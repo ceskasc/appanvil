@@ -482,7 +482,7 @@ const buildInstallerCmd = (ps1: string): string => {
       "'Stop'" +
       '; try { $raw = Get-Content -LiteralPath $env:SELF -Raw; $marker = ' +
       "'::APPANVIL_PS::'" +
-      '; $idx = $raw.IndexOf($marker); if ($idx -lt 0) { Write-Error ' +
+      '; $idx = $raw.LastIndexOf($marker); if ($idx -lt 0) { Write-Error ' +
       "'Embedded installer payload not found.'" +
       '; exit 1 }; $script = $raw.Substring($idx + $marker.Length).TrimStart([char]13,[char]10); $tempDir = Join-Path $env:TEMP ' +
       "'AppAnvil'" +
