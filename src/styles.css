@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #f6fafc;
+  --bg-elevated: rgba(255, 255, 255, 0.7);
+  --panel-surface: rgba(255, 255, 255, 0.78);
+  --panel-soft: rgba(239, 248, 251, 0.82);
+  --panel-border: rgba(111, 144, 171, 0.22);
+  --focus-ring: rgba(0, 160, 158, 0.55);
+  --accent-strong: #0f766e;
+  --accent-soft: rgba(15, 118, 110, 0.14);
+  --text-strong: #112031;
+  --text-muted: #3f556d;
+  --text-subtle: #61758d;
+  color-scheme: light;
+}
+
+html.dark {
+  --bg-base: #070f17;
+  --bg-elevated: rgba(7, 15, 23, 0.55);
+  --panel-surface: rgba(9, 24, 35, 0.7);
+  --panel-soft: rgba(16, 33, 48, 0.72);
+  --panel-border: rgba(106, 170, 208, 0.2);
+  --focus-ring: rgba(60, 190, 160, 0.7);
+  --accent-strong: #35d9b4;
+  --accent-soft: rgba(53, 217, 180, 0.12);
+  --text-strong: #e4f2fb;
+  --text-muted: #abc2d3;
+  --text-subtle: #7d96ab;
+  color-scheme: dark;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    @apply min-h-screen;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    @apply bg-[color:var(--bg-base)] text-[color:var(--text-strong)] antialiased;
+  }
+
+  code {
+    font-family: 'IBM Plex Mono', monospace;
+    @apply rounded bg-[color:var(--panel-soft)] px-1.5 py-0.5 text-[0.8em];
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] shadow-[0_16px_38px_rgba(17,32,49,0.12)] backdrop-blur-xl dark:shadow-[0_18px_50px_rgba(0,0,0,0.38)];
+  }
+
+  .panel {
+    @apply glass rounded-3xl p-5 md:p-6;
+  }
+
+  .panel-title {
+    @apply text-lg font-semibold tracking-tight text-[color:var(--text-strong)];
+  }
+
+  .hash-link {
+    @apply focus-ring inline-flex rounded-lg px-3 py-2 text-sm font-medium text-[color:var(--text-muted)] transition-colors hover:bg-[color:var(--panel-surface)] hover:text-[color:var(--text-strong)];
+  }
+
+  .hash-link.is-active {
+    @apply bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)];
+  }
+
+  .btn-primary {
+    @apply focus-ring inline-flex items-center gap-2 rounded-xl bg-[color:var(--accent-strong)] px-4 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:brightness-110;
+  }
+
+  .btn-ghost {
+    @apply focus-ring inline-flex items-center gap-2 rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-4 py-2.5 text-sm font-medium text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)];
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--text-subtle)];
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+  }
+}
+
+.aurora,
+.surface-grid {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+}
+
+.aurora {
+  z-index: 0;
+  background:
+    radial-gradient(circle at 12% 16%, rgba(34, 197, 94, 0.21), transparent 42%),
+    radial-gradient(circle at 84% 18%, rgba(14, 165, 233, 0.2), transparent 44%),
+    radial-gradient(circle at 54% 82%, rgba(20, 184, 166, 0.18), transparent 36%);
+  animation: aurora-drift 12s ease-in-out infinite alternate;
+}
+
+.surface-grid {
+  z-index: 0;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(to right, rgba(127, 148, 173, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(127, 148, 173, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at center, black 38%, transparent 90%);
+}
+
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: saturate(100%);
+  }
+  to {
+    transform: translate3d(0, -18px, 0) scale(1.05);
+    filter: saturate(120%);
+  }
+}

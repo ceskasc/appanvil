@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AppAnvil builds install scripts for your selected apps. The website never executes installers."
+    />
+    <title>AppAnvil</title>
+    <script>
+      (() => {
+        try {
+          const key = 'appanvil:theme'
+          const saved = localStorage.getItem(key)
+          const wantsDark =
+            saved === 'dark' ||
+            (!saved &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+          if (wantsDark) {
+            document.documentElement.classList.add('dark')
+          }
+        } catch {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

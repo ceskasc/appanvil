@@ -1,0 +1,1806 @@
+[
+  {
+    "id": "google-chrome",
+    "name": "Google Chrome",
+    "description": "Fast web browser by Google",
+    "category": "Browsers",
+    "tags": [
+      "browser",
+      "popular",
+      "browsers"
+    ],
+    "popularity": 98,
+    "addedAt": "2026-01-01",
+    "icon": "chrome",
+    "providers": {
+      "winget": {
+        "packageId": "Google.Chrome",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "googlechrome",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "googlechrome",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.google.com/chrome",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "mozilla-firefox",
+    "name": "Mozilla Firefox",
+    "description": "Open source privacy-focused web browser",
+    "category": "Browsers",
+    "tags": [
+      "browser",
+      "privacy",
+      "popular",
+      "browsers"
+    ],
+    "popularity": 94,
+    "addedAt": "2026-01-02",
+    "icon": "firefox",
+    "providers": {
+      "winget": {
+        "packageId": "Mozilla.Firefox",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "firefox",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "firefox",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.mozilla.org/firefox",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "brave-browser",
+    "name": "Brave Browser",
+    "description": "Chromium-based browser with built-in ad blocking",
+    "category": "Browsers",
+    "tags": [
+      "browser",
+      "privacy",
+      "popular",
+      "browsers"
+    ],
+    "popularity": 88,
+    "addedAt": "2026-01-03",
+    "icon": "shield",
+    "providers": {
+      "winget": {
+        "packageId": "Brave.Brave",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "brave",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "brave",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://brave.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "opera-browser",
+    "name": "Opera",
+    "description": "Browser with integrated workspaces and VPN",
+    "category": "Browsers",
+    "tags": [
+      "browser",
+      "browsers"
+    ],
+    "popularity": 70,
+    "addedAt": "2026-01-04",
+    "icon": "compass",
+    "providers": {
+      "winget": {
+        "packageId": "Opera.Opera",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "opera",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "opera",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.opera.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "vivaldi-browser",
+    "name": "Vivaldi",
+    "description": "Highly customizable browser for power users",
+    "category": "Browsers",
+    "tags": [
+      "browser",
+      "browsers"
+    ],
+    "popularity": 68,
+    "addedAt": "2026-01-05",
+    "icon": "panel-left",
+    "providers": {
+      "winget": {
+        "packageId": "Vivaldi.Vivaldi",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "vivaldi",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "vivaldi",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://vivaldi.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "visual-studio-code",
+    "name": "Visual Studio Code",
+    "description": "Popular code editor from Microsoft",
+    "category": "Developer Tools",
+    "tags": [
+      "editor",
+      "dev",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 99,
+    "addedAt": "2026-01-06",
+    "icon": "file-code-2",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.VisualStudioCode",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "vscode",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "vscode",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://code.visualstudio.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "description": "Distributed version control",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "cli",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 97,
+    "addedAt": "2026-01-07",
+    "icon": "git-branch",
+    "providers": {
+      "winget": {
+        "packageId": "Git.Git",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "git",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "git",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://git-scm.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "nodejs-lts",
+    "name": "Node.js LTS",
+    "description": "JavaScript runtime for server and tooling",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "runtime",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 96,
+    "addedAt": "2026-01-08",
+    "icon": "cpu",
+    "providers": {
+      "winget": {
+        "packageId": "OpenJS.NodeJS.LTS",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "nodejs-lts",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "nodejs-lts",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://nodejs.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "windows-terminal",
+    "name": "Windows Terminal",
+    "description": "Modern terminal for Windows",
+    "category": "Developer Tools",
+    "tags": [
+      "terminal",
+      "microsoft",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 90,
+    "addedAt": "2026-01-09",
+    "icon": "terminal",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.WindowsTerminal",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://aka.ms/terminal",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "postman",
+    "name": "Postman",
+    "description": "API development and testing platform",
+    "category": "Developer Tools",
+    "tags": [
+      "api",
+      "dev",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 88,
+    "addedAt": "2026-01-10",
+    "icon": "send",
+    "providers": {
+      "winget": {
+        "packageId": "Postman.Postman",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "postman",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "postman",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.postman.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "jetbrains-toolbox",
+    "name": "JetBrains Toolbox",
+    "description": "Installer and updater for JetBrains IDEs",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "ide",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 80,
+    "addedAt": "2026-01-11",
+    "icon": "tool-case",
+    "providers": {
+      "winget": {
+        "packageId": "JetBrains.Toolbox",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "jetbrainstoolbox",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.jetbrains.com/toolbox-app",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "seven-zip",
+    "name": "7-Zip",
+    "description": "High-compression file archiver",
+    "category": "Utilities",
+    "tags": [
+      "archive",
+      "popular",
+      "utilities"
+    ],
+    "popularity": 93,
+    "addedAt": "2026-01-12",
+    "icon": "archive",
+    "providers": {
+      "winget": {
+        "packageId": "7zip.7zip",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "7zip",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "7zip",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.7-zip.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "notepad-plus-plus",
+    "name": "Notepad++",
+    "description": "Lightweight source code and text editor",
+    "category": "Utilities",
+    "tags": [
+      "editor",
+      "popular",
+      "utilities"
+    ],
+    "popularity": 87,
+    "addedAt": "2026-01-13",
+    "icon": "notebook-pen",
+    "providers": {
+      "winget": {
+        "packageId": "Notepad++.Notepad++",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "notepadplusplus",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "notepadplusplus",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://notepad-plus-plus.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "microsoft-powertoys",
+    "name": "Microsoft PowerToys",
+    "description": "Advanced productivity utilities for Windows",
+    "category": "Utilities",
+    "tags": [
+      "productivity",
+      "microsoft",
+      "popular",
+      "utilities"
+    ],
+    "popularity": 84,
+    "addedAt": "2026-01-14",
+    "icon": "wand-sparkles",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.PowerToys",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "powertoys",
+        "notes": ""
+      }
+    },
+    "homepage": "https://learn.microsoft.com/windows/powertoys",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "vlc-media-player",
+    "name": "VLC Media Player",
+    "description": "Open source media player",
+    "category": "Utilities",
+    "tags": [
+      "media",
+      "popular",
+      "utilities"
+    ],
+    "popularity": 86,
+    "addedAt": "2026-01-15",
+    "icon": "play",
+    "providers": {
+      "winget": {
+        "packageId": "VideoLAN.VLC",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "vlc",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "vlc",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.videolan.org/vlc",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "discord",
+    "name": "Discord",
+    "description": "Voice and text chat for communities",
+    "category": "Communication",
+    "tags": [
+      "chat",
+      "popular",
+      "communication"
+    ],
+    "popularity": 92,
+    "addedAt": "2026-01-16",
+    "icon": "message-circle",
+    "providers": {
+      "winget": {
+        "packageId": "Discord.Discord",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "discord",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "discord",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://discord.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "slack",
+    "name": "Slack",
+    "description": "Team communication workspace",
+    "category": "Communication",
+    "tags": [
+      "chat",
+      "work",
+      "popular",
+      "communication"
+    ],
+    "popularity": 83,
+    "addedAt": "2026-01-17",
+    "icon": "messages-square",
+    "providers": {
+      "winget": {
+        "packageId": "SlackTechnologies.Slack",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "slack",
+        "notes": ""
+      }
+    },
+    "homepage": "https://slack.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "telegram-desktop",
+    "name": "Telegram Desktop",
+    "description": "Fast and secure messaging app",
+    "category": "Communication",
+    "tags": [
+      "chat",
+      "privacy",
+      "communication"
+    ],
+    "popularity": 79,
+    "addedAt": "2026-01-18",
+    "icon": "send-horizontal",
+    "providers": {
+      "winget": {
+        "packageId": "Telegram.TelegramDesktop",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "telegram",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "telegram",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://desktop.telegram.org",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "bitwarden",
+    "name": "Bitwarden",
+    "description": "Cross-platform password manager",
+    "category": "Security",
+    "tags": [
+      "password-manager",
+      "security",
+      "popular"
+    ],
+    "popularity": 90,
+    "addedAt": "2026-01-19",
+    "icon": "shield-check",
+    "providers": {
+      "winget": {
+        "packageId": "Bitwarden.Bitwarden",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "bitwarden",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "bitwarden",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://bitwarden.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "obs-studio",
+    "name": "OBS Studio",
+    "description": "Open source streaming and recording software",
+    "category": "Media",
+    "tags": [
+      "streaming",
+      "recording",
+      "popular",
+      "media"
+    ],
+    "popularity": 89,
+    "addedAt": "2026-01-20",
+    "icon": "video",
+    "providers": {
+      "winget": {
+        "packageId": "OBSProject.OBSStudio",
+        "source": "winget",
+        "supportsSilent": false,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "obs-studio",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "obs-studio",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://obsproject.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "spotify",
+    "name": "Spotify",
+    "description": "Music streaming client",
+    "category": "Media",
+    "tags": [
+      "music",
+      "popular",
+      "media"
+    ],
+    "popularity": 91,
+    "addedAt": "2026-01-21",
+    "icon": "music-4",
+    "providers": {
+      "winget": {
+        "packageId": "Spotify.Spotify",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "spotify",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "spotify",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.spotify.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "steam",
+    "name": "Steam",
+    "description": "PC game distribution and launcher platform",
+    "category": "Gaming",
+    "tags": [
+      "games",
+      "popular",
+      "gaming"
+    ],
+    "popularity": 92,
+    "addedAt": "2026-01-22",
+    "icon": "gamepad-2",
+    "providers": {
+      "winget": {
+        "packageId": "Valve.Steam",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "steam-client",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "steam",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://store.steampowered.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "microsoft-edge",
+    "name": "Microsoft Edge",
+    "description": "Default Chromium browser for Windows",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 72,
+    "addedAt": "2026-01-23",
+    "icon": "globe",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.Edge",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.microsoft.com/edge",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "tor-browser",
+    "name": "Tor Browser",
+    "description": "Browser bundle focused on anonymity",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 61,
+    "addedAt": "2026-01-24",
+    "icon": "shield-alert",
+    "providers": {
+      "winget": {
+        "packageId": "TorProject.TorBrowser",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.torproject.org",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "librewolf",
+    "name": "LibreWolf",
+    "description": "Firefox fork with hardened defaults",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 58,
+    "addedAt": "2026-01-25",
+    "icon": "fox",
+    "providers": {
+      "winget": {
+        "packageId": "LibreWolf.LibreWolf",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://librewolf.net",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "arc-browser",
+    "name": "Arc Browser",
+    "description": "Modern browser by The Browser Company",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 56,
+    "addedAt": "2026-01-26",
+    "icon": "orbit",
+    "providers": {
+      "winget": {
+        "packageId": "TheBrowserCompany.Arc",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://arc.net",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "windows-pc-manager",
+    "name": "Microsoft PC Manager",
+    "description": "System cleanup and optimization utility",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 55,
+    "addedAt": "2026-01-27",
+    "icon": "sparkles",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.PCManager",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://pcmanager.microsoft.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "protonvpn",
+    "name": "Proton VPN",
+    "description": "Privacy-focused VPN client",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 70,
+    "addedAt": "2026-01-28",
+    "icon": "shield",
+    "providers": {
+      "winget": {
+        "packageId": "ProtonTechnologies.ProtonVPN",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://protonvpn.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "wireshark",
+    "name": "Wireshark",
+    "description": "Network protocol analyzer",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 59,
+    "addedAt": "2026-01-29",
+    "icon": "radar",
+    "providers": {
+      "winget": {
+        "packageId": "WiresharkFoundation.Wireshark",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.wireshark.org",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "microsoft-teams",
+    "name": "Microsoft Teams",
+    "description": "Work chat and meetings from Microsoft",
+    "category": "Communication",
+    "tags": [
+      "communication"
+    ],
+    "popularity": 76,
+    "addedAt": "2026-01-30",
+    "icon": "users-round",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.Teams",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.microsoft.com/microsoft-teams",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "vscodium",
+    "name": "VSCodium",
+    "description": "Telemetry-stripped VS Code build",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 66,
+    "addedAt": "2026-01-31",
+    "icon": "braces",
+    "providers": {
+      "winget": {
+        "packageId": "VSCodium.VSCodium",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "vscodium",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "vscodium",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://vscodium.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "description": "General-purpose programming language runtime",
+    "category": "Developer Tools",
+    "tags": [
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 89,
+    "addedAt": "2026-02-01",
+    "icon": "code-xml",
+    "providers": {
+      "winget": {
+        "packageId": "Python.Python.3.12",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "python",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "python",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.python.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "golang",
+    "name": "Go",
+    "description": "Compiled language for cloud and backend services",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 73,
+    "addedAt": "2026-02-02",
+    "icon": "rocket",
+    "providers": {
+      "winget": {
+        "packageId": "GoLang.Go",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "golang",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "go",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://go.dev",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "github-desktop",
+    "name": "GitHub Desktop",
+    "description": "Desktop client for GitHub workflows",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 76,
+    "addedAt": "2026-02-03",
+    "icon": "github",
+    "providers": {
+      "winget": {
+        "packageId": "GitHub.GitHubDesktop",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "github-desktop",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "github",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://desktop.github.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "sourcetree",
+    "name": "Sourcetree",
+    "description": "Visual Git client from Atlassian",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 64,
+    "addedAt": "2026-02-04",
+    "icon": "git-compare",
+    "providers": {
+      "winget": {
+        "packageId": "Atlassian.Sourcetree",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "sourcetree",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.sourcetreeapp.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "insomnia",
+    "name": "Insomnia",
+    "description": "API client for REST and GraphQL",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 62,
+    "addedAt": "2026-02-05",
+    "icon": "moon",
+    "providers": {
+      "winget": {
+        "packageId": "Kong.Insomnia",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "insomnia-rest-api-client",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "insomnia",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://insomnia.rest",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "dbeaver",
+    "name": "DBeaver Community",
+    "description": "Universal database management tool",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 69,
+    "addedAt": "2026-02-06",
+    "icon": "database",
+    "providers": {
+      "winget": {
+        "packageId": "dbeaver.dbeaver",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "dbeaver",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "dbeaver",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://dbeaver.io",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "mongodb-compass",
+    "name": "MongoDB Compass",
+    "description": "GUI for MongoDB databases",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "popularity": 65,
+    "addedAt": "2026-02-07",
+    "icon": "compass",
+    "providers": {
+      "winget": {
+        "packageId": "MongoDB.Compass.Full",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "mongodb-compass",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "mongodb-compass",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.mongodb.com/products/compass",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "malwarebytes",
+    "name": "Malwarebytes",
+    "description": "Malware detection and cleanup utility",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 75,
+    "addedAt": "2026-02-08",
+    "icon": "shield-alert",
+    "providers": {
+      "winget": {
+        "packageId": "Malwarebytes.Malwarebytes",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "malwarebytes",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.malwarebytes.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "onepassword",
+    "name": "1Password",
+    "description": "Commercial password manager",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 71,
+    "addedAt": "2026-02-09",
+    "icon": "key-square",
+    "providers": {
+      "winget": {
+        "packageId": "AgileBits.1Password",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "1password",
+        "notes": ""
+      }
+    },
+    "homepage": "https://1password.com",
+    "license": "commercial",
+    "needsVerification": true
+  },
+  {
+    "id": "openvpn-connect",
+    "name": "OpenVPN Connect",
+    "description": "Client for OpenVPN secure tunnels",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 57,
+    "addedAt": "2026-02-10",
+    "icon": "lock-keyhole",
+    "providers": {
+      "winget": {
+        "packageId": "OpenVPNTechnologies.OpenVPNConnect",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "openvpn-connect",
+        "notes": ""
+      }
+    },
+    "homepage": "https://openvpn.net/client",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "audacity",
+    "name": "Audacity",
+    "description": "Audio recorder and editor",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 74,
+    "addedAt": "2026-02-11",
+    "icon": "audio-lines",
+    "providers": {
+      "winget": {
+        "packageId": "Audacity.Audacity",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "audacity",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "audacity",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.audacityteam.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "gimp",
+    "name": "GIMP",
+    "description": "Open source raster image editor",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 72,
+    "addedAt": "2026-02-12",
+    "icon": "palette",
+    "providers": {
+      "winget": {
+        "packageId": "GIMP.GIMP",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "gimp",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "gimp",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.gimp.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "blender",
+    "name": "Blender",
+    "description": "3D modeling and animation suite",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 78,
+    "addedAt": "2026-02-13",
+    "icon": "cube",
+    "providers": {
+      "winget": {
+        "packageId": "BlenderFoundation.Blender",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "blender",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "blender",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.blender.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "handbrake",
+    "name": "HandBrake",
+    "description": "Video transcoder for common formats",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 66,
+    "addedAt": "2026-02-14",
+    "icon": "clapperboard",
+    "providers": {
+      "winget": {
+        "packageId": "HandBrake.HandBrake",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "handbrake",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "handbrake",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://handbrake.fr",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "description": "Workspace for notes, docs, and tasks",
+    "category": "Productivity",
+    "tags": [
+      "popular",
+      "productivity"
+    ],
+    "popularity": 86,
+    "addedAt": "2026-02-15",
+    "icon": "notebook-text",
+    "providers": {
+      "winget": {
+        "packageId": "Notion.Notion",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "notion",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "notion",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.notion.so",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "todoist",
+    "name": "Todoist",
+    "description": "Task manager with projects and labels",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 71,
+    "addedAt": "2026-02-16",
+    "icon": "list-checks",
+    "providers": {
+      "winget": {
+        "packageId": "Doist.Todoist",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "todoist",
+        "notes": ""
+      }
+    },
+    "homepage": "https://todoist.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "drawio-desktop",
+    "name": "draw.io Desktop",
+    "description": "Diagramming and whiteboarding app",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 68,
+    "addedAt": "2026-02-17",
+    "icon": "workflow",
+    "providers": {
+      "winget": {
+        "packageId": "JGraph.Draw",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "drawio",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "drawio",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.drawio.com",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "sumatra-pdf",
+    "name": "SumatraPDF",
+    "description": "Lightweight PDF and ebook reader",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 67,
+    "addedAt": "2026-02-18",
+    "icon": "book-open-text",
+    "providers": {
+      "winget": {
+        "packageId": "SumatraPDF.SumatraPDF",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "sumatrapdf",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "sumatrapdf",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.sumatrapdfreader.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "libreoffice",
+    "name": "LibreOffice",
+    "description": "Open source office suite",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 70,
+    "addedAt": "2026-02-19",
+    "icon": "file-spreadsheet",
+    "providers": {
+      "winget": {
+        "packageId": "TheDocumentFoundation.LibreOffice",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "libreoffice-fresh",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "libreoffice-fresh",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.libreoffice.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "chocolatey-gui",
+    "name": "Chocolatey GUI",
+    "description": "Desktop UI for Chocolatey package management (choco-only mapping)",
+    "category": "Utilities",
+    "tags": [
+      "choco-only",
+      "utilities"
+    ],
+    "popularity": 40,
+    "addedAt": "2026-02-20",
+    "icon": "package",
+    "providers": {
+      "choco": {
+        "packageId": "chocolateygui",
+        "notes": "Choco-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://community.chocolatey.org/packages/chocolateygui",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "fiddler-classic",
+    "name": "Fiddler Classic",
+    "description": "Web debugging proxy (choco-only mapping)",
+    "category": "Developer Tools",
+    "tags": [
+      "choco-only",
+      "developer-tools"
+    ],
+    "popularity": 42,
+    "addedAt": "2026-02-21",
+    "icon": "bug",
+    "providers": {
+      "choco": {
+        "packageId": "fiddler",
+        "notes": "Choco-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://www.telerik.com/fiddler",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "classic-shell",
+    "name": "Classic Shell",
+    "description": "Classic Start menu replacement (choco-only mapping)",
+    "category": "Utilities",
+    "tags": [
+      "choco-only",
+      "utilities"
+    ],
+    "popularity": 35,
+    "addedAt": "2026-02-22",
+    "icon": "layout-panel-left",
+    "providers": {
+      "choco": {
+        "packageId": "classic-shell",
+        "notes": "Choco-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://community.chocolatey.org/packages/classic-shell",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "sysinternals-suite",
+    "name": "Sysinternals Suite",
+    "description": "Microsoft diagnostics toolkit (choco-only mapping)",
+    "category": "Utilities",
+    "tags": [
+      "choco-only",
+      "utilities"
+    ],
+    "popularity": 58,
+    "addedAt": "2026-02-23",
+    "icon": "tool-case",
+    "providers": {
+      "choco": {
+        "packageId": "sysinternals",
+        "notes": "Choco-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://learn.microsoft.com/sysinternals",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "grepwin",
+    "name": "grepWin",
+    "description": "Search and replace tool with regex support (choco-only mapping)",
+    "category": "Utilities",
+    "tags": [
+      "choco-only",
+      "utilities"
+    ],
+    "popularity": 33,
+    "addedAt": "2026-02-24",
+    "icon": "regex",
+    "providers": {
+      "choco": {
+        "packageId": "grepwin",
+        "notes": "Choco-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://tools.stefankueng.com/grepWin.html",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "autohotkey-v1",
+    "name": "AutoHotkey v1",
+    "description": "Automation scripting runtime (choco-only mapping)",
+    "category": "Utilities",
+    "tags": [
+      "choco-only",
+      "utilities"
+    ],
+    "popularity": 57,
+    "addedAt": "2026-02-25",
+    "icon": "keyboard",
+    "providers": {
+      "choco": {
+        "packageId": "autohotkey",
+        "notes": "Choco-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://www.autohotkey.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "neovim-scoop",
+    "name": "Neovim (Scoop)",
+    "description": "Hyperextensible Vim-based editor (scoop-only mapping)",
+    "category": "Developer Tools",
+    "tags": [
+      "scoop-only",
+      "developer-tools"
+    ],
+    "popularity": 64,
+    "addedAt": "2026-02-26",
+    "icon": "file-pen-line",
+    "providers": {
+      "scoop": {
+        "packageId": "neovim",
+        "bucket": "main",
+        "notes": "Scoop-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://neovim.io",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "jq-scoop",
+    "name": "jq (Scoop)",
+    "description": "Command-line JSON processor (scoop-only mapping)",
+    "category": "Developer Tools",
+    "tags": [
+      "scoop-only",
+      "developer-tools"
+    ],
+    "popularity": 52,
+    "addedAt": "2026-02-27",
+    "icon": "braces",
+    "providers": {
+      "scoop": {
+        "packageId": "jq",
+        "bucket": "main",
+        "notes": "Scoop-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://jqlang.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "fd-scoop",
+    "name": "fd (Scoop)",
+    "description": "Fast find alternative (scoop-only mapping)",
+    "category": "Developer Tools",
+    "tags": [
+      "scoop-only",
+      "developer-tools"
+    ],
+    "popularity": 48,
+    "addedAt": "2026-02-28",
+    "icon": "search-code",
+    "providers": {
+      "scoop": {
+        "packageId": "fd",
+        "bucket": "main",
+        "notes": "Scoop-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://github.com/sharkdp/fd",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "ripgrep-scoop",
+    "name": "ripgrep (Scoop)",
+    "description": "Fast recursive search tool (scoop-only mapping)",
+    "category": "Developer Tools",
+    "tags": [
+      "scoop-only",
+      "developer-tools"
+    ],
+    "popularity": 66,
+    "addedAt": "2026-03-01",
+    "icon": "scan-search",
+    "providers": {
+      "scoop": {
+        "packageId": "ripgrep",
+        "bucket": "main",
+        "notes": "Scoop-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://github.com/BurntSushi/ripgrep",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "aria2-scoop",
+    "name": "aria2 (Scoop)",
+    "description": "Lightweight multi-source download utility (scoop-only mapping)",
+    "category": "Utilities",
+    "tags": [
+      "scoop-only",
+      "utilities"
+    ],
+    "popularity": 43,
+    "addedAt": "2026-03-02",
+    "icon": "download-cloud",
+    "providers": {
+      "scoop": {
+        "packageId": "aria2",
+        "bucket": "main",
+        "notes": "Scoop-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://aria2.github.io",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "yazi-scoop",
+    "name": "Yazi (Scoop)",
+    "description": "Terminal file manager built for speed (scoop-only mapping)",
+    "category": "Utilities",
+    "tags": [
+      "scoop-only",
+      "utilities"
+    ],
+    "popularity": 39,
+    "addedAt": "2026-03-03",
+    "icon": "folder-open",
+    "providers": {
+      "scoop": {
+        "packageId": "yazi",
+        "bucket": "extras",
+        "notes": "Scoop-only mapping in this catalog."
+      }
+    },
+    "homepage": "https://yazi-rs.github.io",
+    "license": "oss",
+    "needsVerification": true
+  }
+]
