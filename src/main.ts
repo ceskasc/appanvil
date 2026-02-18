@@ -49,10 +49,7 @@ import { initRouter, type AppRoute } from './router'
 import { createStore } from './store/store'
 import {
   applyTheme,
-  getThemePreference,
   renderHeader,
-  toggleThemeMode,
-  type ThemeMode,
   wireHeader,
 } from './ui/header'
 import { showToast } from './ui/toast'
@@ -70,7 +67,7 @@ interface ShareStatusState {
 
 const DEFAULT_SHARE_STATUS: ShareStatusState = {
   tone: 'idle',
-  message: 'Paste a token/URL or upload a selection JSON file to import.',
+  message: 'Token/URL yapistir veya JSON dosyasi yukleyerek secimi ice aktar.',
 }
 
 const iconToSvg = (icon: IconNode, className: string): string => {
@@ -105,13 +102,12 @@ const isGeneratorOptionKey = (
 
 const store = createStore()
 let catalogSearch: CatalogSearch | null = null
-let activeTheme: ThemeMode = getThemePreference()
 let currentRoute: AppRoute = { kind: 'home' }
 let cleanupListeners: Array<() => void> = []
 let shareStatus: ShareStatusState = DEFAULT_SHARE_STATUS
 let lastHandledShareToken: string | null = null
 
-applyTheme(activeTheme)
+applyTheme()
 
 const resetListeners = (): void => {
   cleanupListeners.forEach((cleanup) => cleanup())
@@ -260,7 +256,7 @@ const renderGenerateBody = (): string => {
       <section class="panel max-w-4xl">
         <div class="flex items-center gap-3 text-[color:var(--text-strong)]">
           ${iconToSvg(LoaderCircle, 'h-5 w-5 animate-spin')}
-          <span class="text-sm font-medium">Preparing generator...</span>
+          <span class="text-sm font-medium">Generate sayfasi hazirlaniyor...</span>
         </div>
       </section>
     `
@@ -271,7 +267,7 @@ const renderGenerateBody = (): string => {
       <section class="panel max-w-4xl">
         <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Generate Scripts</h1>
         <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-          Catalog failed to load, so script generation is unavailable.
+          Katalog yuklenemedigi icin script olusturma su an kullanilamiyor.
         </p>
       </section>
     `
@@ -292,11 +288,13 @@ const renderAboutView = (): string => `
       <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
         ${iconToSvg(LayoutPanelLeft, 'h-5 w-5')}
       </span>
-      <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">About AppAnvil</h1>
+      <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">AppAnvil Nedir?</h1>
     </div>
-    <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-      AppAnvil is a static client-side app that builds install scripts. It never executes installers.
-    </p>
+    <ul class="mt-3 space-y-2 text-sm text-[color:var(--text-muted)]">
+      <li>1. Program secimini toplar.</li>
+      <li>2. Winget/Choco/Scoop komutlarini script olarak uretir.</li>
+      <li>3. Kurulumu otomatik baslatmaz, kontrol sende kalir.</li>
+    </ul>
   </section>
 `
 
@@ -313,11 +311,11 @@ const renderShareBody = (): string => {
 
 const renderNotFoundView = (path: string): string => `
   <section class="panel max-w-3xl">
-    <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Unknown Route</h1>
+    <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Sayfa Bulunamadi</h1>
     <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-      ${escapeHtml(path)} is not a valid AppAnvil route.
+      ${escapeHtml(path)} gecerli bir AppAnvil adresi degil.
     </p>
-    <a href="#/" class="btn-primary mt-5 inline-flex">Back to Home</a>
+    <a href="#/" class="btn-primary mt-5 inline-flex">Ana Sayfaya Don</a>
   </section>
 `
 
@@ -340,19 +338,19 @@ const renderCatalogBody = (): string => {
         <section class="panel">
           <div class="flex items-center gap-3 text-[color:var(--text-strong)]">
             ${iconToSvg(LoaderCircle, 'h-5 w-5 animate-spin')}
-            <span class="text-sm font-medium">Loading catalog data...</span>
+            <span class="text-sm font-medium">Katalog yukleniyor...</span>
           </div>
         </section>
       `
       : state.catalogStatus === 'error'
         ? `
           <section class="panel">
-            <div class="flex items-start gap-3 text-amber-800 dark:text-amber-200">
+            <div class="flex items-start gap-3 text-amber-200">
               ${iconToSvg(AlertTriangle, 'mt-0.5 h-5 w-5')}
               <div>
                 <h2 class="text-base font-semibold">Catalog failed to load</h2>
                 <p class="mt-1 text-sm">${escapeHtml(state.catalogError ?? 'Unknown error.')}</p>
-                <p class="mt-2 text-xs text-[color:var(--text-subtle)]">Refresh the page to retry.</p>
+                <p class="mt-2 text-xs text-[color:var(--text-subtle)]">Tekrar denemek icin sayfayi yenile.</p>
               </div>
             </div>
           </section>
@@ -367,15 +365,24 @@ const renderCatalogBody = (): string => {
   return `
     <section class="space-y-4">
       <div class="panel">
-        <div class="flex flex-wrap items-start justify-between gap-4 py-1">
+        <div class="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div class="max-w-3xl">
-            <p class="panel-caption">Catalog Workspace</p>
-            <h1 class="mt-2 text-[2rem] font-bold leading-[1.06] tracking-tight text-[color:var(--text-strong)] md:text-[2.75rem]">
-              A cinematic control room for building your app stack.
+            <p class="panel-caption">How It Works</p>
+            <h1 class="mt-2 text-3xl font-bold leading-tight tracking-tight text-[color:var(--text-strong)] md:text-4xl">
+              Programlarini sec, script olustur, bilgisayarina guvenli sekilde kur.
             </h1>
-            <p class="mt-3 max-w-2xl text-sm text-[color:var(--text-muted)] md:text-base">
-              Review scripts before running. This website does not execute installers.
+            <p class="mt-3 text-sm text-[color:var(--text-muted)] md:text-base">
+              Bu site hicbir kurulumu otomatik calistirmaz. Sadece script uretir.
             </p>
+          </div>
+
+          <div class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-3">
+            <p class="panel-caption">3 Adim</p>
+            <ol class="mt-2 space-y-2 text-sm text-[color:var(--text-muted)]">
+              <li><span class="font-semibold text-[color:var(--text-strong)]">1.</span> Sol taraftan filtrele, ortadan program sec.</li>
+              <li><span class="font-semibold text-[color:var(--text-strong)]">2.</span> Sagdaki sepetten <strong>Generate</strong> sayfasina gec.</li>
+              <li><span class="font-semibold text-[color:var(--text-strong)]">3.</span> Scripti indir, calistirmadan once satirlari kontrol et.</li>
+            </ol>
           </div>
 
           <div class="flex flex-wrap gap-2 lg:hidden">
@@ -387,7 +394,7 @@ const renderCatalogBody = (): string => {
               aria-label="Open filters panel"
             >
               ${iconToSvg(SlidersHorizontal, 'h-4 w-4')}
-              Filters
+              Filtreler
             </button>
             <button
               type="button"
@@ -397,7 +404,7 @@ const renderCatalogBody = (): string => {
               aria-label="Open cart drawer"
             >
               ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-              Cart
+              Sepet
             </button>
           </div>
         </div>
@@ -438,7 +445,7 @@ const renderCatalogBody = (): string => {
         <div class="fixed inset-y-0 left-0 z-50 w-[88%] max-w-xs p-3">
           ${renderFiltersPanel({ filters: state.filters, categories })}
           <button type="button" data-close-drawer="filters-drawer" class="btn-ghost mt-3 w-full">
-            Close Filters
+            Filtreleri Kapat
           </button>
         </div>
       </div>
@@ -463,7 +470,7 @@ const renderCatalogBody = (): string => {
           <div class="glass rounded-2xl p-1.5">
             ${renderCartPanel({ selectedApps, placement: 'mobile' })}
             <button type="button" data-close-drawer="cart-drawer" class="btn-ghost mt-3 w-full">
-              Close Cart
+              Sepeti Kapat
             </button>
           </div>
         </div>
@@ -478,7 +485,7 @@ const renderCatalogBody = (): string => {
           aria-label="Open cart drawer"
         >
           ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-          Open Cart (${selectedApps.length})
+          Sepeti Ac (${selectedApps.length})
         </button>
       </div>
 
@@ -869,7 +876,7 @@ const renderApp = (): void => {
       <div class="lens-vignette"></div>
 
       <div class="relative z-10 mx-auto flex min-h-screen w-full max-w-[1540px] flex-col px-3 py-3 pb-24 md:px-8 md:py-6 md:pb-10">
-        ${renderHeader(currentRoute, activeTheme)}
+        ${renderHeader(currentRoute)}
 
         <main class="mt-3 flex-1" id="route-content">
           ${renderRouteView()}
@@ -878,13 +885,7 @@ const renderApp = (): void => {
     </div>
   `
 
-  cleanupListeners.push(
-    wireHeader(() => {
-      activeTheme = toggleThemeMode(activeTheme)
-      applyTheme(activeTheme)
-      renderApp()
-    }),
-  )
+  cleanupListeners.push(wireHeader())
 
   if (currentRoute.kind === 'home') {
     wireHomeInteractions()

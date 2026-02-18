@@ -29,12 +29,12 @@ interface TabMeta {
 }
 
 const TAB_ORDER: TabMeta[] = [
-  { id: 'ps1', label: 'PowerShell', icon: FileCode2 },
-  { id: 'winget', label: 'Winget', icon: TerminalSquare },
+  { id: 'ps1', label: 'PowerShell Script', icon: FileCode2 },
+  { id: 'winget', label: 'Winget Commands', icon: TerminalSquare },
   { id: 'installer', label: 'Installer .cmd', icon: FileCog },
-  { id: 'choco', label: 'Chocolatey', icon: PackageCheck },
-  { id: 'scoop', label: 'Scoop', icon: PackageCheck },
-  { id: 'json', label: 'Selection JSON', icon: FileJson2 },
+  { id: 'choco', label: 'Chocolatey Script', icon: PackageCheck },
+  { id: 'scoop', label: 'Scoop Script', icon: PackageCheck },
+  { id: 'json', label: 'Secim JSON', icon: FileJson2 },
 ]
 
 const iconToSvg = (icon: IconNode, className: string): string => {
@@ -155,9 +155,9 @@ export const renderGenerateView = ({
           <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Generate Scripts</h1>
         </div>
         <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-          Add apps to your cart first, then come back here to generate install scripts.
+          Once katalogdan program sec. Sonra bu sayfada scriptini olustur.
         </p>
-        <a href="#/" class="btn-primary mt-5 inline-flex">Back to Catalog</a>
+        <a href="#/" class="btn-primary mt-5 inline-flex">Kataloga Don</a>
       </section>
     `
   }
@@ -165,7 +165,7 @@ export const renderGenerateView = ({
   if (!outputs) {
     return `
       <section class="panel max-w-4xl">
-        <p class="text-sm text-[color:var(--text-muted)]">Preparing generator output...</p>
+        <p class="text-sm text-[color:var(--text-muted)]">Cikti hazirlaniyor...</p>
       </section>
     `
   }
@@ -183,17 +183,17 @@ export const renderGenerateView = ({
             ${iconToSvg(FileCode2, 'h-5 w-5')}
           </span>
           <div>
-            <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Generate Scripts</h1>
-            <p class="mt-1 text-xs text-[color:var(--text-subtle)]">${selectedApps.length} selected app(s)</p>
+            <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">4) Script Olustur</h1>
+            <p class="mt-1 text-xs text-[color:var(--text-subtle)]">${selectedApps.length} secili program</p>
           </div>
         </div>
 
-        <div class="mt-4 rounded-2xl border border-amber-300/70 bg-amber-50/90 px-4 py-3 text-sm text-amber-900 dark:border-amber-400/40 dark:bg-amber-400/10 dark:text-amber-200">
+        <div class="mt-4 rounded-2xl border border-amber-400/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
           <p class="flex items-center gap-2 font-semibold">
             ${iconToSvg(AlertTriangle, 'h-4 w-4')}
-            Review scripts before running
+            Scripti calistirmadan once kontrol et
           </p>
-          <p class="mt-1 text-xs">This website does not execute installers.</p>
+          <p class="mt-1 text-xs">Bu site kurulum baslatmaz, sadece komut uretir.</p>
         </div>
         ${renderSelectionChips(selectedApps)}
       </div>
@@ -202,7 +202,7 @@ export const renderGenerateView = ({
         <aside class="panel h-fit">
           <h2 class="panel-title flex items-center gap-2">
             ${iconToSvg(Settings2, 'h-4 w-4')}
-            Options
+            Ayarlar
           </h2>
 
           <div class="mt-4 space-y-3">
@@ -211,11 +211,11 @@ export const renderGenerateView = ({
                 type="checkbox"
                 data-generator-option="silentInstall"
                 ${options.silentInstall ? 'checked' : ''}
-                class="mt-0.5 h-4 w-4 accent-emerald-600"
+                class="mt-0.5 h-4 w-4 accent-sky-500"
               />
               <span>
-                <span class="text-sm font-medium text-[color:var(--text-strong)]">Silent install when possible</span>
-                <span class="mt-0.5 block text-xs text-[color:var(--text-subtle)]">Uses <code>--silent</code> only for supported apps.</span>
+                <span class="text-sm font-medium text-[color:var(--text-strong)]">Mumkunse sessiz kurulum</span>
+                <span class="mt-0.5 block text-xs text-[color:var(--text-subtle)]">Destekleyen paketlerde <code>--silent</code> eklenir.</span>
               </span>
             </label>
 
@@ -224,11 +224,11 @@ export const renderGenerateView = ({
                 type="checkbox"
                 data-generator-option="continueOnError"
                 ${options.continueOnError ? 'checked' : ''}
-                class="mt-0.5 h-4 w-4 accent-emerald-600"
+                class="mt-0.5 h-4 w-4 accent-sky-500"
               />
               <span>
-                <span class="text-sm font-medium text-[color:var(--text-strong)]">Continue on error</span>
-                <span class="mt-0.5 block text-xs text-[color:var(--text-subtle)]">If disabled, script stops on first failed install.</span>
+                <span class="text-sm font-medium text-[color:var(--text-strong)]">Hata olsa da devam et</span>
+                <span class="mt-0.5 block text-xs text-[color:var(--text-subtle)]">Kapatirsan ilk hatada kurulum durur.</span>
               </span>
             </label>
 
@@ -237,19 +237,19 @@ export const renderGenerateView = ({
                 type="checkbox"
                 data-generator-option="includeMsStoreApps"
                 ${options.includeMsStoreApps ? 'checked' : ''}
-                class="mt-0.5 h-4 w-4 accent-emerald-600"
+                class="mt-0.5 h-4 w-4 accent-sky-500"
               />
               <span>
-                <span class="text-sm font-medium text-[color:var(--text-strong)]">Include MS Store apps</span>
-                <span class="mt-0.5 block text-xs text-[color:var(--text-subtle)]">Disabled by default because Store mappings may need extra review.</span>
+                <span class="text-sm font-medium text-[color:var(--text-strong)]">MS Store paketlerini dahil et</span>
+                <span class="mt-0.5 block text-xs text-[color:var(--text-subtle)]">Varsayilan olarak kapali, cunku bazi eslesmeler kontrol gerektirebilir.</span>
               </span>
             </label>
           </div>
 
           <div class="mt-4 space-y-2 rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-3 text-xs text-[color:var(--text-subtle)]">
-            <p class="flex items-center justify-between"><span>Winget mapped</span><strong class="text-[color:var(--text-strong)]">${providerCounts.winget}</strong></p>
-            <p class="flex items-center justify-between"><span>Chocolatey mapped</span><strong class="text-[color:var(--text-strong)]">${providerCounts.choco}</strong></p>
-            <p class="flex items-center justify-between"><span>Scoop mapped</span><strong class="text-[color:var(--text-strong)]">${providerCounts.scoop}</strong></p>
+            <p class="flex items-center justify-between"><span>Winget eslesen</span><strong class="text-[color:var(--text-strong)]">${providerCounts.winget}</strong></p>
+            <p class="flex items-center justify-between"><span>Chocolatey eslesen</span><strong class="text-[color:var(--text-strong)]">${providerCounts.choco}</strong></p>
+            <p class="flex items-center justify-between"><span>Scoop eslesen</span><strong class="text-[color:var(--text-strong)]">${providerCounts.scoop}</strong></p>
           </div>
         </aside>
 
@@ -257,7 +257,7 @@ export const renderGenerateView = ({
           <div class="flex flex-wrap items-center justify-between gap-3">
             <h2 class="panel-title flex items-center gap-2">
               ${iconToSvg(CheckCircle2, 'h-4 w-4')}
-              Generated Output
+              Cikti
             </h2>
             <div class="flex items-center gap-2">
               <button
@@ -267,7 +267,7 @@ export const renderGenerateView = ({
                 aria-label="Download installer cmd"
               >
                 ${iconToSvg(FileCog, 'h-4 w-4')}
-                Installer .cmd
+                Installer .cmd indir
               </button>
               <button
                 type="button"
@@ -277,7 +277,7 @@ export const renderGenerateView = ({
                 aria-label="Copy active output"
               >
                 ${iconToSvg(Clipboard, 'h-4 w-4')}
-                Copy
+                Kopyala
               </button>
               <button
                 type="button"
@@ -287,7 +287,7 @@ export const renderGenerateView = ({
                 aria-label="Download active output"
               >
                 ${iconToSvg(Download, 'h-4 w-4')}
-                Download
+                Indir
               </button>
             </div>
           </div>
@@ -304,7 +304,7 @@ export const renderGenerateView = ({
                     aria-selected="${currentTab === tab.id}"
                     class="focus-ring inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm ${
                       currentTab === tab.id
-                        ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300'
+                        ? 'border-sky-400/45 bg-sky-500/10 text-sky-300'
                         : 'border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-muted)] hover:bg-[color:var(--panel-soft)]'
                     }"
                   >

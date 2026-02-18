@@ -20,10 +20,10 @@ const escapeHtml = (value: string): string =>
 
 const statusClassName = (tone: ShareStatus['tone']): string => {
   if (tone === 'success') {
-    return 'border-emerald-300 bg-emerald-50 text-emerald-800 dark:border-emerald-400/40 dark:bg-emerald-500/15 dark:text-emerald-200'
+    return 'border-emerald-400/40 bg-emerald-500/15 text-emerald-200'
   }
   if (tone === 'error') {
-    return 'border-red-300 bg-red-50 text-red-800 dark:border-red-400/40 dark:bg-red-500/15 dark:text-red-200'
+    return 'border-red-400/40 bg-red-500/15 text-red-200'
   }
   return 'border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] text-[color:var(--text-muted)]'
 }
@@ -36,22 +36,22 @@ export const renderShareView = ({
 }: RenderShareViewProps): string => `
   <section class="space-y-5">
     <div class="panel max-w-5xl">
-      <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Share and Import</h1>
+      <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">5) Paylas ve Ice Aktar</h1>
       <p class="mt-2 text-sm text-[color:var(--text-muted)]">
-        Share tokens include selected app IDs and generator options. Invalid tokens are rejected safely.
+        Bu sayfada secimini baskasina link olarak gonderebilir veya gelen link/JSON ile ayni secimi geri yukleyebilirsin.
       </p>
       <p class="mt-1 text-xs text-[color:var(--text-subtle)]">
-        Current selection: ${selectedCount} app(s)
+        Mevcut secim: ${selectedCount} program
       </p>
     </div>
 
     <div class="grid gap-5 xl:grid-cols-2">
       <section class="panel">
-        <h2 class="panel-title">Route Token Status</h2>
+        <h2 class="panel-title">Link Durumu</h2>
         ${
           routeToken
             ? `<p class="mt-2 break-all rounded-xl border border-dashed border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-2 font-mono text-xs text-[color:var(--text-strong)]">${escapeHtml(routeToken)}</p>`
-            : '<p class="mt-2 text-sm text-[color:var(--text-muted)]">No route token in URL.</p>'
+            : '<p class="mt-2 text-sm text-[color:var(--text-muted)]">URL icinde token yok.</p>'
         }
         <div class="mt-3 rounded-xl border px-3 py-2 text-sm ${statusClassName(status.tone)}">
           ${escapeHtml(status.message)}
@@ -59,24 +59,24 @@ export const renderShareView = ({
       </section>
 
       <section class="panel">
-        <h2 class="panel-title">Create Share Link</h2>
+        <h2 class="panel-title">Paylasim Linki Olustur</h2>
         ${
           currentShareUrl
             ? `
-              <p class="mt-2 text-sm text-[color:var(--text-muted)]">Copy this URL to share the current selection.</p>
+              <p class="mt-2 text-sm text-[color:var(--text-muted)]">Asagidaki URL'yi kopyalayip paylasabilirsin.</p>
               <p class="mt-2 break-all rounded-xl border border-dashed border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-2 text-xs text-[color:var(--text-strong)]">${escapeHtml(currentShareUrl)}</p>
               <button type="button" data-action="copy-current-share-url" class="btn-primary mt-3">
-                Copy Current Share URL
+                Linki Kopyala
               </button>
             `
-            : '<p class="mt-2 text-sm text-[color:var(--text-muted)]">Select at least one app to generate a share URL.</p>'
+            : '<p class="mt-2 text-sm text-[color:var(--text-muted)]">Paylasim linki icin en az bir program secmelisin.</p>'
         }
       </section>
 
       <section class="panel">
-        <h2 class="panel-title">Import via Token or URL</h2>
+        <h2 class="panel-title">Token veya URL ile Ice Aktar</h2>
         <label for="share-import-input" class="mt-2 block text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--text-subtle)]">
-          Paste token or full URL
+          Token veya tam URL yapistir
         </label>
         <textarea
           id="share-import-input"
@@ -87,20 +87,20 @@ export const renderShareView = ({
           aria-label="Paste share token or URL"
         ></textarea>
         <button type="button" data-action="import-share-text" class="btn-primary mt-3">
-          Import from Token/URL
+          Ice Aktar
         </button>
       </section>
 
       <section class="panel">
-        <h2 class="panel-title">Import JSON File</h2>
+        <h2 class="panel-title">JSON Dosyasi ile Ice Aktar</h2>
         <p class="mt-2 text-sm text-[color:var(--text-muted)]">
-          Upload selection JSON exported from AppAnvil.
+          AppAnvil'den indirdigin secim JSON dosyasini yukle.
         </p>
         <label
           for="share-json-file"
           class="focus-ring mt-3 inline-flex cursor-pointer items-center gap-2 rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-4 py-2.5 text-sm font-medium text-[color:var(--text-strong)] hover:bg-[color:var(--panel-soft)]"
         >
-          Choose JSON File
+          JSON Dosyasi Sec
         </label>
         <input
           id="share-json-file"

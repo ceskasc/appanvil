@@ -48,19 +48,19 @@ export const renderCartPanel = ({
   return `
     <section class="panel space-y-3">
       <div class="flex items-center justify-between gap-2">
-        <h2 class="panel-title">Selection</h2>
-        <span class="chip">${selectedApps.length} app</span>
+        <h2 class="panel-title">3) Secim Sepeti</h2>
+        <span class="chip">${selectedApps.length} secili</span>
       </div>
 
       <p class="text-xs text-[color:var(--text-subtle)]">
-        Review scripts before running. This website does not execute installers.
+        Once programlari burada kontrol et. Sonra <strong>Generate</strong> ile script uretebilirsin.
       </p>
 
       ${
         selectedApps.length === 0
           ? `
             <div class="rounded-lg bg-[color:var(--panel-surface)] px-3 py-3 text-sm text-[color:var(--text-muted)]">
-              Cart is empty. Select apps from the catalog list.
+              Sepet bos. Ortadaki listeden program sec.
             </div>
           `
           : `
@@ -95,21 +95,21 @@ export const renderCartPanel = ({
       <div class="grid gap-2">
         <a href="#/generate" class="btn-primary w-full justify-center">
           ${iconToSvg(ClipboardList, 'h-4 w-4')}
-          Generate
+          Generate Sayfasina Git
         </a>
 
         <button type="button" data-action="copy-share-link" class="btn-ghost w-full justify-center">
           ${iconToSvg(Link2, 'h-4 w-4')}
-          Create Share Link
+          Paylasim Linki Olustur
         </button>
 
         <button
           type="button"
           data-action="clear-selection"
-          class="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-xl border border-rose-300/70 bg-rose-500/12 px-3.5 py-2 text-sm font-semibold text-rose-700 transition-colors hover:bg-rose-500/18 dark:border-rose-400/45 dark:text-rose-300"
+          class="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-xl border border-rose-400/45 bg-rose-500/12 px-3.5 py-2 text-sm font-semibold text-rose-300 transition-colors hover:bg-rose-500/18"
         >
           ${iconToSvg(Trash2, 'h-4 w-4')}
-          Clear All
+          Tumunu Temizle
         </button>
       </div>
 

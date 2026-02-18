@@ -1,36 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-base: #eff2f7;
-  --bg-elevated: rgba(255, 255, 255, 0.66);
-  --panel-surface: rgba(255, 255, 255, 0.58);
-  --panel-soft: rgba(246, 250, 255, 0.8);
-  --panel-border: rgba(31, 63, 96, 0.18);
-  --focus-ring: rgba(26, 133, 238, 0.5);
-  --accent-strong: #1264d4;
-  --accent-soft: rgba(18, 100, 212, 0.12);
-  --text-strong: #12263c;
-  --text-muted: #405c79;
-  --text-subtle: #6a84a2;
-  color-scheme: light;
-}
-
-html.dark {
-  --bg-base: #050a10;
-  --bg-elevated: rgba(7, 16, 27, 0.62);
-  --panel-surface: rgba(11, 21, 34, 0.52);
-  --panel-soft: rgba(20, 34, 48, 0.68);
-  --panel-border: rgba(108, 150, 188, 0.24);
-  --focus-ring: rgba(88, 179, 255, 0.58);
-  --accent-strong: #5ec1ff;
-  --accent-soft: rgba(94, 193, 255, 0.13);
-  --text-strong: #e9f3ff;
-  --text-muted: #adc2d8;
-  --text-subtle: #7d97af;
+  --bg-base: #02060d;
+  --panel-surface: rgba(10, 18, 30, 0.78);
+  --panel-soft: rgba(17, 28, 44, 0.92);
+  --panel-border: rgba(111, 141, 176, 0.24);
+  --focus-ring: rgba(95, 188, 255, 0.7);
+  --accent-strong: #61bbff;
+  --accent-soft: rgba(97, 187, 255, 0.16);
+  --text-strong: #e9f2ff;
+  --text-muted: #b4c7da;
+  --text-subtle: #7f96ad;
   color-scheme: dark;
 }
 
@@ -43,13 +27,13 @@ html.dark {
 
   body {
     margin: 0;
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
     @apply bg-[color:var(--bg-base)] text-[color:var(--text-strong)] antialiased;
   }
 
   code {
     font-family: 'IBM Plex Mono', monospace;
-    @apply rounded bg-[color:var(--panel-soft)] px-1.5 py-0.5 text-[0.8em];
+    @apply rounded bg-[color:var(--panel-soft)] px-1.5 py-0.5 text-[0.84em];
   }
 
   ::selection {
@@ -59,32 +43,11 @@ html.dark {
 
 @layer components {
   .glass {
-    @apply border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] backdrop-blur-2xl shadow-[0_20px_40px_rgba(3,14,28,0.22)];
+    @apply border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] backdrop-blur-xl;
   }
 
   .panel {
-    @apply relative px-3 py-4 md:px-4 md:py-5;
-  }
-
-  .panel::before,
-  .panel::after {
-    content: '';
-    @apply absolute left-0 right-0 h-px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      color-mix(in srgb, var(--panel-border) 92%, white 8%) 22%,
-      color-mix(in srgb, var(--panel-border) 92%, white 8%) 78%,
-      transparent
-    );
-  }
-
-  .panel::before {
-    @apply top-0;
-  }
-
-  .panel::after {
-    @apply bottom-0;
+    @apply glass rounded-xl p-4 md:p-5;
   }
 
   .panel-title {
@@ -92,60 +55,39 @@ html.dark {
   }
 
   .panel-caption {
-    @apply text-[11px] uppercase tracking-[0.2em] text-[color:var(--text-subtle)];
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)];
   }
 
   .hash-link {
-    @apply focus-ring inline-flex items-center rounded-lg px-2.5 py-1.5 text-sm font-medium text-[color:var(--text-muted)] transition-colors;
-  }
-
-  .hash-link:hover {
-    @apply text-[color:var(--text-strong)];
+    @apply focus-ring inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium text-[color:var(--text-muted)] transition-colors hover:bg-[color:var(--panel-soft)] hover:text-[color:var(--text-strong)];
   }
 
   .hash-link.is-active {
-    @apply text-[color:var(--accent-strong)];
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      color-mix(in srgb, var(--accent-soft) 82%, transparent 18%)
-    );
-    box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--accent-strong) 60%, transparent 40%);
+    @apply bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)];
   }
 
   .btn-primary {
-    @apply focus-ring inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5;
-    background: linear-gradient(120deg, #2370da, #0f4ea8 54%, #2158ac);
-    box-shadow: 0 8px 22px rgba(15, 81, 165, 0.35);
-  }
-
-  html.dark .btn-primary {
-    background: linear-gradient(120deg, #57bbff, #2b8cdc 58%, #5aa9f4);
-    box-shadow: 0 8px 24px rgba(47, 155, 242, 0.28);
-    color: #031324;
+    @apply focus-ring inline-flex items-center gap-2 rounded-lg bg-[color:var(--accent-strong)] px-3.5 py-2 text-sm font-semibold text-[#03203a] transition-colors hover:brightness-110;
   }
 
   .btn-ghost {
-    @apply focus-ring inline-flex items-center gap-2 rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-3.5 py-2 text-sm font-medium text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)];
+    @apply focus-ring inline-flex items-center gap-2 rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-3.5 py-2 text-sm font-medium text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)];
   }
 
   .btn-inline {
-    @apply focus-ring inline-flex items-center gap-1.5 rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-3 py-1.5 text-xs font-semibold text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)];
+    @apply focus-ring inline-flex items-center gap-1.5 rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-2.5 py-1.5 text-xs font-semibold text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)];
   }
 
   .chip {
-    @apply inline-flex items-center rounded-full border border-[color:var(--panel-border)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)];
-    background: color-mix(in srgb, var(--panel-soft) 78%, transparent 22%);
+    @apply inline-flex items-center rounded-full border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)];
   }
 
   .provider-pill {
-    @apply inline-flex items-center rounded-full border border-[color:var(--panel-border)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[color:var(--text-muted)];
-    background: color-mix(in srgb, var(--panel-soft) 72%, transparent 28%);
+    @apply inline-flex items-center rounded-full border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[color:var(--text-muted)];
   }
 
   .tag-pill {
-    @apply inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium text-[color:var(--accent-strong)];
-    background: color-mix(in srgb, var(--accent-soft) 86%, transparent 14%);
+    @apply inline-flex items-center rounded-full bg-[color:var(--accent-soft)] px-2 py-0.5 text-[11px] font-medium text-[color:var(--accent-strong)];
   }
 
   .focus-ring {
@@ -158,35 +100,20 @@ html.dark {
 
   .rail-pane::before {
     content: '';
-    @apply absolute bottom-0 left-0 top-0 w-px bg-[color:var(--panel-border)] opacity-70;
+    @apply absolute bottom-0 left-0 top-0 w-px bg-[color:var(--panel-border)] opacity-60;
   }
 
   .app-list {
-    @apply relative overflow-hidden;
-  }
-
-  .app-list::before,
-  .app-list::after {
-    content: '';
-    @apply absolute left-0 right-0 h-px;
-    background: linear-gradient(to right, transparent, var(--panel-border), transparent);
-  }
-
-  .app-list::before {
-    @apply top-0;
-  }
-
-  .app-list::after {
-    @apply bottom-0;
+    @apply overflow-hidden rounded-xl border border-[color:var(--panel-border)];
   }
 
   .app-row {
-    @apply relative flex items-center gap-3 px-2 py-3 transition-all duration-200 md:px-3;
+    @apply relative flex items-center gap-3 px-3 py-3 transition-colors md:px-4;
   }
 
   .app-row::before {
     content: '';
-    @apply absolute inset-x-0 bottom-0 h-px bg-[color:var(--panel-border)];
+    @apply absolute inset-x-3 bottom-0 h-px bg-[color:var(--panel-border)] md:inset-x-4;
   }
 
   .app-row:last-child::before {
@@ -194,13 +121,7 @@ html.dark {
   }
 
   .app-row:hover {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      color-mix(in srgb, var(--panel-soft) 75%, transparent 25%) 30%,
-      color-mix(in srgb, var(--panel-soft) 75%, transparent 25%) 70%,
-      transparent
-    );
+    @apply bg-[color:var(--panel-soft)];
   }
 }
 
@@ -214,32 +135,18 @@ html.dark {
 
 .aurora {
   z-index: 0;
-  background:
-    radial-gradient(circle at 50% 14%, #30486f 0%, #1f304f 42%, #141f36 76%, #0b1324 100%);
-}
-
-html.dark .aurora {
-  background:
-    radial-gradient(circle at 50% 18%, #0a1322 0%, #03070f 44%, #010309 78%, #000 100%);
+  background: radial-gradient(circle at 50% 18%, #0a1322 0%, #02060d 58%, #000 100%);
 }
 
 .surface-grid {
   z-index: 1;
-  opacity: 0.86;
-  background-image:
-    radial-gradient(1px 1px at 14% 18%, rgba(236, 246, 255, 0.66), transparent 72%),
-    radial-gradient(1px 1px at 86% 24%, rgba(196, 227, 255, 0.5), transparent 72%),
-    radial-gradient(1.4px 1.4px at 62% 72%, rgba(229, 242, 255, 0.48), transparent 75%);
-  background-size: 230px 230px, 290px 290px, 360px 360px;
-  animation: star-drift 90s linear infinite;
-}
-
-html.dark .surface-grid {
   opacity: 0.95;
   background-image:
-    radial-gradient(1px 1px at 14% 18%, rgba(255, 255, 255, 0.72), transparent 72%),
-    radial-gradient(1px 1px at 86% 24%, rgba(196, 227, 255, 0.58), transparent 72%),
-    radial-gradient(1.4px 1.4px at 62% 72%, rgba(255, 255, 255, 0.58), transparent 75%);
+    radial-gradient(1px 1px at 14% 18%, rgba(255, 255, 255, 0.75), transparent 72%),
+    radial-gradient(1px 1px at 86% 24%, rgba(206, 231, 255, 0.6), transparent 72%),
+    radial-gradient(1.4px 1.4px at 62% 72%, rgba(255, 255, 255, 0.55), transparent 75%);
+  background-size: 230px 230px, 290px 290px, 360px 360px;
+  animation: star-drift 90s linear infinite;
 }
 
 .surface-grid::before,
@@ -251,48 +158,27 @@ html.dark .surface-grid {
 }
 
 .surface-grid::before {
-  opacity: 0.56;
+  opacity: 0.62;
   background-image:
-    radial-gradient(1px 1px at 22% 34%, rgba(234, 245, 255, 0.68), transparent 70%),
-    radial-gradient(1px 1px at 72% 52%, rgba(209, 233, 255, 0.55), transparent 70%),
-    radial-gradient(1px 1px at 40% 80%, rgba(228, 241, 255, 0.5), transparent 70%);
+    radial-gradient(1px 1px at 22% 34%, rgba(255, 255, 255, 0.75), transparent 70%),
+    radial-gradient(1px 1px at 72% 52%, rgba(209, 233, 255, 0.66), transparent 70%),
+    radial-gradient(1px 1px at 40% 80%, rgba(255, 255, 255, 0.6), transparent 70%);
   background-size: 190px 190px, 260px 260px, 310px 310px;
   animation: twinkle 6s ease-in-out infinite alternate;
 }
 
-html.dark .surface-grid::before {
-  opacity: 0.62;
-  background-image:
-    radial-gradient(1px 1px at 22% 34%, rgba(255, 255, 255, 0.72), transparent 70%),
-    radial-gradient(1px 1px at 72% 52%, rgba(209, 233, 255, 0.65), transparent 70%),
-    radial-gradient(1px 1px at 40% 80%, rgba(255, 255, 255, 0.6), transparent 70%);
-}
-
 .surface-grid::after {
-  opacity: 0.35;
-  background-image:
-    radial-gradient(1.8px 1.8px at 18% 74%, rgba(231, 244, 255, 0.5), transparent 74%),
-    radial-gradient(1.5px 1.5px at 78% 36%, rgba(160, 206, 245, 0.42), transparent 74%);
-  background-size: 430px 430px, 520px 520px;
-  animation: twinkle 10s ease-in-out infinite alternate-reverse;
-}
-
-html.dark .surface-grid::after {
   opacity: 0.4;
   background-image:
     radial-gradient(1.8px 1.8px at 18% 74%, rgba(255, 255, 255, 0.58), transparent 74%),
     radial-gradient(1.5px 1.5px at 78% 36%, rgba(160, 206, 245, 0.52), transparent 74%);
+  background-size: 430px 430px, 520px 520px;
+  animation: twinkle 10s ease-in-out infinite alternate-reverse;
 }
 
 .lens-vignette {
   z-index: 2;
-  background:
-    radial-gradient(circle at 50% 44%, transparent 36%, rgba(7, 14, 30, 0.44) 100%);
-}
-
-html.dark .lens-vignette {
-  background:
-    radial-gradient(circle at 50% 44%, transparent 36%, rgba(0, 0, 0, 0.64) 100%);
+  background: radial-gradient(circle at 50% 44%, transparent 36%, rgba(0, 0, 0, 0.64) 100%);
 }
 
 @keyframes star-drift {
@@ -307,7 +193,7 @@ html.dark .lens-vignette {
 
 @keyframes twinkle {
   from {
-    opacity: 0.36;
+    opacity: 0.35;
   }
 
   to {

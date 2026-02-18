@@ -1,10 +1,8 @@
-import { Anvil, Menu, MoonStar, SunMedium, createElement } from 'lucide'
+import { Anvil, Menu, createElement } from 'lucide'
 import type { IconNode } from 'lucide'
 import type { AppRoute } from '../router'
 
-export type ThemeMode = 'light' | 'dark'
-
-const THEME_STORAGE_KEY = 'appanvil:theme'
+export type ThemeMode = 'dark'
 
 const icon = (node: IconNode, className: string): string =>
   (() => {
@@ -18,19 +16,15 @@ const isNavActive = (route: AppRoute, href: string): boolean => {
   if (href === '#/') {
     return route.kind === 'home'
   }
-
   if (href === '#/generate') {
     return route.kind === 'generate'
   }
-
   if (href === '#/about') {
     return route.kind === 'about'
   }
-
   if (href === '#/share') {
     return route.kind === 'share'
   }
-
   return false
 }
 
@@ -44,52 +38,32 @@ const navLink = (label: string, href: string, active: boolean): string => `
   </a>
 `
 
-export const getThemePreference = (): ThemeMode => {
-  try {
-    const saved = localStorage.getItem(THEME_STORAGE_KEY)
+export const getThemePreference = (): ThemeMode => 'dark'
 
-    if (saved === 'light' || saved === 'dark') {
-      return saved
-    }
-  } catch {}
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light'
+export const applyTheme = (_theme: ThemeMode = 'dark'): void => {
+  document.documentElement.classList.add('dark')
 }
 
-export const applyTheme = (theme: ThemeMode): void => {
-  const isDark = theme === 'dark'
-  document.documentElement.classList.toggle('dark', isDark)
+export const toggleThemeMode = (_theme: ThemeMode): ThemeMode => 'dark'
 
-  try {
-    localStorage.setItem(THEME_STORAGE_KEY, theme)
-  } catch {}
-}
-
-export const toggleThemeMode = (theme: ThemeMode): ThemeMode =>
-  theme === 'dark' ? 'light' : 'dark'
-
-export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
-  <header class="relative px-1 py-2 md:px-2 md:py-3">
-    <div class="absolute inset-x-0 bottom-0 h-px bg-[color:var(--panel-border)]"></div>
-
-    <div class="relative flex items-center gap-2">
+export const renderHeader = (route: AppRoute): string => `
+  <header class="panel">
+    <div class="flex items-center gap-3">
       <a
         href="#/"
-        class="focus-ring inline-flex items-center gap-2 rounded-xl px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
+        class="focus-ring inline-flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
         aria-label="AppAnvil home"
       >
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)] shadow-[inset_0_0_0_1px_rgba(94,193,255,0.24)]">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
           ${icon(Anvil, 'h-5 w-5')}
         </span>
         <span class="hidden sm:block">
-          <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--text-subtle)]">Installer Script Studio</span>
+          <span class="block text-[10px] font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">Practical App Setup</span>
           <span class="block text-lg font-semibold leading-tight text-[color:var(--text-strong)]">AppAnvil</span>
         </span>
       </a>
 
-      <span class="chip ml-1 hidden lg:inline-flex bg-[color:var(--panel-soft)]">Ctrl/Cmd + K</span>
+      <span class="chip ml-1 hidden lg:inline-flex">Ctrl/Cmd + K</span>
 
       <button
         id="mobile-nav-toggle"
@@ -102,51 +76,22 @@ export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
         ${icon(Menu, 'h-5 w-5')}
       </button>
 
-      <button
-        id="theme-toggle-mobile"
-        type="button"
-        aria-label="Toggle color theme"
-        class="focus-ring inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)] md:hidden"
-      >
-        ${theme === 'dark' ? icon(SunMedium, 'h-5 w-5') : icon(MoonStar, 'h-5 w-5')}
-      </button>
-
       <nav
         id="header-nav"
         aria-label="Primary"
         class="mt-3 hidden w-full flex-col gap-1.5 border-t border-[color:var(--panel-border)] pt-2 md:mt-0 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:gap-1.5 md:border-0 md:pt-0"
       >
-        ${navLink('Home', '#/', isNavActive(route, '#/'))}
+        ${navLink('Catalog', '#/', isNavActive(route, '#/'))}
         ${navLink('Generate', '#/generate', isNavActive(route, '#/generate'))}
         ${navLink('Share', '#/share', isNavActive(route, '#/share'))}
         ${navLink('About', '#/about', isNavActive(route, '#/about'))}
       </nav>
-
-      <button
-        id="theme-toggle"
-        type="button"
-        aria-label="Toggle color theme"
-        class="focus-ring hidden h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)] md:inline-flex"
-      >
-        ${theme === 'dark' ? icon(SunMedium, 'h-5 w-5') : icon(MoonStar, 'h-5 w-5')}
-      </button>
     </div>
   </header>
 `
 
-export const wireHeader = (onThemeToggle: () => void): (() => void) => {
+export const wireHeader = (): (() => void) => {
   const cleanups: Array<() => void> = []
-
-  ;['#theme-toggle', '#theme-toggle-mobile'].forEach((selector) => {
-    const themeToggle = document.querySelector<HTMLButtonElement>(selector)
-    if (!themeToggle) {
-      return
-    }
-
-    const clickHandler = (): void => onThemeToggle()
-    themeToggle.addEventListener('click', clickHandler)
-    cleanups.push(() => themeToggle.removeEventListener('click', clickHandler))
-  })
 
   const mobileToggle = document.querySelector<HTMLButtonElement>('#mobile-nav-toggle')
   const nav = document.querySelector<HTMLElement>('#header-nav')

@@ -70,17 +70,17 @@ const renderProviderBadges = (app: CatalogApp): string => {
 
   if (app.providers.winget) {
     badges.push(
-      '<span class="provider-pill border-sky-300/50 text-sky-700 dark:border-sky-400/45 dark:text-sky-300">Winget</span>',
+      '<span class="provider-pill border-sky-400/45 text-sky-300">Winget</span>',
     )
   }
   if (app.providers.choco) {
     badges.push(
-      '<span class="provider-pill border-amber-300/50 text-amber-700 dark:border-amber-400/45 dark:text-amber-300">Choco</span>',
+      '<span class="provider-pill border-amber-400/45 text-amber-300">Choco</span>',
     )
   }
   if (app.providers.scoop) {
     badges.push(
-      '<span class="provider-pill border-emerald-300/50 text-emerald-700 dark:border-emerald-400/45 dark:text-emerald-300">Scoop</span>',
+      '<span class="provider-pill border-emerald-400/45 text-emerald-300">Scoop</span>',
     )
   }
 
@@ -105,7 +105,7 @@ const renderRow = (app: CatalogApp, selected: boolean): string => {
   return `
     <article class="app-row">
       <div class="flex min-w-0 flex-1 items-start gap-3">
-        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white/80 p-1 shadow-[inset_0_0_0_1px_rgba(100,140,180,0.22)] dark:bg-slate-900/62 dark:shadow-[inset_0_0_0_1px_rgba(130,170,210,0.22)]">
+        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-slate-900/70 p-1 shadow-[inset_0_0_0_1px_rgba(130,170,210,0.22)]">
           <img
             src="${logoUrl}"
             alt="${appName} logo"
@@ -125,7 +125,7 @@ const renderRow = (app: CatalogApp, selected: boolean): string => {
             </span>
             ${
               app.needsVerification
-                ? `<span class="chip border-amber-300/60 text-amber-700 dark:border-amber-400/45 dark:text-amber-300">${iconToSvg(TriangleAlert, 'mr-1 h-3 w-3')}Verify</span>`
+                ? `<span class="chip border-amber-400/45 text-amber-300">${iconToSvg(TriangleAlert, 'mr-1 h-3 w-3')}Verify</span>`
                 : ''
             }
           </div>
@@ -145,7 +145,7 @@ const renderRow = (app: CatalogApp, selected: boolean): string => {
         data-app-id="${escapeHtml(app.id)}"
         class="focus-ring ml-2 inline-flex shrink-0 items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
           selected
-            ? 'border-emerald-400/50 bg-emerald-500/14 text-emerald-700 dark:border-emerald-400/45 dark:text-emerald-300'
+            ? 'border-emerald-400/50 bg-emerald-500/14 text-emerald-300'
             : 'border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] hover:bg-[color:var(--panel-soft)]'
         }"
         aria-label="${selected ? 'Remove' : 'Add'} ${appName}"
@@ -163,7 +163,7 @@ export const renderFiltersPanel = ({
 }: FiltersPanelProps): string => `
   <section class="panel space-y-4">
     <div class="flex items-center justify-between gap-2">
-      <h2 class="panel-title">Filters</h2>
+      <h2 class="panel-title">1) Filtrele</h2>
       <button
         type="button"
         data-action="reset-filters"
@@ -179,7 +179,7 @@ export const renderFiltersPanel = ({
         type="checkbox"
         data-filter="popular-only"
         ${filters.popularOnly ? 'checked' : ''}
-        class="h-4 w-4 accent-sky-600 dark:accent-sky-400"
+        class="h-4 w-4 accent-sky-500"
       />
     </label>
 
@@ -187,15 +187,15 @@ export const renderFiltersPanel = ({
       <legend class="panel-caption">Providers</legend>
       <div class="space-y-1">
         <label class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-xs text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)]">
-          <input type="checkbox" data-filter="provider" value="winget" ${filters.providers.winget ? 'checked' : ''} class="h-4 w-4 accent-sky-600 dark:accent-sky-400" />
+          <input type="checkbox" data-filter="provider" value="winget" ${filters.providers.winget ? 'checked' : ''} class="h-4 w-4 accent-sky-500" />
           Winget
         </label>
         <label class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-xs text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)]">
-          <input type="checkbox" data-filter="provider" value="choco" ${filters.providers.choco ? 'checked' : ''} class="h-4 w-4 accent-sky-600 dark:accent-sky-400" />
+          <input type="checkbox" data-filter="provider" value="choco" ${filters.providers.choco ? 'checked' : ''} class="h-4 w-4 accent-sky-500" />
           Chocolatey
         </label>
         <label class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-xs text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)]">
-          <input type="checkbox" data-filter="provider" value="scoop" ${filters.providers.scoop ? 'checked' : ''} class="h-4 w-4 accent-sky-600 dark:accent-sky-400" />
+          <input type="checkbox" data-filter="provider" value="scoop" ${filters.providers.scoop ? 'checked' : ''} class="h-4 w-4 accent-sky-500" />
           Scoop
         </label>
       </div>
@@ -213,7 +213,7 @@ export const renderFiltersPanel = ({
                   data-filter="category"
                   value="${escapeHtml(category)}"
                   ${filters.categories.includes(category) ? 'checked' : ''}
-                  class="h-4 w-4 accent-sky-600 dark:accent-sky-400"
+                  class="h-4 w-4 accent-sky-500"
                 />
                 ${escapeHtml(category)}
               </label>
@@ -234,8 +234,8 @@ export const renderCatalogPanel = ({
   <section class="panel space-y-3">
     <div class="flex flex-wrap items-center justify-between gap-3">
       <div>
-        <h2 class="panel-title">Catalog</h2>
-        <p class="mt-1 text-xs text-[color:var(--text-subtle)]">${apps.length} shown of ${totalCount}</p>
+        <h2 class="panel-title">2) Program Listesi</h2>
+        <p class="mt-1 text-xs text-[color:var(--text-subtle)]">${apps.length} / ${totalCount} program gosteriliyor</p>
       </div>
 
       <div class="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
@@ -247,7 +247,7 @@ export const renderCatalogPanel = ({
             type="search"
             value="${escapeHtml(filters.query)}"
             data-filter="query"
-            placeholder="Search apps, tags, descriptions"
+            placeholder="Program ara (isim, etiket, aciklama)"
             class="focus-ring h-10 w-full rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] pl-10 pr-3 text-sm text-[color:var(--text-strong)] placeholder:text-[color:var(--text-muted)]"
           />
         </label>
@@ -257,9 +257,9 @@ export const renderCatalogPanel = ({
           class="focus-ring h-10 rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-3 text-sm text-[color:var(--text-strong)]"
           aria-label="Sort apps"
         >
-          <option value="popularity" ${filters.sort === 'popularity' ? 'selected' : ''}>Popularity</option>
-          <option value="name" ${filters.sort === 'name' ? 'selected' : ''}>Name A-Z</option>
-          <option value="recent" ${filters.sort === 'recent' ? 'selected' : ''}>Recently Added</option>
+          <option value="popularity" ${filters.sort === 'popularity' ? 'selected' : ''}>En Populer</option>
+          <option value="name" ${filters.sort === 'name' ? 'selected' : ''}>Isim A-Z</option>
+          <option value="recent" ${filters.sort === 'recent' ? 'selected' : ''}>Yeni Eklenen</option>
         </select>
       </div>
     </div>
@@ -269,7 +269,7 @@ export const renderCatalogPanel = ({
         apps.length === 0
           ? `
             <div class="px-4 py-8 text-center text-sm text-[color:var(--text-muted)]">
-              No apps match the current filters.
+              Secili filtrelerle eslesen program bulunamadi.
             </div>
           `
           : apps.map((app) => renderRow(app, selectedIds.has(app.id))).join('')
@@ -298,7 +298,7 @@ export const renderCommandPalette = ({
             type="text"
             value="${escapeHtml(query)}"
             data-filter="palette-query"
-            placeholder="Type app name and press Enter"
+            placeholder="Hizli ara (Enter ile ekle/cikar)"
             class="focus-ring h-11 w-full rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] pl-10 pr-4 text-sm text-[color:var(--text-strong)] placeholder:text-[color:var(--text-muted)]"
             aria-label="Command palette search input"
           />
@@ -307,7 +307,7 @@ export const renderCommandPalette = ({
         <ul class="mt-3 max-h-[55vh] space-y-1 overflow-y-auto" aria-label="Command palette results">
           ${
             results.length === 0
-              ? '<li class="rounded-xl border border-dashed border-[color:var(--panel-border)] px-3 py-4 text-sm text-[color:var(--text-muted)]">No matching apps.</li>'
+              ? '<li class="rounded-xl border border-dashed border-[color:var(--panel-border)] px-3 py-4 text-sm text-[color:var(--text-muted)]">Eslesen program bulunamadi.</li>'
               : results
                   .map((app, index) => {
                     const isSelected = selectedIds.has(app.id)
@@ -337,11 +337,11 @@ export const renderCommandPalette = ({
 
         <p class="mt-2 text-xs text-[color:var(--text-subtle)]">
           <kbd class="rounded border border-[color:var(--panel-border)] px-1.5 py-0.5">Ctrl/Cmd + K</kbd>
-          open,
+          ac,
           <kbd class="rounded border border-[color:var(--panel-border)] px-1.5 py-0.5">Enter</kbd>
-          toggle,
+          ekle/cikar,
           <kbd class="rounded border border-[color:var(--panel-border)] px-1.5 py-0.5">Esc</kbd>
-          close.
+          kapat.
         </p>
       </section>
     </div>
