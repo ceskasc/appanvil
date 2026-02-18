@@ -130,4 +130,22 @@ describe('generator', () => {
 
     expect(parsed.success).toBe(true)
   })
+
+  it('builds installer cmd output with sequential winget commands', () => {
+    const app = createApp('chrome', 'Google Chrome', {
+      winget: {
+        packageId: 'Google.Chrome',
+        source: 'winget',
+        supportsSilent: true,
+        notes: '',
+      },
+    })
+
+    const output = generateInstallOutputs([app], DEFAULT_GENERATOR_OPTIONS)
+
+    expect(output.installerCmd).toContain('call :install "Google Chrome"')
+    expect(output.installerCmd).toContain(
+      'install --id Google.Chrome --exact --accept-source-agreements --accept-package-agreements --silent',
+    )
+  })
 })

@@ -91,6 +91,7 @@ const escapeHtml = (value: string): string =>
 const isGenerateTab = (value: string): value is GenerateTab =>
   value === 'ps1' ||
   value === 'winget' ||
+  value === 'installer' ||
   value === 'choco' ||
   value === 'scoop' ||
   value === 'json'
@@ -745,6 +746,11 @@ const wireGenerateInteractions = (): void => {
               getGeneratorViewData().outputs,
             )
       downloadGenerateOutput(resolvedTab)
+      return
+    }
+
+    if (action === 'download-installer-cmd') {
+      downloadGenerateOutput('installer')
     }
   }
 

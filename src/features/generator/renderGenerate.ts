@@ -4,6 +4,7 @@ import {
   Clipboard,
   Download,
   FileCode2,
+  FileCog,
   FileJson2,
   PackageCheck,
   Settings2,
@@ -30,6 +31,7 @@ interface TabMeta {
 const TAB_ORDER: TabMeta[] = [
   { id: 'ps1', label: 'PowerShell', icon: FileCode2 },
   { id: 'winget', label: 'Winget', icon: TerminalSquare },
+  { id: 'installer', label: 'Installer .cmd', icon: FileCog },
   { id: 'choco', label: 'Chocolatey', icon: PackageCheck },
   { id: 'scoop', label: 'Scoop', icon: PackageCheck },
   { id: 'json', label: 'Selection JSON', icon: FileJson2 },
@@ -66,6 +68,7 @@ const getOutputContent = (
 ): string => {
   if (tab === 'ps1') return outputs.ps1
   if (tab === 'winget') return outputs.winget
+  if (tab === 'installer') return outputs.installerCmd
   if (tab === 'choco') return outputs.choco ?? ''
   if (tab === 'scoop') return outputs.scoop ?? ''
   return outputs.selectionJson
@@ -109,6 +112,7 @@ export const getGenerateOutputContent = (
 export const getGenerateFilename = (tab: GenerateTab): string => {
   if (tab === 'ps1') return 'appanvil-install.ps1'
   if (tab === 'winget') return 'appanvil-winget.txt'
+  if (tab === 'installer') return 'appanvil-installer.cmd'
   if (tab === 'choco') return 'appanvil-choco.ps1'
   if (tab === 'scoop') return 'appanvil-scoop.ps1'
   return 'appanvil-selection.json'
@@ -256,6 +260,15 @@ export const renderGenerateView = ({
               Generated Output
             </h2>
             <div class="flex items-center gap-2">
+              <button
+                type="button"
+                data-action="download-installer-cmd"
+                class="btn-ghost"
+                aria-label="Download installer cmd"
+              >
+                ${iconToSvg(FileCog, 'h-4 w-4')}
+                Installer .cmd
+              </button>
               <button
                 type="button"
                 data-action="copy-generate-output"

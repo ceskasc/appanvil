@@ -17,11 +17,18 @@ export const DEFAULT_GENERATOR_OPTIONS: GeneratorOptions = {
   includeMsStoreApps: false,
 }
 
-export type GenerateTab = 'ps1' | 'winget' | 'choco' | 'scoop' | 'json'
+export type GenerateTab =
+  | 'ps1'
+  | 'winget'
+  | 'installer'
+  | 'choco'
+  | 'scoop'
+  | 'json'
 
 export interface GeneratorOutput {
   ps1: string
   winget: string
+  installerCmd: string
   choco?: string
   scoop?: string
   selectionJson: string
@@ -315,6 +322,116 @@ const buildPowerShellScript = (
   return lines.join('\n')
 }
 
+const buildInstallerCmd = (
+  wingetPlan: WingetPlanItem[],
+  options: GeneratorOptions,
+  skippedMsStore: WingetPlanItem[],
+): string => {
+  const commandLines = wingetPlan.flatMap((item) => {
+    const lines: string[] = []
+    if (item.app.needsVerification) {
+      lines.push(
+        `echo [VERIFY] ${item.app.name} mapping should be reviewed before install.`,
+      )
+    }
+
+    const args = toWingetArgs(item, options).join(' ')
+    lines.push(`call :install "${item.app.name}" ${args}`)
+    lines.push('if errorlevel 2 goto :summary')
+    return lines
+  })
+
+  const lines = [
+    '@echo off',
+    'setlocal EnableExtensions EnableDelayedExpansion',
+    'title AppAnvil Installer',
+    '',
+    'echo AppAnvil installer launcher',
+    'echo Review scripts before running.',
+    'echo This installer runs Winget commands sequentially.',
+    'echo.',
+    '',
+    'net session >nul 2>&1',
+    'if not "%ERRORLEVEL%"=="0" (',
+    '  echo [WARNING] Administrator privileges not detected.',
+    '  echo [INFO] Right-click and "Run as administrator" for best results.',
+    '  echo.',
+    ')',
+    '',
+    'where winget >nul 2>&1',
+    'if errorlevel 1 (',
+    '  echo [ERROR] winget was not found on this machine.',
+    '  echo [INFO] Install App Installer: https://aka.ms/getwinget',
+    '  pause',
+    '  exit /b 1',
+    ')',
+    '',
+    'set "LOGDIR=%TEMP%\\AppAnvil"',
+    'set "LOGFILE=%LOGDIR%\\appanvil-install.log"',
+    'if not exist "%LOGDIR%" mkdir "%LOGDIR%"',
+    'echo === AppAnvil run %DATE% %TIME% ===>>"%LOGFILE%"',
+    '',
+    `set "CONTINUE_ON_ERROR=${options.continueOnError ? '1' : '0'}"`,
+    'set /a SUCCESS=0',
+    'set /a FAIL=0',
+    'set "FAILED_LIST="',
+    '',
+  ]
+
+  if (!options.includeMsStoreApps && skippedMsStore.length > 0) {
+    lines.push(
+      `echo [INFO] Skipped MS Store apps: ${skippedMsStore.map((item) => item.app.name).join(', ')}`,
+      'echo.',
+    )
+  }
+
+  if (commandLines.length === 0) {
+    lines.push(
+      'echo [INFO] No winget-compatible apps in this selection.',
+      'goto :summary',
+      '',
+    )
+  } else {
+    lines.push(...commandLines, '')
+  }
+
+  lines.push(
+    'goto :summary',
+    '',
+    ':install',
+    'set "APPNAME=%~1"',
+    'shift',
+    'echo Installing !APPNAME! ...',
+    'echo [INSTALL] !APPNAME!>>"%LOGFILE%"',
+    'echo winget %*>>"%LOGFILE%"',
+    'winget %*>>"%LOGFILE%" 2>&1',
+    'if errorlevel 1 (',
+    '  echo [FAIL] !APPNAME!',
+    '  set /a FAIL+=1',
+    '  set "FAILED_LIST=!FAILED_LIST!!APPNAME!, "',
+    '  if "%CONTINUE_ON_ERROR%"=="1" exit /b 0',
+    '  exit /b 2',
+    ')',
+    'echo [OK] !APPNAME!',
+    'set /a SUCCESS+=1',
+    'exit /b 0',
+    '',
+    ':summary',
+    'echo.',
+    'echo ===============================',
+    'echo AppAnvil install summary',
+    'echo Succeeded: %SUCCESS%',
+    'echo Failed: %FAIL%',
+    'if not "%FAILED_LIST%"=="" echo Failed apps: %FAILED_LIST%',
+    'echo Log file: %LOGFILE%',
+    'echo ===============================',
+    'pause',
+    'exit /b %FAIL%',
+  )
+
+  return lines.join('\n')
+}
+
 const buildSelectionJson = (
   apps: CatalogApp[],
   options: GeneratorOptions,
@@ -357,6 +474,7 @@ export const generateInstallOutputs = (
   return {
     ps1: buildPowerShellScript(wingetPlan, options, skippedMsStore),
     winget: buildWingetOutput(wingetPlan, options, skippedMsStore),
+    installerCmd: buildInstallerCmd(wingetPlan, options, skippedMsStore),
     choco: buildChocoOutput(chocoPlan),
     scoop: buildScoopOutput(scoopPlan),
     selectionJson: buildSelectionJson(apps, options),
