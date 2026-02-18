@@ -48,19 +48,19 @@ export const renderCartPanel = ({
   return `
     <section class="panel space-y-3">
       <div class="flex items-center justify-between gap-2">
-        <h2 class="panel-title">3) Secim Sepeti</h2>
-        <span class="chip">${selectedApps.length} secili</span>
+        <h2 class="panel-title">Your Selection</h2>
+        <span class="chip">${selectedApps.length} selected</span>
       </div>
 
       <p class="text-xs text-[color:var(--text-subtle)]">
-        Once programlari burada kontrol et. Sonra <strong>Generate</strong> ile script uretebilirsin.
+        Review scripts before running. This site does not execute installers.
       </p>
 
       ${
         selectedApps.length === 0
           ? `
-            <div class="rounded-lg bg-[color:var(--panel-surface)] px-3 py-3 text-sm text-[color:var(--text-muted)]">
-              Sepet bos. Ortadaki listeden program sec.
+            <div class="rounded-md border border-dashed border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-3 text-sm text-[color:var(--text-muted)]">
+              No apps selected yet.
             </div>
           `
           : `
@@ -68,7 +68,7 @@ export const renderCartPanel = ({
               ${[...grouped.entries()]
                 .map(
                   ([category, apps]) => `
-                    <div class="rounded-lg bg-[color:var(--panel-surface)] px-3 py-2">
+                    <div class="rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-2">
                       <div class="flex items-center justify-between text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
                         <span>${escapeHtml(category)}</span>
                         <span>${apps.length}</span>
@@ -95,21 +95,21 @@ export const renderCartPanel = ({
       <div class="grid gap-2">
         <a href="#/generate" class="btn-primary w-full justify-center">
           ${iconToSvg(ClipboardList, 'h-4 w-4')}
-          Generate Sayfasina Git
+          Get My Installer
         </a>
 
         <button type="button" data-action="copy-share-link" class="btn-ghost w-full justify-center">
           ${iconToSvg(Link2, 'h-4 w-4')}
-          Paylasim Linki Olustur
+          Create Share Link
         </button>
 
         <button
           type="button"
           data-action="clear-selection"
-          class="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-xl border border-rose-400/45 bg-rose-500/12 px-3.5 py-2 text-sm font-semibold text-rose-300 transition-colors hover:bg-rose-500/18"
+          class="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-md border border-rose-200 bg-rose-50 px-3.5 py-2 text-sm font-semibold text-rose-700 transition-colors hover:bg-rose-100"
         >
           ${iconToSvg(Trash2, 'h-4 w-4')}
-          Tumunu Temizle
+          Clear All
         </button>
       </div>
 

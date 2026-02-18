@@ -67,7 +67,7 @@ interface ShareStatusState {
 
 const DEFAULT_SHARE_STATUS: ShareStatusState = {
   tone: 'idle',
-  message: 'Token/URL yapistir veya JSON dosyasi yukleyerek secimi ice aktar.',
+  message: 'Paste a token/URL or upload a selection JSON file to import.',
 }
 
 const iconToSvg = (icon: IconNode, className: string): string => {
@@ -256,7 +256,7 @@ const renderGenerateBody = (): string => {
       <section class="panel max-w-4xl">
         <div class="flex items-center gap-3 text-[color:var(--text-strong)]">
           ${iconToSvg(LoaderCircle, 'h-5 w-5 animate-spin')}
-          <span class="text-sm font-medium">Generate sayfasi hazirlaniyor...</span>
+          <span class="text-sm font-medium">Preparing generator...</span>
         </div>
       </section>
     `
@@ -267,7 +267,7 @@ const renderGenerateBody = (): string => {
       <section class="panel max-w-4xl">
         <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Generate Scripts</h1>
         <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-          Katalog yuklenemedigi icin script olusturma su an kullanilamiyor.
+          Catalog failed to load, so script generation is unavailable.
         </p>
       </section>
     `
@@ -288,12 +288,12 @@ const renderAboutView = (): string => `
       <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
         ${iconToSvg(LayoutPanelLeft, 'h-5 w-5')}
       </span>
-      <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">AppAnvil Nedir?</h1>
+      <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">About AppAnvil</h1>
     </div>
     <ul class="mt-3 space-y-2 text-sm text-[color:var(--text-muted)]">
-      <li>1. Program secimini toplar.</li>
-      <li>2. Winget/Choco/Scoop komutlarini script olarak uretir.</li>
-      <li>3. Kurulumu otomatik baslatmaz, kontrol sende kalir.</li>
+      <li>1. Pick apps from the catalog.</li>
+      <li>2. Generate Winget/Choco/Scoop installer scripts.</li>
+      <li>3. Review scripts and run them on your own machine.</li>
     </ul>
   </section>
 `
@@ -311,11 +311,11 @@ const renderShareBody = (): string => {
 
 const renderNotFoundView = (path: string): string => `
   <section class="panel max-w-3xl">
-    <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Sayfa Bulunamadi</h1>
+    <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Unknown Route</h1>
     <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-      ${escapeHtml(path)} gecerli bir AppAnvil adresi degil.
+      ${escapeHtml(path)} is not a valid AppAnvil route.
     </p>
-    <a href="#/" class="btn-primary mt-5 inline-flex">Ana Sayfaya Don</a>
+    <a href="#/" class="btn-primary mt-5 inline-flex">Back to Home</a>
   </section>
 `
 
@@ -338,19 +338,19 @@ const renderCatalogBody = (): string => {
         <section class="panel">
           <div class="flex items-center gap-3 text-[color:var(--text-strong)]">
             ${iconToSvg(LoaderCircle, 'h-5 w-5 animate-spin')}
-            <span class="text-sm font-medium">Katalog yukleniyor...</span>
+            <span class="text-sm font-medium">Loading catalog data...</span>
           </div>
         </section>
       `
       : state.catalogStatus === 'error'
         ? `
           <section class="panel">
-            <div class="flex items-start gap-3 text-amber-200">
+            <div class="flex items-start gap-3 text-amber-900">
               ${iconToSvg(AlertTriangle, 'mt-0.5 h-5 w-5')}
               <div>
                 <h2 class="text-base font-semibold">Catalog failed to load</h2>
                 <p class="mt-1 text-sm">${escapeHtml(state.catalogError ?? 'Unknown error.')}</p>
-                <p class="mt-2 text-xs text-[color:var(--text-subtle)]">Tekrar denemek icin sayfayi yenile.</p>
+                <p class="mt-2 text-xs text-[color:var(--text-subtle)]">Refresh the page to retry.</p>
               </div>
             </div>
           </section>
@@ -365,24 +365,33 @@ const renderCatalogBody = (): string => {
   return `
     <section class="space-y-4">
       <div class="panel">
-        <div class="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-          <div class="max-w-3xl">
-            <p class="panel-caption">How It Works</p>
+        <div class="grid gap-4 xl:grid-cols-[1.25fr_0.9fr_0.9fr]">
+          <div>
+            <p class="panel-caption">Install and Update Apps</p>
             <h1 class="mt-2 text-3xl font-bold leading-tight tracking-tight text-[color:var(--text-strong)] md:text-4xl">
-              Programlarini sec, script olustur, bilgisayarina guvenli sekilde kur.
+              Pick apps. Get installer. Run once.
             </h1>
-            <p class="mt-3 text-sm text-[color:var(--text-muted)] md:text-base">
-              Bu site hicbir kurulumu otomatik calistirmaz. Sadece script uretir.
+            <p class="mt-3 text-sm text-[color:var(--text-muted)]">
+              AppAnvil generates scripts and installer files for your selected apps.
             </p>
           </div>
 
-          <div class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-3">
-            <p class="panel-caption">3 Adim</p>
-            <ol class="mt-2 space-y-2 text-sm text-[color:var(--text-muted)]">
-              <li><span class="font-semibold text-[color:var(--text-strong)]">1.</span> Sol taraftan filtrele, ortadan program sec.</li>
-              <li><span class="font-semibold text-[color:var(--text-strong)]">2.</span> Sagdaki sepetten <strong>Generate</strong> sayfasina gec.</li>
-              <li><span class="font-semibold text-[color:var(--text-strong)]">3.</span> Scripti indir, calistirmadan once satirlari kontrol et.</li>
+          <div class="rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-3">
+            <p class="panel-caption">How To Use</p>
+            <ol class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
+              <li>1. Pick apps from the catalog lists below.</li>
+              <li>2. Open your selection panel on the right.</li>
+              <li>3. Download and run your generated installer/script.</li>
             </ol>
+          </div>
+
+          <div class="rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-3">
+            <p class="panel-caption">Safety</p>
+            <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
+              <li>• This website never installs apps directly.</li>
+              <li>• Always review scripts before running.</li>
+              <li>• Use Admin PowerShell when required.</li>
+            </ul>
           </div>
 
           <div class="flex flex-wrap gap-2 lg:hidden">
@@ -394,7 +403,7 @@ const renderCatalogBody = (): string => {
               aria-label="Open filters panel"
             >
               ${iconToSvg(SlidersHorizontal, 'h-4 w-4')}
-              Filtreler
+              Filters
             </button>
             <button
               type="button"
@@ -404,7 +413,7 @@ const renderCatalogBody = (): string => {
               aria-label="Open cart drawer"
             >
               ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-              Sepet
+              Selection
             </button>
           </div>
         </div>
@@ -445,7 +454,7 @@ const renderCatalogBody = (): string => {
         <div class="fixed inset-y-0 left-0 z-50 w-[88%] max-w-xs p-3">
           ${renderFiltersPanel({ filters: state.filters, categories })}
           <button type="button" data-close-drawer="filters-drawer" class="btn-ghost mt-3 w-full">
-            Filtreleri Kapat
+            Close Filters
           </button>
         </div>
       </div>
@@ -470,7 +479,7 @@ const renderCatalogBody = (): string => {
           <div class="glass rounded-2xl p-1.5">
             ${renderCartPanel({ selectedApps, placement: 'mobile' })}
             <button type="button" data-close-drawer="cart-drawer" class="btn-ghost mt-3 w-full">
-              Sepeti Kapat
+              Close Selection
             </button>
           </div>
         </div>
@@ -485,7 +494,7 @@ const renderCatalogBody = (): string => {
           aria-label="Open cart drawer"
         >
           ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-          Sepeti Ac (${selectedApps.length})
+          Open Selection (${selectedApps.length})
         </button>
       </div>
 

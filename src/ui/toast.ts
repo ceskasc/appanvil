@@ -4,9 +4,9 @@ const CONTAINER_ID = 'toast-stack'
 
 const toneClassMap: Record<ToastTone, string> = {
   success:
-    'border-emerald-300 bg-emerald-50 text-emerald-800 dark:border-emerald-400/40 dark:bg-emerald-500/15 dark:text-emerald-200',
+    'border-emerald-300 bg-emerald-50 text-emerald-800',
   error:
-    'border-red-300 bg-red-50 text-red-800 dark:border-red-400/40 dark:bg-red-500/15 dark:text-red-200',
+    'border-red-300 bg-red-50 text-red-800',
   info: 'border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)]',
 }
 
