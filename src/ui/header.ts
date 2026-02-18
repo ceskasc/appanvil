@@ -52,21 +52,22 @@ export const renderHeader = (route: AppRoute): string => `
     <div class="flex items-center gap-3">
       <a
         href="#/"
-        class="focus-ring inline-flex items-center gap-2 rounded-md px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
+        class="focus-ring inline-flex items-center gap-3 rounded-md px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
         aria-label="AppAnvil home"
       >
-        <span class="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-md bg-[color:var(--accent-soft)]">
+        <span class="inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--accent-soft)] shadow-sm">
           <img
             src="${logoUrl}"
             alt=""
-            class="h-5 w-5 object-contain"
+            class="h-8 w-8 object-contain"
             loading="eager"
             decoding="async"
           />
         </span>
-        <span class="hidden sm:block">
-          <span class="block text-[10px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">Batch Installer Builder</span>
-          <span class="block text-xl font-semibold leading-tight text-[color:var(--text-strong)]">AppAnvil</span>
+        <span class="hidden sm:flex sm:flex-col">
+          <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--text-subtle)]">Installer Script Studio</span>
+          <span class="mt-0.5 block text-[1.55rem] font-extrabold leading-none tracking-tight text-[color:var(--text-strong)]">AppAnvil</span>
+          <span class="mt-0.5 block text-[12px] font-medium text-[color:var(--text-muted)]">Build once, install apps fast</span>
         </span>
       </a>
 
