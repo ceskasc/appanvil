@@ -215,18 +215,31 @@ html.dark {
 .aurora {
   z-index: 0;
   background:
+    radial-gradient(circle at 50% 14%, #30486f 0%, #1f304f 42%, #141f36 76%, #0b1324 100%);
+}
+
+html.dark .aurora {
+  background:
     radial-gradient(circle at 50% 18%, #0a1322 0%, #03070f 44%, #010309 78%, #000 100%);
 }
 
 .surface-grid {
   z-index: 1;
-  opacity: 0.95;
+  opacity: 0.86;
   background-image:
-    radial-gradient(1px 1px at 14% 18%, rgba(255, 255, 255, 0.7), transparent 72%),
-    radial-gradient(1px 1px at 86% 24%, rgba(196, 227, 255, 0.58), transparent 72%),
-    radial-gradient(1.4px 1.4px at 62% 72%, rgba(255, 255, 255, 0.58), transparent 75%);
+    radial-gradient(1px 1px at 14% 18%, rgba(236, 246, 255, 0.66), transparent 72%),
+    radial-gradient(1px 1px at 86% 24%, rgba(196, 227, 255, 0.5), transparent 72%),
+    radial-gradient(1.4px 1.4px at 62% 72%, rgba(229, 242, 255, 0.48), transparent 75%);
   background-size: 230px 230px, 290px 290px, 360px 360px;
   animation: star-drift 90s linear infinite;
+}
+
+html.dark .surface-grid {
+  opacity: 0.95;
+  background-image:
+    radial-gradient(1px 1px at 14% 18%, rgba(255, 255, 255, 0.72), transparent 72%),
+    radial-gradient(1px 1px at 86% 24%, rgba(196, 227, 255, 0.58), transparent 72%),
+    radial-gradient(1.4px 1.4px at 62% 72%, rgba(255, 255, 255, 0.58), transparent 75%);
 }
 
 .surface-grid::before,
@@ -238,26 +251,46 @@ html.dark {
 }
 
 .surface-grid::before {
+  opacity: 0.56;
+  background-image:
+    radial-gradient(1px 1px at 22% 34%, rgba(234, 245, 255, 0.68), transparent 70%),
+    radial-gradient(1px 1px at 72% 52%, rgba(209, 233, 255, 0.55), transparent 70%),
+    radial-gradient(1px 1px at 40% 80%, rgba(228, 241, 255, 0.5), transparent 70%);
+  background-size: 190px 190px, 260px 260px, 310px 310px;
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+html.dark .surface-grid::before {
   opacity: 0.62;
   background-image:
     radial-gradient(1px 1px at 22% 34%, rgba(255, 255, 255, 0.72), transparent 70%),
     radial-gradient(1px 1px at 72% 52%, rgba(209, 233, 255, 0.65), transparent 70%),
     radial-gradient(1px 1px at 40% 80%, rgba(255, 255, 255, 0.6), transparent 70%);
-  background-size: 190px 190px, 260px 260px, 310px 310px;
-  animation: twinkle 6s ease-in-out infinite alternate;
 }
 
 .surface-grid::after {
-  opacity: 0.4;
+  opacity: 0.35;
   background-image:
-    radial-gradient(1.8px 1.8px at 18% 74%, rgba(255, 255, 255, 0.58), transparent 74%),
-    radial-gradient(1.5px 1.5px at 78% 36%, rgba(160, 206, 245, 0.52), transparent 74%);
+    radial-gradient(1.8px 1.8px at 18% 74%, rgba(231, 244, 255, 0.5), transparent 74%),
+    radial-gradient(1.5px 1.5px at 78% 36%, rgba(160, 206, 245, 0.42), transparent 74%);
   background-size: 430px 430px, 520px 520px;
   animation: twinkle 10s ease-in-out infinite alternate-reverse;
 }
 
+html.dark .surface-grid::after {
+  opacity: 0.4;
+  background-image:
+    radial-gradient(1.8px 1.8px at 18% 74%, rgba(255, 255, 255, 0.58), transparent 74%),
+    radial-gradient(1.5px 1.5px at 78% 36%, rgba(160, 206, 245, 0.52), transparent 74%);
+}
+
 .lens-vignette {
   z-index: 2;
+  background:
+    radial-gradient(circle at 50% 44%, transparent 36%, rgba(7, 14, 30, 0.44) 100%);
+}
+
+html.dark .lens-vignette {
   background:
     radial-gradient(circle at 50% 44%, transparent 36%, rgba(0, 0, 0, 0.64) 100%);
 }
