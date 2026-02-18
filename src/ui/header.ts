@@ -32,7 +32,7 @@ const isNavActive = (route: AppRoute, href: string): boolean => {
 const navLink = (label: string, href: string, active: boolean): string => `
   <a
     href="${href}"
-    class="hash-link ${active ? 'is-active' : ''}"
+    class="nav-pill ${active ? 'is-active' : ''}"
     ${active ? 'aria-current="page"' : ''}
   >
     ${label}
@@ -48,14 +48,14 @@ export const applyTheme = (_theme: ThemeMode = 'light'): void => {
 export const toggleThemeMode = (_theme: ThemeMode): ThemeMode => 'light'
 
 export const renderHeader = (route: AppRoute): string => `
-  <header class="panel py-3">
+  <header class="panel header-shell py-3">
     <div class="flex items-center gap-3">
       <a
         href="#/"
-        class="focus-ring inline-flex items-center gap-3 rounded-md px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
+        class="focus-ring inline-flex items-center gap-3 rounded-xl px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
         aria-label="AppAnvil home"
       >
-        <span class="inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--accent-soft)] shadow-sm">
+        <span class="inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--accent-soft)] shadow-[0_10px_30px_rgba(14,88,179,0.25)]">
           <img
             src="${logoUrl}"
             alt=""
@@ -65,11 +65,13 @@ export const renderHeader = (route: AppRoute): string => `
           />
         </span>
         <span class="hidden sm:flex sm:flex-col">
-          <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--text-subtle)]">Installer Script Studio</span>
-          <span class="mt-0.5 block text-[1.55rem] font-extrabold leading-none tracking-tight text-[color:var(--text-strong)]">AppAnvil</span>
-          <span class="mt-0.5 block text-[12px] font-medium text-[color:var(--text-muted)]">Build once, install apps fast</span>
+          <span class="block text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--text-subtle)]">Installer Platform</span>
+          <span class="mt-0.5 block text-[1.6rem] font-extrabold leading-none tracking-tight text-[color:var(--text-strong)]">AppAnvil</span>
+          <span class="mt-0.5 block text-[12px] font-medium text-[color:var(--text-muted)]">Build profiles now, launch native EXE soon</span>
         </span>
       </a>
+
+      <span class="chip ml-auto hidden md:inline-flex">EXE Soon</span>
 
       <button
         id="mobile-nav-toggle"
@@ -77,7 +79,7 @@ export const renderHeader = (route: AppRoute): string => `
         aria-label="Toggle navigation"
         aria-controls="header-nav"
         aria-expanded="false"
-        class="focus-ring ml-auto inline-flex h-9 w-9 items-center justify-center rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] md:hidden"
+        class="focus-ring ml-auto inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] md:hidden"
       >
         ${icon(Menu, 'h-5 w-5')}
       </button>
@@ -85,10 +87,10 @@ export const renderHeader = (route: AppRoute): string => `
       <nav
         id="header-nav"
         aria-label="Primary"
-        class="mt-3 hidden w-full flex-col gap-1.5 border-t border-[color:var(--panel-border)] pt-2 md:mt-0 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:gap-1.5 md:border-0 md:pt-0"
+        class="mt-3 hidden w-full flex-col gap-1.5 border-t border-[color:var(--panel-border)] pt-2 md:mt-0 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:gap-2 md:border-0 md:pt-0"
       >
         ${navLink('Apps', '#/', isNavActive(route, '#/'))}
-        ${navLink('About', '#/about', isNavActive(route, '#/about'))}
+        ${navLink('Roadmap', '#/about', isNavActive(route, '#/about'))}
       </nav>
     </div>
   </header>

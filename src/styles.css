@@ -5,17 +5,17 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: #f3f6fb;
-  --panel-surface: #ffffff;
-  --panel-soft: #f7f9fc;
-  --panel-border: #d8e0ec;
-  --focus-ring: rgba(27, 121, 236, 0.45);
-  --accent-strong: #1f6fd8;
-  --accent-soft: rgba(31, 111, 216, 0.12);
-  --text-strong: #13263d;
-  --text-muted: #4b6079;
-  --text-subtle: #6e839d;
-  color-scheme: light;
+  --bg-base: #060b15;
+  --panel-surface: rgba(10, 18, 31, 0.84);
+  --panel-soft: rgba(21, 35, 58, 0.58);
+  --panel-border: rgba(133, 170, 221, 0.24);
+  --focus-ring: rgba(91, 190, 255, 0.45);
+  --accent-strong: #63b8ff;
+  --accent-soft: rgba(99, 184, 255, 0.14);
+  --text-strong: #e6f0ff;
+  --text-muted: #b8cae6;
+  --text-subtle: #7f99bd;
+  color-scheme: dark;
 }
 
 @layer base {
@@ -33,7 +33,7 @@
 
   code {
     font-family: 'IBM Plex Mono', monospace;
-    @apply rounded bg-[color:var(--panel-soft)] px-1.5 py-0.5 text-[0.84em];
+    @apply rounded bg-[color:var(--panel-soft)] px-1.5 py-0.5 text-[0.84em] text-sky-100;
   }
 
   ::selection {
@@ -43,11 +43,11 @@
 
 @layer components {
   .glass {
-    @apply border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)];
+    @apply border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] backdrop-blur-xl;
   }
 
   .panel {
-    @apply glass rounded-lg p-4 md:p-5;
+    @apply glass rounded-xl p-4 shadow-[0_16px_40px_rgba(2,10,20,0.45)] md:p-5;
   }
 
   .panel-title {
@@ -58,20 +58,24 @@
     @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-[color:var(--text-subtle)];
   }
 
-  .hash-link {
-    @apply focus-ring inline-flex items-center rounded-md px-3 py-2 text-sm font-medium text-[color:var(--text-muted)] transition-colors hover:bg-[color:var(--panel-soft)] hover:text-[color:var(--text-strong)];
+  .header-shell {
+    @apply border-[color:var(--panel-border)] bg-[linear-gradient(130deg,rgba(18,30,49,0.72),rgba(8,15,26,0.86))];
   }
 
-  .hash-link.is-active {
-    @apply bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)];
+  .nav-pill {
+    @apply focus-ring inline-flex items-center rounded-full border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3.5 py-1.5 text-sm font-semibold text-[color:var(--text-muted)] transition-colors hover:text-[color:var(--text-strong)];
+  }
+
+  .nav-pill.is-active {
+    @apply border-[color:var(--accent-strong)] bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)];
   }
 
   .btn-primary {
-    @apply focus-ring inline-flex items-center gap-2 rounded-md bg-[color:var(--accent-strong)] px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:brightness-105;
+    @apply focus-ring inline-flex items-center gap-2 rounded-lg bg-[color:var(--accent-strong)] px-3.5 py-2 text-sm font-semibold text-slate-950 transition-colors hover:brightness-105;
   }
 
   .btn-ghost {
-    @apply focus-ring inline-flex items-center gap-2 rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-3.5 py-2 text-sm font-medium text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)];
+    @apply focus-ring inline-flex items-center gap-2 rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-3.5 py-2 text-sm font-medium text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)];
   }
 
   .btn-inline {
@@ -117,6 +121,47 @@
   .catalog-item-logo {
     @apply h-4 w-4 shrink-0 rounded object-contain;
   }
+
+  .hero-shell {
+    @apply overflow-hidden;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(78, 164, 255, 0.2), transparent 38%),
+      radial-gradient(circle at 84% 10%, rgba(83, 155, 255, 0.14), transparent 42%);
+  }
+
+  .photo-feature {
+    @apply relative overflow-hidden rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)];
+    min-height: 150px;
+  }
+
+  .photo-feature img {
+    @apply h-full w-full object-cover;
+    filter: saturate(1.02) contrast(1.05);
+  }
+
+  .photo-feature::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(5, 10, 19, 0.84) 0%,
+      rgba(5, 10, 19, 0.28) 55%,
+      rgba(5, 10, 19, 0.05) 100%
+    );
+  }
+
+  .photo-overlay {
+    @apply absolute inset-x-0 bottom-0 z-10 p-3;
+  }
+
+  .photo-overlay h3 {
+    @apply text-sm font-semibold text-[color:var(--text-strong)];
+  }
+
+  .photo-tag {
+    @apply text-[10px] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent-strong)];
+  }
 }
 
 .aurora,
@@ -130,20 +175,20 @@
 .aurora {
   z-index: 0;
   background:
-    radial-gradient(circle at 15% 12%, rgba(88, 146, 223, 0.13), transparent 42%),
-    radial-gradient(circle at 80% 8%, rgba(62, 118, 199, 0.1), transparent 45%);
+    radial-gradient(circle at 15% 12%, rgba(85, 158, 255, 0.18), transparent 42%),
+    radial-gradient(circle at 80% 8%, rgba(62, 118, 199, 0.14), transparent 45%);
 }
 
 .surface-grid {
   z-index: 0;
   background-image:
-    linear-gradient(to right, rgba(84, 107, 135, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(84, 107, 135, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(93, 126, 167, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(93, 126, 167, 0.14) 1px, transparent 1px);
   background-size: 28px 28px;
-  opacity: 0.34;
+  opacity: 0.24;
 }
 
 .lens-vignette {
   z-index: 0;
-  background: radial-gradient(circle at 50% 45%, transparent 35%, rgba(0, 0, 0, 0.05) 100%);
+  background: radial-gradient(circle at 50% 45%, transparent 24%, rgba(0, 0, 0, 0.45) 100%);
 }

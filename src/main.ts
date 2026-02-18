@@ -67,7 +67,7 @@ interface ShareStatusState {
 
 const DEFAULT_SHARE_STATUS: ShareStatusState = {
   tone: 'idle',
-  message: 'Paste a token/URL or upload a selection JSON file to import.',
+  message: 'Paste a token/URL or upload JSON to import your install profile.',
 }
 
 const iconToSvg = (icon: IconNode, className: string): string => {
@@ -256,7 +256,7 @@ const renderGenerateBody = (): string => {
       <section class="panel max-w-4xl">
         <div class="flex items-center gap-3 text-[color:var(--text-strong)]">
           ${iconToSvg(LoaderCircle, 'h-5 w-5 animate-spin')}
-          <span class="text-sm font-medium">Preparing generator...</span>
+          <span class="text-sm font-medium">Preparing output bundle...</span>
         </div>
       </section>
     `
@@ -265,7 +265,7 @@ const renderGenerateBody = (): string => {
   if (state.catalogStatus === 'error') {
     return `
       <section class="panel max-w-4xl">
-        <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Generate Scripts</h1>
+        <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Output Bundle</h1>
         <p class="mt-3 text-sm text-[color:var(--text-muted)]">
           Catalog failed to load, so script generation is unavailable.
         </p>
@@ -282,18 +282,34 @@ const renderGenerateBody = (): string => {
 }
 
 const renderAboutView = (): string => `
-  <section class="panel max-w-4xl">
+  <section class="panel max-w-5xl">
     <div class="flex items-center gap-3">
       <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
         ${iconToSvg(LayoutPanelLeft, 'h-5 w-5')}
       </span>
       <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">About AppAnvil</h1>
     </div>
-    <ul class="mt-3 space-y-2 text-sm text-[color:var(--text-muted)]">
-      <li>1. Pick apps from the catalog.</li>
-      <li>2. Generate Winget/Choco/Scoop installer scripts.</li>
-      <li>3. Review scripts and run them on your own machine.</li>
-    </ul>
+    <p class="mt-3 text-sm text-[color:var(--text-muted)]">
+      AppAnvil is building toward a native one-click EXE installer. Today it generates a reliable command bundle profile so teams can install the same app stack consistently.
+    </p>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+        <h2 class="text-sm font-semibold tracking-tight text-[color:var(--text-strong)]">Current Workflow</h2>
+        <ol class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
+          <li>1. Select apps from the catalog.</li>
+          <li>2. Download command bundle outputs.</li>
+          <li>3. Run outputs locally with full visibility.</li>
+        </ol>
+      </article>
+      <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+        <h2 class="text-sm font-semibold tracking-tight text-[color:var(--text-strong)]">Native EXE Roadmap</h2>
+        <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
+          <li>- Same profile format, direct EXE execution.</li>
+          <li>- Visual progress and install diagnostics.</li>
+          <li>- Enterprise-ready bundle consistency.</li>
+        </ul>
+      </article>
+    </div>
   </section>
 `
 
@@ -344,7 +360,7 @@ const renderCatalogBody = (): string => {
       : state.catalogStatus === 'error'
         ? `
           <section class="panel">
-            <div class="flex items-start gap-3 text-amber-900">
+            <div class="flex items-start gap-3 text-amber-200">
               ${iconToSvg(AlertTriangle, 'mt-0.5 h-5 w-5')}
               <div>
                 <h2 class="text-base font-semibold">Catalog failed to load</h2>
@@ -363,58 +379,84 @@ const renderCatalogBody = (): string => {
 
   return `
     <section class="space-y-4">
-      <div class="panel">
-        <div class="grid gap-4 xl:grid-cols-[1.25fr_0.9fr_0.9fr]">
-          <div>
-            <p class="panel-caption">Install and Update Apps</p>
-            <h1 class="mt-2 text-3xl font-bold leading-tight tracking-tight text-[color:var(--text-strong)] md:text-4xl">
-              Pick apps. Get installer. Run once.
+      <div class="panel hero-shell">
+        <div class="grid gap-5 xl:grid-cols-[1.25fr_1fr]">
+          <div class="space-y-4">
+            <p class="panel-caption">AppAnvil Installer Platform</p>
+            <h1 class="text-3xl font-bold leading-tight tracking-tight text-[color:var(--text-strong)] md:text-5xl">
+              Build your install stack now.
+              <span class="block text-[color:var(--accent-strong)]">Native EXE launch flow is coming next.</span>
             </h1>
-            <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-              AppAnvil generates scripts and installer files for your selected apps.
+            <p class="max-w-2xl text-sm text-[color:var(--text-muted)] md:text-base">
+              Today AppAnvil creates clean install bundles with Winget, Chocolatey and Scoop mappings. Soon, this same profile will run in a single branded EXE installer.
             </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="chip">Live now: Script + CMD bundle</span>
+              <span class="chip">Roadmap: Native EXE installer</span>
+              <span class="chip">Safe: no auto-run in browser</span>
+            </div>
+            <div class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+              <p class="panel-caption">How It Works</p>
+              <ol class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
+                <li>1. Choose apps and save your install profile.</li>
+                <li>2. Download your bundle and run locally.</li>
+                <li>3. Reuse the same profile later with native EXE.</li>
+              </ol>
+            </div>
           </div>
 
-          <div class="rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-3">
-            <p class="panel-caption">How To Use</p>
-            <ol class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
-              <li>1. Pick apps from the catalog lists below.</li>
-              <li>2. Open your selection panel on the right.</li>
-              <li>3. Download and run your generated installer/script.</li>
-            </ol>
-          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <article class="photo-feature sm:col-span-2">
+              <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1400&q=80" alt="Modern workstation with laptop and software setup" loading="lazy" decoding="async" />
+              <div class="photo-overlay">
+                <p class="photo-tag">Deployment Ready</p>
+                <h3>Team-ready setup bundles</h3>
+              </div>
+            </article>
 
-          <div class="rounded-md border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-3">
-            <p class="panel-caption">Safety</p>
-            <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
-              <li>• This website never installs apps directly.</li>
-              <li>• Always review scripts before running.</li>
-              <li>• Use Admin PowerShell when required.</li>
-            </ul>
-          </div>
+            <article class="photo-feature">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Close-up hardware and engineering desk detail" loading="lazy" decoding="async" />
+              <div class="photo-overlay">
+                <p class="photo-tag">Precision</p>
+                <h3>Mapped package IDs</h3>
+              </div>
+            </article>
 
-          <div class="flex flex-wrap gap-2 lg:hidden">
-            <button
-              type="button"
-              data-open-drawer="filters-drawer"
-              class="btn-ghost"
-              aria-controls="filters-drawer"
-              aria-label="Open filters panel"
-            >
-              ${iconToSvg(SlidersHorizontal, 'h-4 w-4')}
-              Filters
-            </button>
-            <button
-              type="button"
-              data-open-drawer="cart-drawer"
-              class="btn-ghost"
-              aria-controls="cart-drawer"
-              aria-label="Open cart drawer"
-            >
-              ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-              Selection
-            </button>
+            <article class="photo-feature">
+              <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1200&q=80" alt="Minimal multi-display workspace setup" loading="lazy" decoding="async" />
+              <div class="photo-overlay">
+                <p class="photo-tag">Future EXE</p>
+                <h3>One-click visual installer</h3>
+              </div>
+            </article>
           </div>
+        </div>
+
+        <p class="mt-3 text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
+          Photos from Unsplash (royalty-free).
+        </p>
+
+        <div class="mt-4 flex flex-wrap gap-2 lg:hidden">
+          <button
+            type="button"
+            data-open-drawer="filters-drawer"
+            class="btn-ghost"
+            aria-controls="filters-drawer"
+            aria-label="Open filters panel"
+          >
+            ${iconToSvg(SlidersHorizontal, 'h-4 w-4')}
+            Filters
+          </button>
+          <button
+            type="button"
+            data-open-drawer="cart-drawer"
+            class="btn-ghost"
+            aria-controls="cart-drawer"
+            aria-label="Open cart drawer"
+          >
+            ${iconToSvg(ShoppingBag, 'h-4 w-4')}
+            Selection
+          </button>
         </div>
       </div>
 
@@ -493,7 +535,7 @@ const renderCatalogBody = (): string => {
           aria-label="Open cart drawer"
         >
           ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-          Open Selection (${selectedApps.length})
+          Selection & Download (${selectedApps.length})
         </button>
       </div>
 
@@ -507,7 +549,6 @@ const renderCatalogBody = (): string => {
     </section>
   `
 }
-
 const renderRouteView = (): string => {
   if (currentRoute.kind === 'home') {
     return renderCatalogBody()
@@ -947,3 +988,4 @@ initRouter((route) => {
   }
   renderApp()
 })
+

@@ -111,7 +111,7 @@ export const renderGenerateView = ({
       <section class="panel max-w-4xl">
         <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Advanced Outputs</h1>
         <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-          Select apps on the home page, then download your installer.
+          Select apps on the home page to generate your command bundle profile.
         </p>
         <a href="#/" class="btn-primary mt-5 inline-flex">Back to Home</a>
       </section>
@@ -135,7 +135,7 @@ export const renderGenerateView = ({
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Advanced Outputs</h1>
-          <p class="mt-1 text-xs text-[color:var(--text-subtle)]">Use Home for one-click installer download.</p>
+          <p class="mt-1 text-xs text-[color:var(--text-subtle)]">Native EXE is coming. Use these outputs as your installation bundle today.</p>
         </div>
         <div class="flex items-center gap-2">
           <button
@@ -173,7 +173,7 @@ export const renderGenerateView = ({
                 aria-selected="${currentTab === tab.id}"
                 class="focus-ring inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm ${
                   currentTab === tab.id
-                    ? 'border-sky-400/60 bg-sky-100 text-sky-700'
+                    ? 'border-[color:var(--accent-strong)] bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]'
                     : 'border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-muted)] hover:bg-[color:var(--panel-soft)]'
                 }"
               >

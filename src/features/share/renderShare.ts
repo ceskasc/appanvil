@@ -20,10 +20,10 @@ const escapeHtml = (value: string): string =>
 
 const statusClassName = (tone: ShareStatus['tone']): string => {
   if (tone === 'success') {
-    return 'border-emerald-300 bg-emerald-50 text-emerald-800'
+    return 'border-emerald-400/35 bg-emerald-500/10 text-emerald-200'
   }
   if (tone === 'error') {
-    return 'border-red-300 bg-red-50 text-red-800'
+    return 'border-rose-400/35 bg-rose-500/10 text-rose-200'
   }
   return 'border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] text-[color:var(--text-muted)]'
 }
@@ -38,10 +38,10 @@ export const renderShareView = ({
     <div class="panel max-w-5xl">
       <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">Share and Import</h1>
       <p class="mt-2 text-sm text-[color:var(--text-muted)]">
-        Share tokens include selected app IDs and generator options. Invalid tokens are safely rejected.
+        Share tokens keep selected app IDs and options in a portable profile.
       </p>
       <p class="mt-1 text-xs text-[color:var(--text-subtle)]">
-        Current selection: ${selectedCount} app(s)
+        Current profile: ${selectedCount} app(s). Same profile will be reusable in the native EXE flow.
       </p>
     </div>
 
@@ -63,7 +63,7 @@ export const renderShareView = ({
         ${
           currentShareUrl
             ? `
-              <p class="mt-2 text-sm text-[color:var(--text-muted)]">Copy this URL to share your current selection.</p>
+              <p class="mt-2 text-sm text-[color:var(--text-muted)]">Copy this URL to share your install profile with a teammate.</p>
               <p class="mt-2 break-all rounded-xl border border-dashed border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-2 text-xs text-[color:var(--text-strong)]">${escapeHtml(currentShareUrl)}</p>
               <button type="button" data-action="copy-current-share-url" class="btn-primary mt-3">
                 Copy Current Share URL

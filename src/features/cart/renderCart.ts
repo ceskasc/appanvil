@@ -53,14 +53,14 @@ export const renderCartPanel = ({
       </div>
 
       <p class="text-xs text-[color:var(--text-subtle)]">
-        Review scripts before running. This site does not execute installers.
+        Native EXE installer is in progress. For now, download the command bundle.
       </p>
 
       ${
         selectedApps.length === 0
           ? `
             <div class="rounded-md border border-dashed border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-3 text-sm text-[color:var(--text-muted)]">
-              No apps selected yet.
+              No apps selected yet. Pick apps to build your install profile.
             </div>
           `
           : `
@@ -100,7 +100,7 @@ export const renderCartPanel = ({
           class="btn-primary w-full justify-center ${selectedApps.length === 0 ? 'pointer-events-none opacity-60' : ''}"
         >
           ${iconToSvg(Download, 'h-4 w-4')}
-          Download Visual Installer (.cmd)
+          Download Starter Bundle (.cmd)
         </button>
       </div>
 
