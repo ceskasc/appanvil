@@ -71,23 +71,25 @@ export const toggleThemeMode = (theme: ThemeMode): ThemeMode =>
   theme === 'dark' ? 'light' : 'dark'
 
 export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
-  <header class="glass rounded-2xl px-3 py-3 md:px-5 md:py-3.5">
-    <div class="flex items-center gap-2">
+  <header class="relative px-1 py-2 md:px-2 md:py-3">
+    <div class="absolute inset-x-0 bottom-0 h-px bg-[color:var(--panel-border)]"></div>
+
+    <div class="relative flex items-center gap-2">
       <a
         href="#/"
         class="focus-ring inline-flex items-center gap-2 rounded-xl px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
         aria-label="AppAnvil home"
       >
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)] shadow-[inset_0_0_0_1px_rgba(94,193,255,0.24)]">
           ${icon(Anvil, 'h-5 w-5')}
         </span>
         <span class="hidden sm:block">
-          <span class="block text-[10px] font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">Installer Script Studio</span>
+          <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--text-subtle)]">Installer Script Studio</span>
           <span class="block text-lg font-semibold leading-tight text-[color:var(--text-strong)]">AppAnvil</span>
         </span>
       </a>
 
-      <span class="chip ml-1 hidden lg:inline-flex">Ctrl/Cmd + K</span>
+      <span class="chip ml-1 hidden lg:inline-flex bg-[color:var(--panel-soft)]">Ctrl/Cmd + K</span>
 
       <button
         id="mobile-nav-toggle"

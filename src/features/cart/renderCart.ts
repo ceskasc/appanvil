@@ -46,29 +46,29 @@ export const renderCartPanel = ({
   const grouped = groupByCategory(selectedApps)
 
   return `
-    <section class="panel">
+    <section class="panel space-y-3">
       <div class="flex items-center justify-between gap-2">
         <h2 class="panel-title">Selection</h2>
         <span class="chip">${selectedApps.length} app</span>
       </div>
 
-      <p class="mt-2 text-xs text-[color:var(--text-subtle)]">
+      <p class="text-xs text-[color:var(--text-subtle)]">
         Review scripts before running. This website does not execute installers.
       </p>
 
       ${
         selectedApps.length === 0
           ? `
-            <div class="mt-4 rounded-xl border border-dashed border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-4 text-sm text-[color:var(--text-muted)]">
+            <div class="rounded-lg bg-[color:var(--panel-surface)] px-3 py-3 text-sm text-[color:var(--text-muted)]">
               Cart is empty. Select apps from the catalog list.
             </div>
           `
           : `
-            <div class="mt-4 max-h-[300px] space-y-3 overflow-y-auto pr-1">
+            <div class="max-h-[300px] space-y-2 overflow-y-auto pr-1">
               ${[...grouped.entries()]
                 .map(
                   ([category, apps]) => `
-                    <div class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] px-3 py-2">
+                    <div class="rounded-lg bg-[color:var(--panel-surface)] px-3 py-2">
                       <div class="flex items-center justify-between text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
                         <span>${escapeHtml(category)}</span>
                         <span>${apps.length}</span>
@@ -92,7 +92,7 @@ export const renderCartPanel = ({
           `
       }
 
-      <div class="mt-4 grid gap-2">
+      <div class="grid gap-2">
         <a href="#/generate" class="btn-primary w-full justify-center">
           ${iconToSvg(ClipboardList, 'h-4 w-4')}
           Generate
@@ -106,7 +106,7 @@ export const renderCartPanel = ({
         <button
           type="button"
           data-action="clear-selection"
-          class="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-xl border border-rose-300/70 bg-rose-500/10 px-3.5 py-2 text-sm font-semibold text-rose-700 transition-colors hover:bg-rose-500/15 dark:border-rose-400/40 dark:text-rose-300"
+          class="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-xl border border-rose-300/70 bg-rose-500/12 px-3.5 py-2 text-sm font-semibold text-rose-700 transition-colors hover:bg-rose-500/18 dark:border-rose-400/45 dark:text-rose-300"
         >
           ${iconToSvg(Trash2, 'h-4 w-4')}
           Clear All
@@ -115,7 +115,7 @@ export const renderCartPanel = ({
 
       ${
         placement === 'mobile'
-          ? '<p class="mt-3 text-center text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">Mobile drawer</p>'
+          ? '<p class="text-center text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">Mobile drawer</p>'
           : ''
       }
     </section>

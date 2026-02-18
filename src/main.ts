@@ -367,13 +367,13 @@ const renderCatalogBody = (): string => {
   return `
     <section class="space-y-4">
       <div class="panel">
-        <div class="flex flex-wrap items-start justify-between gap-4">
+        <div class="flex flex-wrap items-start justify-between gap-4 py-1">
           <div class="max-w-3xl">
             <p class="panel-caption">Catalog Workspace</p>
-            <h1 class="mt-1 text-2xl font-bold tracking-tight text-[color:var(--text-strong)] md:text-[2rem]">
-              Build installation bundles with a compact command-first flow.
+            <h1 class="mt-2 text-[2rem] font-bold leading-[1.06] tracking-tight text-[color:var(--text-strong)] md:text-[2.75rem]">
+              A cinematic control room for building your app stack.
             </h1>
-            <p class="mt-2 text-sm text-[color:var(--text-muted)]">
+            <p class="mt-3 max-w-2xl text-sm text-[color:var(--text-muted)] md:text-base">
               Review scripts before running. This website does not execute installers.
             </p>
           </div>
@@ -403,17 +403,17 @@ const renderCatalogBody = (): string => {
         </div>
       </div>
 
-      <div class="grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
+      <div class="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)_280px]">
         <aside class="hidden lg:block">
-          <div class="sticky top-4">
+          <div class="rail-pane sticky top-4">
             ${renderFiltersPanel({ filters: state.filters, categories })}
           </div>
         </aside>
 
-        <section>${catalogSection}</section>
+        <section class="min-w-0">${catalogSection}</section>
 
         <aside class="hidden lg:block">
-          <div class="sticky top-4">
+          <div class="rail-pane sticky top-4">
             ${renderCartPanel({ selectedApps, placement: 'desktop' })}
           </div>
         </aside>
@@ -469,7 +469,7 @@ const renderCatalogBody = (): string => {
         </div>
       </div>
 
-      <div class="fixed inset-x-0 bottom-0 z-30 border-t border-[color:var(--panel-border)] bg-[color:var(--panel-surface)]/95 px-4 py-2.5 backdrop-blur lg:hidden">
+      <div class="fixed inset-x-0 bottom-0 z-30 border-t border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-4 py-2.5 backdrop-blur lg:hidden">
         <button
           type="button"
           data-open-drawer="cart-drawer"
@@ -866,11 +866,12 @@ const renderApp = (): void => {
     <div class="relative min-h-screen overflow-x-clip">
       <div class="aurora"></div>
       <div class="surface-grid"></div>
+      <div class="lens-vignette"></div>
 
-      <div class="relative z-10 mx-auto flex min-h-screen w-full max-w-[1560px] flex-col px-3 py-3 pb-24 md:px-7 md:py-6 md:pb-10">
+      <div class="relative z-10 mx-auto flex min-h-screen w-full max-w-[1540px] flex-col px-3 py-3 pb-24 md:px-8 md:py-6 md:pb-10">
         ${renderHeader(currentRoute, activeTheme)}
 
-        <main class="mt-4 flex-1" id="route-content">
+        <main class="mt-3 flex-1" id="route-content">
           ${renderRouteView()}
         </main>
       </div>
