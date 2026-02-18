@@ -3,7 +3,7 @@ import type { IconNode } from 'lucide'
 import type { AppRoute } from '../router'
 
 export type ThemeMode = 'light'
-const logoUrl = `${import.meta.env.BASE_URL}logo.svg`
+const logoUrl = `${import.meta.env.BASE_URL}logo1.svg`
 
 const icon = (node: IconNode, className: string): string =>
   (() => {
