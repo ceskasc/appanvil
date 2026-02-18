@@ -467,200 +467,40 @@ const buildPowerShellScript = (
   return lines.join('\n')
 }
 
-const escapeCmdArg = (value: string): string => value.replaceAll('"', '""')
-
-const buildInstallerCmd = (
-  installPlan: InstallPlanItem[],
-  options: GeneratorOptions,
-  skippedMsStore: WingetPlanItem[],
-): string => {
-  const needsWinget = installPlan.some((item) => item.method === 'winget')
-  const needsChoco = installPlan.some((item) => item.method === 'choco')
-  const needsScoop = installPlan.some((item) => item.method === 'scoop')
-
-  const commandLines = installPlan.flatMap((item) => {
-    const packageId = item.provider.packageId
-    let source = ''
-    let bucket = ''
-    let useSilent = false
-
-    if (item.method === 'winget') {
-      source = item.provider.source
-      useSilent = options.silentInstall && item.provider.supportsSilent
-    }
-
-    if (item.method === 'scoop') {
-      source = item.provider.bucket
-      bucket = item.provider.bucket
-    }
-
-    const needsVerification = item.app.needsVerification
-
-    return [
-      `call :install "${escapeCmdArg(item.app.name)}" "${item.method}" "${escapeCmdArg(packageId)}" "${escapeCmdArg(source)}" "${escapeCmdArg(bucket)}" "${useSilent ? '1' : '0'}" "${needsVerification ? '1' : '0'}"`,
-      'if errorlevel 2 goto :summary',
-    ]
-  })
-
+const buildInstallerCmd = (ps1: string): string => {
+  const psLines = ps1.split('\n')
   const lines = [
     '@echo off',
-    'setlocal EnableExtensions EnableDelayedExpansion',
-    'title AppAnvil Installer',
+    'setlocal',
+    'title AppAnvil Visual Installer',
     '',
+    'set "SELF=%~f0"',
     'echo AppAnvil installer launcher',
-    'echo Review scripts before running.',
-    'echo This installer runs selected app installs sequentially.',
+    'echo Starting embedded visual PowerShell installer...',
     'echo.',
-    '',
-    'net session >nul 2>&1',
-    'if not "%ERRORLEVEL%"=="0" (',
-    '  echo [WARNING] Administrator privileges not detected.',
-    '  echo [INFO] Right-click and "Run as administrator" for best results.',
-    '  echo.',
-    ')',
-    '',
-    'set "HAS_WINGET=0"',
-    'set "HAS_CHOCO=0"',
-    'set "HAS_SCOOP=0"',
-    'where winget >nul 2>&1 && set "HAS_WINGET=1"',
-    'where choco >nul 2>&1 && set "HAS_CHOCO=1"',
-    'where scoop >nul 2>&1 && set "HAS_SCOOP=1"',
-    '',
-    `set "NEEDS_WINGET=${needsWinget ? '1' : '0'}"`,
-    `set "NEEDS_CHOCO=${needsChoco ? '1' : '0'}"`,
-    `set "NEEDS_SCOOP=${needsScoop ? '1' : '0'}"`,
-    '',
-    'if "%NEEDS_WINGET%"=="1" if "%HAS_WINGET%"=="0" (',
-    '  echo [ERROR] winget is required but was not found.',
-    '  echo [INFO] Install App Installer: https://aka.ms/getwinget',
-    '  pause',
-    '  exit /b 1',
-    ')',
-    'if "%NEEDS_CHOCO%"=="1" if "%HAS_CHOCO%"=="0" (',
-    '  echo [ERROR] Chocolatey is required but was not found.',
-    '  echo [INFO] Install Chocolatey: https://chocolatey.org/install',
-    '  pause',
-    '  exit /b 1',
-    ')',
-    'if "%NEEDS_SCOOP%"=="1" if "%HAS_SCOOP%"=="0" (',
-    '  echo [ERROR] Scoop is required but was not found.',
-    '  echo [INFO] Install Scoop: https://scoop.sh/',
-    '  pause',
-    '  exit /b 1',
-    ')',
-    '',
-    'set "LOGDIR=%TEMP%\\AppAnvil"',
-    'set "LOGFILE=%LOGDIR%\\appanvil-install.log"',
-    'if not exist "%LOGDIR%" mkdir "%LOGDIR%"',
-    'echo === AppAnvil run %DATE% %TIME% ===>>"%LOGFILE%"',
-    '',
-    `set "CONTINUE_ON_ERROR=${options.continueOnError ? '1' : '0'}"`,
-    'set /a SUCCESS=0',
-    'set /a FAIL=0',
-    'set "FAILED_LIST="',
-    'set "ADDED_BUCKETS=;"',
-    '',
-  ]
-
-  if (!options.includeMsStoreApps && skippedMsStore.length > 0) {
-    lines.push(
-      `echo [INFO] Skipped MS Store apps without fallback: ${skippedMsStore.map((item) => item.app.name).join(', ')}`,
-      'echo.',
-    )
-  }
-
-  if (commandLines.length === 0) {
-    lines.push(
-      'echo [INFO] No installable apps in this selection.',
-      'goto :summary',
-      '',
-    )
-  } else {
-    lines.push(...commandLines, '')
-  }
-
-  lines.push(
-    'goto :summary',
-    '',
-    ':ensureBucket',
-    'set "TARGET_BUCKET=%~1"',
-    'echo !ADDED_BUCKETS! | find /I ";!TARGET_BUCKET!;" >nul && exit /b 0',
-    'echo [INFO] Adding Scoop bucket !TARGET_BUCKET!...',
-    'scoop bucket add "!TARGET_BUCKET!" >>"%LOGFILE%" 2>&1',
-    'if errorlevel 1 (',
-    '  echo [FAIL] Could not add Scoop bucket !TARGET_BUCKET!',
-    '  exit /b 1',
-    ')',
-    'set "ADDED_BUCKETS=!ADDED_BUCKETS!!TARGET_BUCKET!;"',
-    'exit /b 0',
-    '',
-    ':install',
-    'set "APPNAME=%~1"',
-    'set "METHOD=%~2"',
-    'set "PKG=%~3"',
-    'set "SOURCE=%~4"',
-    'set "BUCKET=%~5"',
-    'set "USESILENT=%~6"',
-    'set "NEEDSVERIFY=%~7"',
-    '',
-    'if "%NEEDSVERIFY%"=="1" echo [VERIFY] %APPNAME% mapping should be reviewed.',
-    '',
-    'echo Installing %APPNAME% ...',
-    'echo [INSTALL] %APPNAME%>>"%LOGFILE%"',
-    '',
-    'if /I "%METHOD%"=="winget" (',
-    '  if not "%SOURCE%"=="" if /I not "%SOURCE%"=="winget" (',
-    '    if "%USESILENT%"=="1" (',
-    '      winget install --id "%PKG%" --exact --accept-source-agreements --accept-package-agreements --source "%SOURCE%" --silent >>"%LOGFILE%" 2>&1',
-    '    ) else (',
-    '      winget install --id "%PKG%" --exact --accept-source-agreements --accept-package-agreements --source "%SOURCE%" >>"%LOGFILE%" 2>&1',
-    '    )',
-    '  ) else (',
-    '    if "%USESILENT%"=="1" (',
-    '      winget install --id "%PKG%" --exact --accept-source-agreements --accept-package-agreements --silent >>"%LOGFILE%" 2>&1',
-    '    ) else (',
-    '      winget install --id "%PKG%" --exact --accept-source-agreements --accept-package-agreements >>"%LOGFILE%" 2>&1',
-    '    )',
-    '  )',
-    ') else if /I "%METHOD%"=="choco" (',
-    '  choco install "%PKG%" -y >>"%LOGFILE%" 2>&1',
-    ') else if /I "%METHOD%"=="scoop" (',
-    '  if not "%BUCKET%"=="" if /I not "%BUCKET%"=="main" (',
-    '    call :ensureBucket "%BUCKET%"',
-    '    if errorlevel 1 goto :install_fail',
-    '  )',
-    '  scoop install "%PKG%" >>"%LOGFILE%" 2>&1',
+    'powershell -NoProfile -ExecutionPolicy Bypass -Command "$raw = Get-Content -LiteralPath $env:SELF -Raw; $marker = ' +
+      "'::APPANVIL_PS::'" +
+      '; $idx = $raw.IndexOf($marker); if ($idx -lt 0) { Write-Error ' +
+      "'Embedded installer payload not found.'" +
+      '; exit 1 }; $script = $raw.Substring($idx + $marker.Length).TrimStart(' +
+      "'`r','`n'" +
+      '); $tempDir = Join-Path $env:TEMP ' +
+      "'AppAnvil'" +
+      '; New-Item -ItemType Directory -Path $tempDir -Force | Out-Null; $tempPs = Join-Path $tempDir ' +
+      "'appanvil-install.ps1'" +
+      '; Set-Content -LiteralPath $tempPs -Value $script -Encoding UTF8; & powershell -NoProfile -ExecutionPolicy Bypass -File $tempPs; exit $LASTEXITCODE"',
+    'set "EXITCODE=%ERRORLEVEL%"',
+    'echo.',
+    'if not "%EXITCODE%"=="0" (',
+    '  echo Installer finished with errors. Check %%TEMP%%\\AppAnvil\\appanvil-install.log',
     ') else (',
-    '  echo [FAIL] Unknown installer method for %APPNAME%',
-    '  goto :install_fail_stop',
+    '  echo Installer completed.',
     ')',
-    '',
-    'if errorlevel 1 goto :install_fail',
-    '',
-    'echo [OK] %APPNAME%',
-    'set /a SUCCESS+=1',
-    'exit /b 0',
-    '',
-    ':install_fail',
-    'echo [FAIL] %APPNAME%',
-    'set /a FAIL+=1',
-    'set "FAILED_LIST=!FAILED_LIST!%APPNAME%, "',
-    'if "%CONTINUE_ON_ERROR%"=="1" exit /b 0',
-    ':install_fail_stop',
-    'exit /b 2',
-    '',
-    ':summary',
-    'echo.',
-    'echo ===============================',
-    'echo AppAnvil install summary',
-    'echo Succeeded: %SUCCESS%',
-    'echo Failed: %FAIL%',
-    'if not "%FAILED_LIST%"=="" echo Failed apps: %FAILED_LIST%',
-    'echo Log file: %LOGFILE%',
-    'echo ===============================',
     'pause',
-    'exit /b %FAIL%',
-  )
+    'exit /b %EXITCODE%',
+    '::APPANVIL_PS::',
+    ...psLines,
+  ]
 
   return lines.join('\n')
 }
@@ -724,18 +564,16 @@ export const generateInstallOutputs = (
     )
     .map((app) => ({ app, provider: app.providers.scoop }))
 
+  const ps1 = buildPowerShellScript(
+    installPlan,
+    options,
+    skippedMsStoreWithoutFallback,
+  )
+
   return {
-    ps1: buildPowerShellScript(
-      installPlan,
-      options,
-      skippedMsStoreWithoutFallback,
-    ),
+    ps1,
     winget: buildWingetOutput(wingetPlan, options, skippedMsStore),
-    installerCmd: buildInstallerCmd(
-      installPlan,
-      options,
-      skippedMsStoreWithoutFallback,
-    ),
+    installerCmd: buildInstallerCmd(ps1),
     choco: buildChocoOutput(chocoPlan),
     scoop: buildScoopOutput(scoopPlan),
     selectionJson: buildSelectionJson(apps, options),

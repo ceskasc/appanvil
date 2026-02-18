@@ -131,7 +131,7 @@ describe('generator', () => {
     expect(parsed.success).toBe(true)
   })
 
-  it('builds installer cmd output with sequential winget commands', () => {
+  it('builds installer cmd as a launcher with embedded visual PowerShell', () => {
     const app = createApp('chrome', 'Google Chrome', {
       winget: {
         packageId: 'Google.Chrome',
@@ -144,14 +144,17 @@ describe('generator', () => {
     const output = generateInstallOutputs([app], DEFAULT_GENERATOR_OPTIONS)
 
     expect(output.installerCmd).toContain(
-      'call :install "Google Chrome" "winget" "Google.Chrome"',
+      '::APPANVIL_PS::',
     )
     expect(output.installerCmd).toContain(
-      'winget install --id "%PKG%" --exact --accept-source-agreements --accept-package-agreements',
+      'APPANVIL VISUAL INSTALLER',
+    )
+    expect(output.installerCmd).toContain(
+      "Id = 'Google.Chrome'",
     )
   })
 
-  it('falls back to choco or scoop installers when winget is unavailable', () => {
+  it('falls back to choco or scoop methods when winget source is msstore', () => {
     const msStoreWithChoco = createApp('store-app', 'Store App', {
       winget: {
         packageId: 'Vendor.StoreApp',
@@ -178,11 +181,9 @@ describe('generator', () => {
       DEFAULT_GENERATOR_OPTIONS,
     )
 
-    expect(output.installerCmd).toContain(
-      'call :install "Store App" "choco" "vendor-store-app"',
-    )
-    expect(output.installerCmd).toContain(
-      'call :install "Scoop App" "scoop" "vendor-scoop-app"',
-    )
+    expect(output.ps1).toContain("Name = 'Store App'")
+    expect(output.ps1).toContain("Method = 'choco'")
+    expect(output.ps1).toContain("Name = 'Scoop App'")
+    expect(output.ps1).toContain("Method = 'scoop'")
   })
 })

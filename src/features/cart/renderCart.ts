@@ -100,7 +100,7 @@ export const renderCartPanel = ({
           class="btn-primary w-full justify-center ${selectedApps.length === 0 ? 'pointer-events-none opacity-60' : ''}"
         >
           ${iconToSvg(Download, 'h-4 w-4')}
-          Download Installer (.cmd)
+          Download Visual Installer (.cmd)
         </button>
       </div>
 
