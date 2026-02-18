@@ -1,8 +1,9 @@
-import { Anvil, Menu, createElement } from 'lucide'
+import { Menu, createElement } from 'lucide'
 import type { IconNode } from 'lucide'
 import type { AppRoute } from '../router'
 
 export type ThemeMode = 'light'
+const logoUrl = `${import.meta.env.BASE_URL}logo.svg`
 
 const icon = (node: IconNode, className: string): string =>
   (() => {
@@ -54,8 +55,14 @@ export const renderHeader = (route: AppRoute): string => `
         class="focus-ring inline-flex items-center gap-2 rounded-md px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
         aria-label="AppAnvil home"
       >
-        <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
-          ${icon(Anvil, 'h-4.5 w-4.5')}
+        <span class="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-md bg-[color:var(--accent-soft)]">
+          <img
+            src="${logoUrl}"
+            alt=""
+            class="h-5 w-5 object-contain"
+            loading="eager"
+            decoding="async"
+          />
         </span>
         <span class="hidden sm:block">
           <span class="block text-[10px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">Batch Installer Builder</span>
