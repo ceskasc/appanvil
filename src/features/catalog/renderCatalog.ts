@@ -85,17 +85,29 @@ const renderCard = (app: CatalogApp, selected: boolean): string => {
   const categoryIcon = iconForCategory(app.category)
   const appName = escapeHtml(app.name)
   const appDescription = escapeHtml(app.description)
+  const logoUrl = `https://www.google.com/s2/favicons?sz=128&domain_url=${encodeURIComponent(app.homepage)}`
 
   return `
     <article class="panel group transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_45px_rgba(9,20,38,0.14)] dark:hover:shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
       <div class="flex items-start justify-between gap-3">
         <div class="flex min-w-0 items-start gap-3">
-          <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
-            ${iconToSvg(categoryIcon, 'h-5 w-5')}
+          <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[color:var(--panel-border)] bg-white/90 p-1 dark:bg-slate-900/65">
+            <img
+              src="${logoUrl}"
+              alt="${appName} logo"
+              class="h-full w-full rounded-md object-contain"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+            />
           </span>
           <div class="min-w-0">
             <h3 class="truncate text-base font-semibold text-[color:var(--text-strong)]">${appName}</h3>
             <p class="mt-1 text-sm text-[color:var(--text-muted)]">${appDescription}</p>
+            <p class="mt-1 inline-flex items-center gap-1 text-xs text-[color:var(--text-subtle)]">
+              ${iconToSvg(categoryIcon, 'h-3.5 w-3.5')}
+              ${escapeHtml(app.category)}
+            </p>
           </div>
         </div>
         ${app.needsVerification ? `<span class="chip bg-amber-100/80 text-amber-800 dark:bg-amber-400/10 dark:text-amber-200">${iconToSvg(TriangleAlert, 'mr-1 h-3.5 w-3.5')}Verify</span>` : ''}
