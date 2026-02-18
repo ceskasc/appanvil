@@ -446,7 +446,7 @@ const renderCatalogBody = (): string => {
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="chip">Live now: Script + CMD bundle</span>
-              <span class="chip">Roadmap: Native EXE installer</span>
+              <span class="chip">Native EXE: In development</span>
               <span class="chip">Safe: no auto-run in browser</span>
             </div>
             <div class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
@@ -460,14 +460,6 @@ const renderCatalogBody = (): string => {
           </div>
 
           <div class="grid gap-3 sm:grid-cols-2">
-            <article class="photo-feature sm:col-span-2">
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Modern workstation with laptop and software setup" loading="lazy" decoding="async" />
-              <div class="photo-overlay">
-                <p class="photo-tag">Deployment Ready</p>
-                <h3>Team-ready setup bundles</h3>
-              </div>
-            </article>
-
             <article class="photo-feature">
               <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Close-up hardware and engineering desk detail" loading="lazy" decoding="async" />
               <div class="photo-overlay">

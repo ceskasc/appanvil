@@ -1802,5 +1802,588 @@
     "homepage": "https://yazi-rs.github.io",
     "license": "oss",
     "needsVerification": true
+  },
+  {
+    "id": "zoom",
+    "name": "Zoom",
+    "description": "Video meetings and screen sharing for teams",
+    "category": "Communication",
+    "tags": [
+      "communication",
+      "popular"
+    ],
+    "popularity": 88,
+    "addedAt": "2026-03-04",
+    "icon": "video",
+    "providers": {
+      "winget": {
+        "packageId": "Zoom.Zoom",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "zoom",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "zoom",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://zoom.us",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "signal-desktop",
+    "name": "Signal Desktop",
+    "description": "Private messenger for secure conversations",
+    "category": "Communication",
+    "tags": [
+      "communication",
+      "privacy"
+    ],
+    "popularity": 77,
+    "addedAt": "2026-03-05",
+    "icon": "shield",
+    "providers": {
+      "winget": {
+        "packageId": "OpenWhisperSystems.Signal",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "signal",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "signal",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://signal.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "mozilla-thunderbird",
+    "name": "Mozilla Thunderbird",
+    "description": "Open-source email client with calendar support",
+    "category": "Communication",
+    "tags": [
+      "communication",
+      "email"
+    ],
+    "popularity": 70,
+    "addedAt": "2026-03-06",
+    "icon": "mail",
+    "providers": {
+      "winget": {
+        "packageId": "Mozilla.Thunderbird",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "thunderbird",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "thunderbird",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.thunderbird.net",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "whatsapp-desktop",
+    "name": "WhatsApp Desktop",
+    "description": "Desktop messaging client for WhatsApp",
+    "category": "Communication",
+    "tags": [
+      "communication"
+    ],
+    "popularity": 82,
+    "addedAt": "2026-03-07",
+    "icon": "message-circle",
+    "providers": {
+      "winget": {
+        "packageId": "WhatsApp.WhatsApp",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "whatsapp",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.whatsapp.com/download",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "element-desktop",
+    "name": "Element Desktop",
+    "description": "Matrix client for secure team communication",
+    "category": "Communication",
+    "tags": [
+      "communication",
+      "security"
+    ],
+    "popularity": 61,
+    "addedAt": "2026-03-08",
+    "icon": "messages-square",
+    "providers": {
+      "winget": {
+        "packageId": "Element.Element",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "element-desktop",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "element",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://element.io",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "epic-games-launcher",
+    "name": "Epic Games Launcher",
+    "description": "Game launcher and store client from Epic",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 86,
+    "addedAt": "2026-03-09",
+    "icon": "gamepad-2",
+    "providers": {
+      "winget": {
+        "packageId": "EpicGames.EpicGamesLauncher",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "epicgameslauncher",
+        "notes": ""
+      }
+    },
+    "homepage": "https://store.epicgames.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "gog-galaxy",
+    "name": "GOG GALAXY",
+    "description": "Game library manager by GOG",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 72,
+    "addedAt": "2026-03-10",
+    "icon": "joystick",
+    "providers": {
+      "winget": {
+        "packageId": "GOG.Galaxy",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "goggalaxy",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.gog.com/galaxy",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "ubisoft-connect",
+    "name": "Ubisoft Connect",
+    "description": "Ubisoft game launcher and account client",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 67,
+    "addedAt": "2026-03-11",
+    "icon": "gamepad",
+    "providers": {
+      "winget": {
+        "packageId": "Ubisoft.Connect",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "ubisoft-connect",
+        "notes": ""
+      }
+    },
+    "homepage": "https://ubisoftconnect.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "battle-net",
+    "name": "Battle.net",
+    "description": "Blizzard game launcher and updater",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 74,
+    "addedAt": "2026-03-12",
+    "icon": "swords",
+    "providers": {
+      "winget": {
+        "packageId": "Blizzard.BattleNet",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "battle.net",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.blizzard.com/apps/battle.net",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "heroic-games-launcher",
+    "name": "Heroic Games Launcher",
+    "description": "Open source launcher for Epic and GOG libraries",
+    "category": "Gaming",
+    "tags": [
+      "gaming",
+      "oss"
+    ],
+    "popularity": 59,
+    "addedAt": "2026-03-13",
+    "icon": "sword",
+    "providers": {
+      "winget": {
+        "packageId": "HeroicGamesLauncher.HeroicGamesLauncher",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "heroic",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://heroicgameslauncher.com",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "evernote",
+    "name": "Evernote",
+    "description": "Cross-device note taking and organization",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 73,
+    "addedAt": "2026-03-14",
+    "icon": "notebook",
+    "providers": {
+      "winget": {
+        "packageId": "Evernote.Evernote",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "evernote",
+        "notes": ""
+      }
+    },
+    "homepage": "https://evernote.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "obsidian",
+    "name": "Obsidian",
+    "description": "Markdown knowledge base and notes app",
+    "category": "Productivity",
+    "tags": [
+      "productivity",
+      "popular"
+    ],
+    "popularity": 83,
+    "addedAt": "2026-03-15",
+    "icon": "gem",
+    "providers": {
+      "winget": {
+        "packageId": "Obsidian.Obsidian",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "obsidian",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "obsidian",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://obsidian.md",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "joplin",
+    "name": "Joplin",
+    "description": "Open source notes and to-do manager",
+    "category": "Productivity",
+    "tags": [
+      "productivity",
+      "oss"
+    ],
+    "popularity": 66,
+    "addedAt": "2026-03-16",
+    "icon": "notebook-tabs",
+    "providers": {
+      "winget": {
+        "packageId": "Joplin.Joplin",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "joplin",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "joplin",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://joplinapp.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "keepassxc",
+    "name": "KeePassXC",
+    "description": "Offline password manager with encrypted vaults",
+    "category": "Security",
+    "tags": [
+      "security",
+      "oss"
+    ],
+    "popularity": 69,
+    "addedAt": "2026-03-17",
+    "icon": "key-round",
+    "providers": {
+      "winget": {
+        "packageId": "KeePassXCTeam.KeePassXC",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "keepassxc",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "keepassxc",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://keepassxc.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "wireguard",
+    "name": "WireGuard",
+    "description": "Fast modern VPN client for secure networking",
+    "category": "Security",
+    "tags": [
+      "security",
+      "network"
+    ],
+    "popularity": 63,
+    "addedAt": "2026-03-18",
+    "icon": "lock",
+    "providers": {
+      "winget": {
+        "packageId": "WireGuard.WireGuard",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "wireguard",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "wireguard",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.wireguard.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "everything-search",
+    "name": "Everything Search",
+    "description": "Instant local file and folder search utility",
+    "category": "Utilities",
+    "tags": [
+      "utilities",
+      "popular"
+    ],
+    "popularity": 79,
+    "addedAt": "2026-03-19",
+    "icon": "search",
+    "providers": {
+      "winget": {
+        "packageId": "voidtools.Everything",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "everything",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "everything",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.voidtools.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "winscp",
+    "name": "WinSCP",
+    "description": "SFTP and FTP client for secure file transfer",
+    "category": "Utilities",
+    "tags": [
+      "utilities",
+      "network"
+    ],
+    "popularity": 75,
+    "addedAt": "2026-03-20",
+    "icon": "file-up",
+    "providers": {
+      "winget": {
+        "packageId": "WinSCP.WinSCP",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "winscp",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "winscp",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://winscp.net",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "mpv-player",
+    "name": "mpv",
+    "description": "Lightweight media player focused on quality playback",
+    "category": "Media",
+    "tags": [
+      "media",
+      "oss"
+    ],
+    "popularity": 64,
+    "addedAt": "2026-03-21",
+    "icon": "film",
+    "providers": {
+      "winget": {
+        "packageId": "Mpv.net",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "mpv",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://mpv.io",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "docker-desktop",
+    "name": "Docker Desktop",
+    "description": "Local container development environment",
+    "category": "Developer Tools",
+    "tags": [
+      "developer-tools",
+      "popular"
+    ],
+    "popularity": 91,
+    "addedAt": "2026-03-22",
+    "icon": "container",
+    "providers": {
+      "winget": {
+        "packageId": "Docker.DockerDesktop",
+        "source": "winget",
+        "supportsSilent": false,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "docker-desktop",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "docker",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.docker.com/products/docker-desktop",
+    "license": "freeware",
+    "needsVerification": false
   }
 ]

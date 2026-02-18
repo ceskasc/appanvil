@@ -90,7 +90,7 @@ export const renderHeader = (route: AppRoute): string => `
         class="mt-3 hidden w-full flex-col gap-1.5 border-t border-[color:var(--panel-border)] pt-2 md:mt-0 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:gap-2 md:border-0 md:pt-0"
       >
         ${navLink('Apps', '#/', isNavActive(route, '#/'))}
-        ${navLink('Roadmap', '#/about', isNavActive(route, '#/about'))}
+        ${navLink('About', '#/about', isNavActive(route, '#/about'))}
       </nav>
     </div>
   </header>
