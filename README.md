@@ -43,7 +43,7 @@ The native custom EXE installer flow is planned as the next major delivery.
     <td width="50%" valign="top">
       <h3>Catalog and Selection</h3>
       <ul>
-        <li>81 curated applications across major categories</li>
+        <li>147 curated applications across major categories</li>
         <li>Provider mappings: Winget, Chocolatey, Scoop</li>
         <li>Fuzzy search, category/provider filters, sorting</li>
         <li>Selection cart with local persistence</li>
@@ -84,7 +84,6 @@ App uses hash routing and works safely on refresh in GitHub Pages:
 
 - `#/` catalog and selection
 - `#/generate` output workspace
-- `#/about` product and architecture details
 - `#/share/<token>` import by share token
 
 ## Run Locally

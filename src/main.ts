@@ -1,6 +1,5 @@
 import {
   AlertTriangle,
-  LayoutPanelLeft,
   LoaderCircle,
   ShoppingBag,
   SlidersHorizontal,
@@ -281,92 +280,6 @@ const renderGenerateBody = (): string => {
   })
 }
 
-const renderAboutView = (): string => `
-  <section class="space-y-5">
-    <section class="panel hero-shell max-w-6xl">
-      <div class="grid gap-5 xl:grid-cols-[1.15fr_1fr]">
-        <div>
-          <div class="flex items-center gap-3">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
-              ${iconToSvg(LayoutPanelLeft, 'h-5 w-5')}
-            </span>
-            <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">About AppAnvil</h1>
-          </div>
-          <p class="mt-3 text-sm text-[color:var(--text-muted)] md:text-base">
-            AppAnvil helps teams define one installation profile and reuse it across machines. The current experience focuses on trusted script/profile generation, while a native EXE runner is actively being prepared.
-          </p>
-          <div class="mt-4 grid gap-3 sm:grid-cols-2">
-            <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
-              <h2 class="text-sm font-semibold text-[color:var(--text-strong)]">What Exists Today</h2>
-              <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
-                <li>- Curated multi-provider catalog.</li>
-                <li>- Profile persistence and sharing tokens.</li>
-                <li>- Transparent output generation with no auto-execution.</li>
-              </ul>
-            </article>
-            <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
-              <h2 class="text-sm font-semibold text-[color:var(--text-strong)]">What Is Next</h2>
-              <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
-                <li>- Native AppAnvil EXE launcher.</li>
-                <li>- Guided visual install progress.</li>
-                <li>- Better diagnostics and install reports.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-
-        <div class="grid gap-3 sm:grid-cols-2">
-          <article class="photo-feature sm:col-span-2">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Development workspace with laptop and code editor" loading="lazy" decoding="async" />
-            <div class="photo-overlay">
-              <p class="photo-tag">Mission</p>
-              <h3>Reliable setup flow for every machine</h3>
-            </div>
-          </article>
-          <article class="photo-feature">
-            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Team collaboration around software planning" loading="lazy" decoding="async" />
-            <div class="photo-overlay">
-              <p class="photo-tag">Teams</p>
-              <h3>Consistent onboarding</h3>
-            </div>
-          </article>
-          <article class="photo-feature">
-            <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80" alt="Computer hardware and system performance setup" loading="lazy" decoding="async" />
-            <div class="photo-overlay">
-              <p class="photo-tag">Roadmap</p>
-              <h3>Native EXE execution layer</h3>
-            </div>
-          </article>
-        </div>
-      </div>
-      <p class="mt-3 text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
-        Images from Unsplash (royalty-free).
-      </p>
-    </section>
-
-    <section class="panel max-w-6xl">
-      <h2 class="text-lg font-semibold tracking-tight text-[color:var(--text-strong)]">Roadmap Detail</h2>
-      <div class="mt-3 grid gap-3 md:grid-cols-3">
-        <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
-          <p class="panel-caption">Phase 1</p>
-          <h3 class="mt-2 text-sm font-semibold text-[color:var(--text-strong)]">Profile Standardization</h3>
-          <p class="mt-2 text-sm text-[color:var(--text-muted)]">Lock profile schema and improve validation for long-term compatibility.</p>
-        </article>
-        <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
-          <p class="panel-caption">Phase 2</p>
-          <h3 class="mt-2 text-sm font-semibold text-[color:var(--text-strong)]">Installer UX</h3>
-          <p class="mt-2 text-sm text-[color:var(--text-muted)]">Ship branded progress UI and clearer success/failure diagnostics.</p>
-        </article>
-        <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
-          <p class="panel-caption">Phase 3</p>
-          <h3 class="mt-2 text-sm font-semibold text-[color:var(--text-strong)]">Native EXE</h3>
-          <p class="mt-2 text-sm text-[color:var(--text-muted)]">Activate one-click installer downloads directly from AppAnvil.</p>
-        </article>
-      </div>
-    </section>
-  </section>
-`
-
 const renderShareBody = (): string => {
   const state = store.getState()
 
@@ -461,18 +374,18 @@ const renderCatalogBody = (): string => {
 
           <div class="grid gap-3 sm:grid-cols-2">
             <article class="photo-feature">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Close-up hardware and engineering desk detail" loading="lazy" decoding="async" />
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1400&q=80" alt="Developer workstation with code editor and modern setup" loading="lazy" decoding="async" />
               <div class="photo-overlay">
-                <p class="photo-tag">Precision</p>
-                <h3>Mapped package IDs</h3>
+                <p class="photo-tag">Curated Catalog</p>
+                <h3>Accurate package mapping, cleaner setup flow</h3>
               </div>
             </article>
 
             <article class="photo-feature">
-              <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1200&q=80" alt="Minimal multi-display workspace setup" loading="lazy" decoding="async" />
+              <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1400&q=80" alt="Minimal premium desk with modern monitor and keyboard" loading="lazy" decoding="async" />
               <div class="photo-overlay">
                 <p class="photo-tag">Future EXE</p>
-                <h3>One-click visual installer</h3>
+                <h3>One-click branded installer experience</h3>
               </div>
             </article>
           </div>
@@ -601,9 +514,6 @@ const renderRouteView = (): string => {
   }
   if (currentRoute.kind === 'generate') {
     return renderGenerateBody()
-  }
-  if (currentRoute.kind === 'about') {
-    return renderAboutView()
   }
   if (currentRoute.kind === 'share') {
     return renderShareBody()

@@ -1,7 +1,6 @@
 export type AppRoute =
   | { kind: 'home' }
   | { kind: 'generate' }
-  | { kind: 'about' }
   | { kind: 'share'; token: string | null }
   | { kind: 'not-found'; path: string }
 
@@ -26,7 +25,7 @@ export const parseRoute = (rawHash: string = window.location.hash): AppRoute => 
   }
 
   if (path === '/about') {
-    return { kind: 'about' }
+    return { kind: 'home' }
   }
 
   if (path === '/share') {

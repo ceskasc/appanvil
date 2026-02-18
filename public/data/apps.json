@@ -2385,5 +2385,2143 @@
     "homepage": "https://www.docker.com/products/docker-desktop",
     "license": "freeware",
     "needsVerification": false
+  },
+  {
+    "id": "chromium-browser",
+    "name": "Chromium",
+    "description": "Open-source browser project behind Chromium-based browsers",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 65,
+    "addedAt": "2026-03-24",
+    "icon": "chromium-browser",
+    "providers": {
+      "winget": {
+        "packageId": "Chromium.Chromium",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "chromium",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "chromium",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.chromium.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "waterfox",
+    "name": "Waterfox",
+    "description": "Privacy-focused browser based on Firefox",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 59,
+    "addedAt": "2026-03-25",
+    "icon": "waterfox",
+    "providers": {
+      "winget": {
+        "packageId": "Waterfox.Waterfox",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "waterfox",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "waterfox",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.waterfox.net",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "floorp-browser",
+    "name": "Floorp Browser",
+    "description": "Customizable Firefox-based browser",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 54,
+    "addedAt": "2026-03-26",
+    "icon": "floorp-browser",
+    "providers": {
+      "winget": {
+        "packageId": "Ablaze.Floorp",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "floorp",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "floorp",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://floorp.app",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "pale-moon",
+    "name": "Pale Moon",
+    "description": "Customizable browser focused on classic UI and efficiency",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 46,
+    "addedAt": "2026-03-27",
+    "icon": "pale-moon",
+    "providers": {
+      "winget": {
+        "packageId": "MoonchildProductions.PaleMoon",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "palemoon",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "palemoon",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.palemoon.org",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "maxthon-browser",
+    "name": "Maxthon Browser",
+    "description": "Cloud-enabled browser for multitasking workflows",
+    "category": "Browsers",
+    "tags": [
+      "browsers"
+    ],
+    "popularity": 41,
+    "addedAt": "2026-03-28",
+    "icon": "maxthon-browser",
+    "providers": {
+      "winget": {
+        "packageId": "Maxthon.Maxthon",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "maxthon",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "maxthon",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.maxthon.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "skype",
+    "name": "Skype",
+    "description": "Voice, video, and chat communication client",
+    "category": "Communication",
+    "tags": [
+      "communication"
+    ],
+    "popularity": 64,
+    "addedAt": "2026-03-29",
+    "icon": "skype",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.Skype",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "skype",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "skype",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.skype.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "viber",
+    "name": "Viber",
+    "description": "Cross-platform messaging and calls",
+    "category": "Communication",
+    "tags": [
+      "communication"
+    ],
+    "popularity": 58,
+    "addedAt": "2026-03-30",
+    "icon": "viber",
+    "providers": {
+      "winget": {
+        "packageId": "Viber.Viber",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "viber",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "viber",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.viber.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "cisco-webex",
+    "name": "Cisco Webex",
+    "description": "Enterprise video meeting and collaboration platform",
+    "category": "Communication",
+    "tags": [
+      "communication"
+    ],
+    "popularity": 72,
+    "addedAt": "2026-03-31",
+    "icon": "cisco-webex",
+    "providers": {
+      "winget": {
+        "packageId": "Cisco.Webex",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "webex-meetings",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "webex",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.webex.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "mattermost-desktop",
+    "name": "Mattermost Desktop",
+    "description": "Open-source team chat client",
+    "category": "Communication",
+    "tags": [
+      "communication"
+    ],
+    "popularity": 56,
+    "addedAt": "2026-04-01",
+    "icon": "mattermost-desktop",
+    "providers": {
+      "winget": {
+        "packageId": "Mattermost.MattermostDesktop",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "mattermost-desktop",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "mattermost",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://mattermost.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "ferdium",
+    "name": "Ferdium",
+    "description": "Unified messaging desktop workspace",
+    "category": "Communication",
+    "tags": [
+      "communication"
+    ],
+    "popularity": 52,
+    "addedAt": "2026-04-02",
+    "icon": "ferdium",
+    "providers": {
+      "winget": {
+        "packageId": "Ferdium.Ferdium",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "ferdium",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "ferdium",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://ferdium.org",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "intellij-idea-community",
+    "name": "IntelliJ IDEA Community",
+    "description": "JetBrains IDE for JVM and general software development",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 88,
+    "addedAt": "2026-04-03",
+    "icon": "intellij-idea-community",
+    "providers": {
+      "winget": {
+        "packageId": "JetBrains.IntelliJIDEA.Community",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "intellijidea-community",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "idea",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.jetbrains.com/idea",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "pycharm-community",
+    "name": "PyCharm Community",
+    "description": "Python IDE from JetBrains",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 84,
+    "addedAt": "2026-04-04",
+    "icon": "pycharm-community",
+    "providers": {
+      "winget": {
+        "packageId": "JetBrains.PyCharm.Community",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "pycharm-community",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "pycharm",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.jetbrains.com/pycharm",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "webstorm",
+    "name": "WebStorm",
+    "description": "JavaScript and TypeScript IDE by JetBrains",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 79,
+    "addedAt": "2026-04-05",
+    "icon": "webstorm",
+    "providers": {
+      "winget": {
+        "packageId": "JetBrains.WebStorm",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "webstorm",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "webstorm",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.jetbrains.com/webstorm",
+    "license": "commercial",
+    "needsVerification": false
+  },
+  {
+    "id": "rider-ide",
+    "name": "JetBrains Rider",
+    "description": ".NET and game development IDE",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 71,
+    "addedAt": "2026-04-06",
+    "icon": "rider-ide",
+    "providers": {
+      "winget": {
+        "packageId": "JetBrains.Rider",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "rider",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "rider",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.jetbrains.com/rider",
+    "license": "commercial",
+    "needsVerification": false
+  },
+  {
+    "id": "datagrip",
+    "name": "DataGrip",
+    "description": "Professional SQL IDE for database development",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 68,
+    "addedAt": "2026-04-07",
+    "icon": "datagrip",
+    "providers": {
+      "winget": {
+        "packageId": "JetBrains.DataGrip",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "datagrip",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "datagrip",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.jetbrains.com/datagrip",
+    "license": "commercial",
+    "needsVerification": false
+  },
+  {
+    "id": "android-studio",
+    "name": "Android Studio",
+    "description": "Official IDE for Android app development",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 82,
+    "addedAt": "2026-04-08",
+    "icon": "android-studio",
+    "providers": {
+      "winget": {
+        "packageId": "Google.AndroidStudio",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "androidstudio",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "android-studio",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://developer.android.com/studio",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "visual-studio-2022-community",
+    "name": "Visual Studio 2022 Community",
+    "description": "Full-featured IDE for .NET and C++ development",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 86,
+    "addedAt": "2026-04-09",
+    "icon": "visual-studio-2022-community",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.VisualStudio.2022.Community",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "visualstudio2022community",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "visual-studio-community",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://visualstudio.microsoft.com/vs/community",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "dotnet-sdk-8",
+    "name": ".NET SDK 8",
+    "description": "SDK for building modern .NET applications",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 80,
+    "addedAt": "2026-04-10",
+    "icon": "dotnet-sdk-8",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.DotNet.SDK.8",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "dotnet-sdk",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "dotnet-sdk",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://dotnet.microsoft.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "python-3-12",
+    "name": "Python 3.12",
+    "description": "General-purpose programming language runtime",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "popular",
+      "developer-tools"
+    ],
+    "popularity": 92,
+    "addedAt": "2026-04-11",
+    "icon": "python-3-12",
+    "providers": {
+      "winget": {
+        "packageId": "Python.Python.3.12",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "python",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "python",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.python.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "rustup-init",
+    "name": "Rustup",
+    "description": "Rust toolchain installer and version manager",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 74,
+    "addedAt": "2026-04-12",
+    "icon": "rustup-init",
+    "providers": {
+      "winget": {
+        "packageId": "Rustlang.Rustup",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "rustup.install",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "rustup",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://rustup.rs",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "cmake",
+    "name": "CMake",
+    "description": "Cross-platform build system generator",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 77,
+    "addedAt": "2026-04-13",
+    "icon": "cmake",
+    "providers": {
+      "winget": {
+        "packageId": "Kitware.CMake",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "cmake",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "cmake",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://cmake.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "llvm-toolchain",
+    "name": "LLVM Toolchain",
+    "description": "Compiler toolchain including clang and lld",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 63,
+    "addedAt": "2026-04-14",
+    "icon": "llvm-toolchain",
+    "providers": {
+      "winget": {
+        "packageId": "LLVM.LLVM",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "llvm",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "llvm",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://llvm.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "terraform-cli",
+    "name": "Terraform CLI",
+    "description": "Infrastructure as code provisioning tool",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 76,
+    "addedAt": "2026-04-15",
+    "icon": "terraform-cli",
+    "providers": {
+      "winget": {
+        "packageId": "Hashicorp.Terraform",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "terraform",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "terraform",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.terraform.io",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "kubernetes-kubectl",
+    "name": "kubectl",
+    "description": "Command-line tool for Kubernetes clusters",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 75,
+    "addedAt": "2026-04-16",
+    "icon": "kubernetes-kubectl",
+    "providers": {
+      "winget": {
+        "packageId": "Kubernetes.kubectl",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "kubernetes-cli",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "kubectl",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://kubernetes.io/docs/reference/kubectl",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "helm",
+    "name": "Helm",
+    "description": "Kubernetes package manager",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 69,
+    "addedAt": "2026-04-17",
+    "icon": "helm",
+    "providers": {
+      "winget": {
+        "packageId": "Helm.Helm",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "kubernetes-helm",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "helm",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://helm.sh",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "minikube",
+    "name": "Minikube",
+    "description": "Run Kubernetes locally for development",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 61,
+    "addedAt": "2026-04-18",
+    "icon": "minikube",
+    "providers": {
+      "winget": {
+        "packageId": "Kubernetes.minikube",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "minikube",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "minikube",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://minikube.sigs.k8s.io",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "gitkraken",
+    "name": "GitKraken",
+    "description": "Visual Git client with collaboration workflows",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 67,
+    "addedAt": "2026-04-19",
+    "icon": "gitkraken",
+    "providers": {
+      "winget": {
+        "packageId": "Axosoft.GitKraken",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "gitkraken",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "gitkraken",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.gitkraken.com",
+    "license": "commercial",
+    "needsVerification": false
+  },
+  {
+    "id": "tortoisegit",
+    "name": "TortoiseGit",
+    "description": "Windows shell interface for Git",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 60,
+    "addedAt": "2026-04-20",
+    "icon": "tortoisegit",
+    "providers": {
+      "winget": {
+        "packageId": "TortoiseGit.TortoiseGit",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "tortoisegit",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "tortoisegit",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://tortoisegit.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "sqlitebrowser",
+    "name": "DB Browser for SQLite",
+    "description": "Visual editor for SQLite database files",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 66,
+    "addedAt": "2026-04-21",
+    "icon": "sqlitebrowser",
+    "providers": {
+      "winget": {
+        "packageId": "SQLiteBrowser.SQLiteBrowser",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "sqlitebrowser",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "sqlitebrowser",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://sqlitebrowser.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "pgadmin4",
+    "name": "pgAdmin 4",
+    "description": "PostgreSQL administration and query tool",
+    "category": "Developer Tools",
+    "tags": [
+      "dev",
+      "developer-tools"
+    ],
+    "popularity": 70,
+    "addedAt": "2026-04-22",
+    "icon": "pgadmin4",
+    "providers": {
+      "winget": {
+        "packageId": "PostgreSQL.pgAdmin",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "pgadmin4",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "pgadmin4",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.pgadmin.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "filezilla",
+    "name": "FileZilla",
+    "description": "FTP/SFTP client for file transfers",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 76,
+    "addedAt": "2026-04-23",
+    "icon": "filezilla",
+    "providers": {
+      "winget": {
+        "packageId": "FileZilla.FileZilla",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "filezilla",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "filezilla",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://filezilla-project.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "qbittorrent",
+    "name": "qBittorrent",
+    "description": "Open-source torrent client",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 73,
+    "addedAt": "2026-04-24",
+    "icon": "qbittorrent",
+    "providers": {
+      "winget": {
+        "packageId": "qBittorrent.qBittorrent",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "qbittorrent",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "qbittorrent",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.qbittorrent.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "rufus",
+    "name": "Rufus",
+    "description": "Bootable USB creator for Windows images",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 71,
+    "addedAt": "2026-04-25",
+    "icon": "rufus",
+    "providers": {
+      "winget": {
+        "packageId": "Rufus.Rufus",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "rufus",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "rufus",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://rufus.ie",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "balena-etcher",
+    "name": "balenaEtcher",
+    "description": "Flash OS images to SD cards and USB drives",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 67,
+    "addedAt": "2026-04-26",
+    "icon": "balena-etcher",
+    "providers": {
+      "winget": {
+        "packageId": "Balena.Etcher",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "etcher",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "etcher",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://etcher.balena.io",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "ventoy",
+    "name": "Ventoy",
+    "description": "Create multi-ISO bootable USB drives",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 68,
+    "addedAt": "2026-04-27",
+    "icon": "ventoy",
+    "providers": {
+      "winget": {
+        "packageId": "Ventoy.Ventoy",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "ventoy",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "ventoy",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.ventoy.net",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "treesize-free",
+    "name": "TreeSize Free",
+    "description": "Disk usage analyzer for Windows drives",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 62,
+    "addedAt": "2026-04-28",
+    "icon": "treesize-free",
+    "providers": {
+      "winget": {
+        "packageId": "JAMSoftware.TreeSize.Free",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "treesizefree",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "treesize-free",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.jam-software.com/treesize_free",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "windirstat",
+    "name": "WinDirStat",
+    "description": "Visual disk usage statistics viewer",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 66,
+    "addedAt": "2026-04-29",
+    "icon": "windirstat",
+    "providers": {
+      "winget": {
+        "packageId": "WinDirStat.WinDirStat",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "windirstat",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "windirstat",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://windirstat.net",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "teamviewer",
+    "name": "TeamViewer",
+    "description": "Remote desktop and support software",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 74,
+    "addedAt": "2026-04-30",
+    "icon": "teamviewer",
+    "providers": {
+      "winget": {
+        "packageId": "TeamViewer.TeamViewer",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "teamviewer",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "teamviewer",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.teamviewer.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "anydesk",
+    "name": "AnyDesk",
+    "description": "Fast remote desktop application",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 72,
+    "addedAt": "2026-05-01",
+    "icon": "anydesk",
+    "providers": {
+      "winget": {
+        "packageId": "AnyDeskSoftwareGmbH.AnyDesk",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "anydesk",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "anydesk",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://anydesk.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "cpu-z",
+    "name": "CPU-Z",
+    "description": "System hardware information utility",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 61,
+    "addedAt": "2026-05-02",
+    "icon": "cpu-z",
+    "providers": {
+      "winget": {
+        "packageId": "CPUID.CPU-Z",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "cpu-z",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "cpu-z",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.cpuid.com/softwares/cpu-z.html",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "hwinfo",
+    "name": "HWiNFO",
+    "description": "Detailed system diagnostics and monitoring",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 63,
+    "addedAt": "2026-05-03",
+    "icon": "hwinfo",
+    "providers": {
+      "winget": {
+        "packageId": "REALiX.HWiNFO",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "hwinfo",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "hwinfo",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.hwinfo.com",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "crystaldiskinfo",
+    "name": "CrystalDiskInfo",
+    "description": "Drive health and SMART monitoring tool",
+    "category": "Utilities",
+    "tags": [
+      "utilities"
+    ],
+    "popularity": 64,
+    "addedAt": "2026-05-04",
+    "icon": "crystaldiskinfo",
+    "providers": {
+      "winget": {
+        "packageId": "CrystalDewWorld.CrystalDiskInfo",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "crystaldiskinfo",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "crystaldiskinfo",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://crystalmark.info/en/software/crystaldiskinfo",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "veracrypt",
+    "name": "VeraCrypt",
+    "description": "Disk encryption and secure volume manager",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 72,
+    "addedAt": "2026-05-05",
+    "icon": "veracrypt",
+    "providers": {
+      "winget": {
+        "packageId": "IDRIX.VeraCrypt",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "veracrypt",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "veracrypt",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.veracrypt.fr",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "nordvpn",
+    "name": "NordVPN",
+    "description": "VPN client for encrypted internet traffic",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 78,
+    "addedAt": "2026-05-06",
+    "icon": "nordvpn",
+    "providers": {
+      "winget": {
+        "packageId": "NordSecurity.NordVPN",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "nordvpn",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "nordvpn",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://nordvpn.com",
+    "license": "commercial",
+    "needsVerification": false
+  },
+  {
+    "id": "mullvad-vpn",
+    "name": "Mullvad VPN",
+    "description": "Privacy-first VPN service client",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 65,
+    "addedAt": "2026-05-07",
+    "icon": "mullvad-vpn",
+    "providers": {
+      "winget": {
+        "packageId": "MullvadVPN.MullvadVPN",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "mullvad-vpn",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "mullvad",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://mullvad.net",
+    "license": "commercial",
+    "needsVerification": false
+  },
+  {
+    "id": "avast-free-antivirus",
+    "name": "Avast Free Antivirus",
+    "description": "Endpoint security and malware protection",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 60,
+    "addedAt": "2026-05-08",
+    "icon": "avast-free-antivirus",
+    "providers": {
+      "winget": {
+        "packageId": "AVASTSoftware.AvastFreeAntivirus",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "avastfreeantivirus",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "avast-free-antivirus",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.avast.com/free-antivirus-download",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "adguard",
+    "name": "AdGuard",
+    "description": "System-wide ad and tracker blocking tool",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 57,
+    "addedAt": "2026-05-09",
+    "icon": "adguard",
+    "providers": {
+      "winget": {
+        "packageId": "AdGuard.AdGuard",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "adguard",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "adguard",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://adguard.com",
+    "license": "commercial",
+    "needsVerification": false
+  },
+  {
+    "id": "glasswire",
+    "name": "GlassWire",
+    "description": "Network monitoring and firewall visualization",
+    "category": "Security",
+    "tags": [
+      "security"
+    ],
+    "popularity": 53,
+    "addedAt": "2026-05-10",
+    "icon": "glasswire",
+    "providers": {
+      "winget": {
+        "packageId": "GlassWire.GlassWire",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "glasswire",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "glasswire",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.glasswire.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "kodi",
+    "name": "Kodi",
+    "description": "Open-source home theater media center",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 62,
+    "addedAt": "2026-05-11",
+    "icon": "kodi",
+    "providers": {
+      "winget": {
+        "packageId": "Kodi.Kodi",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "kodi",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "kodi",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://kodi.tv",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "foobar2000",
+    "name": "foobar2000",
+    "description": "Lightweight advanced music player",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 58,
+    "addedAt": "2026-05-12",
+    "icon": "foobar2000",
+    "providers": {
+      "winget": {
+        "packageId": "PeterPawlowski.foobar2000",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "foobar2000",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "foobar2000",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.foobar2000.org",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "musicbee",
+    "name": "MusicBee",
+    "description": "Music manager and player for large libraries",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 56,
+    "addedAt": "2026-05-13",
+    "icon": "musicbee",
+    "providers": {
+      "winget": {
+        "packageId": "MusicBee.MusicBee",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "musicbee",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "musicbee",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://getmusicbee.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "inkscape",
+    "name": "Inkscape",
+    "description": "Open-source vector graphics editor",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 73,
+    "addedAt": "2026-05-14",
+    "icon": "inkscape",
+    "providers": {
+      "winget": {
+        "packageId": "Inkscape.Inkscape",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "inkscape",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "inkscape",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://inkscape.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "krita",
+    "name": "Krita",
+    "description": "Digital painting and illustration app",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 69,
+    "addedAt": "2026-05-15",
+    "icon": "krita",
+    "providers": {
+      "winget": {
+        "packageId": "KDE.Krita",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "krita",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "krita",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://krita.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "paint-net",
+    "name": "Paint.NET",
+    "description": "Image and photo editing software",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 74,
+    "addedAt": "2026-05-16",
+    "icon": "paint-net",
+    "providers": {
+      "winget": {
+        "packageId": "dotPDNLLC.paintdotnet",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "paint.net",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "paint.net",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.getpaint.net",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "davinci-resolve",
+    "name": "DaVinci Resolve",
+    "description": "Professional video editing and color grading suite",
+    "category": "Media",
+    "tags": [
+      "media"
+    ],
+    "popularity": 79,
+    "addedAt": "2026-05-17",
+    "icon": "davinci-resolve",
+    "providers": {
+      "winget": {
+        "packageId": "BlackmagicDesign.DaVinciResolve",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "davinciresolve",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "davinci-resolve",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "ea-app",
+    "name": "EA App",
+    "description": "Electronic Arts game launcher client",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 70,
+    "addedAt": "2026-05-18",
+    "icon": "ea-app",
+    "providers": {
+      "winget": {
+        "packageId": "ElectronicArts.EADesktop",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "ea-app",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "ea-app",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.ea.com/ea-app",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "riot-client",
+    "name": "Riot Client",
+    "description": "Launcher for Riot Games titles",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 68,
+    "addedAt": "2026-05-19",
+    "icon": "riot-client",
+    "providers": {
+      "winget": {
+        "packageId": "RiotGames.RiotClient",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "riot-client",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "riot-client",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.riotgames.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "minecraft-launcher",
+    "name": "Minecraft Launcher",
+    "description": "Official launcher for Minecraft editions",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 81,
+    "addedAt": "2026-05-20",
+    "icon": "minecraft-launcher",
+    "providers": {
+      "winget": {
+        "packageId": "Mojang.MinecraftLauncher",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "minecraft-launcher",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "minecraft",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.minecraft.net/download",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "itch-desktop",
+    "name": "itch.io Desktop",
+    "description": "Indie game platform desktop app",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 52,
+    "addedAt": "2026-05-21",
+    "icon": "itch-desktop",
+    "providers": {
+      "winget": {
+        "packageId": "ItchIo.Itch",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "itch",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "itch",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://itch.io/app",
+    "license": "oss",
+    "needsVerification": true
+  },
+  {
+    "id": "parsec",
+    "name": "Parsec",
+    "description": "Low-latency remote gaming and desktop streaming",
+    "category": "Gaming",
+    "tags": [
+      "gaming"
+    ],
+    "popularity": 63,
+    "addedAt": "2026-05-22",
+    "icon": "parsec",
+    "providers": {
+      "winget": {
+        "packageId": "Parsec.Parsec",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "parsec",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "parsec",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://parsec.app",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "microsoft-onenote",
+    "name": "Microsoft OneNote",
+    "description": "Digital notebook for notes and planning",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 78,
+    "addedAt": "2026-05-23",
+    "icon": "microsoft-onenote",
+    "providers": {
+      "winget": {
+        "packageId": "Microsoft.OneNote",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "onenote",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "onenote",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.onenote.com",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "calibre",
+    "name": "Calibre",
+    "description": "E-book library manager and reader utility",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 67,
+    "addedAt": "2026-05-24",
+    "icon": "calibre",
+    "providers": {
+      "winget": {
+        "packageId": "calibre.calibre",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "calibre",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "calibre",
+        "bucket": "main",
+        "notes": ""
+      }
+    },
+    "homepage": "https://calibre-ebook.com",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "zotero",
+    "name": "Zotero",
+    "description": "Reference manager for research workflows",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 64,
+    "addedAt": "2026-05-25",
+    "icon": "zotero",
+    "providers": {
+      "winget": {
+        "packageId": "DigitalScholar.Zotero",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "zotero",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "zotero",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.zotero.org",
+    "license": "oss",
+    "needsVerification": false
+  },
+  {
+    "id": "foxit-reader",
+    "name": "Foxit PDF Reader",
+    "description": "PDF reader and annotation tool",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 69,
+    "addedAt": "2026-05-26",
+    "icon": "foxit-reader",
+    "providers": {
+      "winget": {
+        "packageId": "Foxit.FoxitReader",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "foxitreader",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "foxit-reader",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://www.foxit.com/pdf-reader",
+    "license": "freeware",
+    "needsVerification": false
+  },
+  {
+    "id": "adobe-acrobat-reader",
+    "name": "Adobe Acrobat Reader",
+    "description": "Popular PDF viewing and form filling software",
+    "category": "Productivity",
+    "tags": [
+      "popular",
+      "productivity"
+    ],
+    "popularity": 82,
+    "addedAt": "2026-05-27",
+    "icon": "adobe-acrobat-reader",
+    "providers": {
+      "winget": {
+        "packageId": "Adobe.Acrobat.Reader.64-bit",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "adobereader",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "adobe-reader",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://get.adobe.com/reader",
+    "license": "freeware",
+    "needsVerification": true
+  },
+  {
+    "id": "clickup-desktop",
+    "name": "ClickUp Desktop",
+    "description": "Task and project management desktop client",
+    "category": "Productivity",
+    "tags": [
+      "productivity"
+    ],
+    "popularity": 61,
+    "addedAt": "2026-05-28",
+    "icon": "clickup-desktop",
+    "providers": {
+      "winget": {
+        "packageId": "ClickUp.ClickUp",
+        "source": "winget",
+        "supportsSilent": true,
+        "notes": ""
+      },
+      "choco": {
+        "packageId": "clickup",
+        "notes": ""
+      },
+      "scoop": {
+        "packageId": "clickup",
+        "bucket": "extras",
+        "notes": ""
+      }
+    },
+    "homepage": "https://clickup.com/download",
+    "license": "freeware",
+    "needsVerification": true
   }
 ]
