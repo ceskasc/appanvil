@@ -1,4 +1,4 @@
-import { ClipboardList, Link2, Trash2, createElement } from 'lucide'
+import { Download, createElement } from 'lucide'
 import type { IconNode } from 'lucide'
 import type { CatalogApp } from '../../data/schema'
 
@@ -93,23 +93,14 @@ export const renderCartPanel = ({
       }
 
       <div class="grid gap-2">
-        <a href="#/generate" class="btn-primary w-full justify-center">
-          ${iconToSvg(ClipboardList, 'h-4 w-4')}
-          Get My Installer
-        </a>
-
-        <button type="button" data-action="copy-share-link" class="btn-ghost w-full justify-center">
-          ${iconToSvg(Link2, 'h-4 w-4')}
-          Create Share Link
-        </button>
-
         <button
           type="button"
-          data-action="clear-selection"
-          class="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-md border border-rose-200 bg-rose-50 px-3.5 py-2 text-sm font-semibold text-rose-700 transition-colors hover:bg-rose-100"
+          data-action="download-home-installer"
+          ${selectedApps.length === 0 ? 'disabled' : ''}
+          class="btn-primary w-full justify-center ${selectedApps.length === 0 ? 'pointer-events-none opacity-60' : ''}"
         >
-          ${iconToSvg(Trash2, 'h-4 w-4')}
-          Clear All
+          ${iconToSvg(Download, 'h-4 w-4')}
+          Download Installer (.cmd)
         </button>
       </div>
 

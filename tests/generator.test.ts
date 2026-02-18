@@ -143,9 +143,46 @@ describe('generator', () => {
 
     const output = generateInstallOutputs([app], DEFAULT_GENERATOR_OPTIONS)
 
-    expect(output.installerCmd).toContain('call :install "Google Chrome"')
     expect(output.installerCmd).toContain(
-      'install --id Google.Chrome --exact --accept-source-agreements --accept-package-agreements --silent',
+      'call :install "Google Chrome" "winget" "Google.Chrome"',
+    )
+    expect(output.installerCmd).toContain(
+      'winget install --id "%PKG%" --exact --accept-source-agreements --accept-package-agreements',
+    )
+  })
+
+  it('falls back to choco or scoop installers when winget is unavailable', () => {
+    const msStoreWithChoco = createApp('store-app', 'Store App', {
+      winget: {
+        packageId: 'Vendor.StoreApp',
+        source: 'msstore',
+        supportsSilent: false,
+        notes: '',
+      },
+      choco: {
+        packageId: 'vendor-store-app',
+        notes: '',
+      },
+    })
+
+    const scoopOnly = createApp('scoop-only', 'Scoop App', {
+      scoop: {
+        packageId: 'vendor-scoop-app',
+        bucket: 'extras',
+        notes: '',
+      },
+    })
+
+    const output = generateInstallOutputs(
+      [msStoreWithChoco, scoopOnly],
+      DEFAULT_GENERATOR_OPTIONS,
+    )
+
+    expect(output.installerCmd).toContain(
+      'call :install "Store App" "choco" "vendor-store-app"',
+    )
+    expect(output.installerCmd).toContain(
+      'call :install "Scoop App" "scoop" "vendor-scoop-app"',
     )
   })
 })

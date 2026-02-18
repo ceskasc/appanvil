@@ -278,7 +278,6 @@ const renderGenerateBody = (): string => {
     selectedApps,
     outputs,
     activeTab,
-    options: state.generatorOptions,
   })
 }
 
@@ -622,6 +621,11 @@ const wireHomeInteractions = (): void => {
 
     if (action === 'copy-share-link') {
       void copyShareLink()
+      return
+    }
+
+    if (action === 'download-home-installer') {
+      downloadGenerateOutput('installer')
       return
     }
 
