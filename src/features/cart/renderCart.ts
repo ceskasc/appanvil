@@ -53,7 +53,7 @@ export const renderCartPanel = ({
       </div>
 
       <p class="text-xs text-[color:var(--text-subtle)]">
-        Native EXE installer is in progress. For now, download the command bundle.
+        Native EXE download is coming soon. Profile export is temporarily disabled.
       </p>
 
       ${
@@ -95,12 +95,11 @@ export const renderCartPanel = ({
       <div class="grid gap-2">
         <button
           type="button"
-          data-action="download-home-installer"
-          ${selectedApps.length === 0 ? 'disabled' : ''}
-          class="btn-primary w-full justify-center ${selectedApps.length === 0 ? 'pointer-events-none opacity-60' : ''}"
+          disabled
+          class="btn-primary w-full justify-center pointer-events-none opacity-60"
         >
           ${iconToSvg(Download, 'h-4 w-4')}
-          Download Starter Bundle (.cmd)
+          Download Coming Soon
         </button>
       </div>
 

@@ -5,17 +5,17 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: #060b15;
-  --panel-surface: rgba(10, 18, 31, 0.84);
-  --panel-soft: rgba(21, 35, 58, 0.58);
-  --panel-border: rgba(133, 170, 221, 0.24);
-  --focus-ring: rgba(91, 190, 255, 0.45);
-  --accent-strong: #63b8ff;
-  --accent-soft: rgba(99, 184, 255, 0.14);
-  --text-strong: #e6f0ff;
-  --text-muted: #b8cae6;
-  --text-subtle: #7f99bd;
-  color-scheme: dark;
+  --bg-base: #edf2fb;
+  --panel-surface: rgba(255, 255, 255, 0.84);
+  --panel-soft: rgba(236, 244, 255, 0.78);
+  --panel-border: rgba(113, 147, 196, 0.34);
+  --focus-ring: rgba(45, 125, 231, 0.4);
+  --accent-strong: #226ed8;
+  --accent-soft: rgba(34, 110, 216, 0.12);
+  --text-strong: #132844;
+  --text-muted: #3f5e82;
+  --text-subtle: #6985aa;
+  color-scheme: light;
 }
 
 @layer base {
@@ -33,7 +33,7 @@
 
   code {
     font-family: 'IBM Plex Mono', monospace;
-    @apply rounded bg-[color:var(--panel-soft)] px-1.5 py-0.5 text-[0.84em] text-sky-100;
+    @apply rounded bg-[color:var(--panel-soft)] px-1.5 py-0.5 text-[0.84em] text-[color:var(--text-strong)];
   }
 
   ::selection {
@@ -47,7 +47,7 @@
   }
 
   .panel {
-    @apply glass rounded-xl p-4 shadow-[0_16px_40px_rgba(2,10,20,0.45)] md:p-5;
+    @apply glass rounded-xl p-4 shadow-[0_10px_30px_rgba(26,56,100,0.12)] md:p-5;
   }
 
   .panel-title {
@@ -59,7 +59,7 @@
   }
 
   .header-shell {
-    @apply border-[color:var(--panel-border)] bg-[linear-gradient(130deg,rgba(18,30,49,0.72),rgba(8,15,26,0.86))];
+    @apply border-[color:var(--panel-border)] bg-[linear-gradient(130deg,rgba(246,251,255,0.92),rgba(233,243,255,0.95))];
   }
 
   .nav-pill {
@@ -71,7 +71,7 @@
   }
 
   .btn-primary {
-    @apply focus-ring inline-flex items-center gap-2 rounded-lg bg-[color:var(--accent-strong)] px-3.5 py-2 text-sm font-semibold text-slate-950 transition-colors hover:brightness-105;
+    @apply focus-ring inline-flex items-center gap-2 rounded-lg bg-[color:var(--accent-strong)] px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:brightness-105;
   }
 
   .btn-ghost {
@@ -125,8 +125,8 @@
   .hero-shell {
     @apply overflow-hidden;
     background:
-      radial-gradient(circle at 18% 12%, rgba(78, 164, 255, 0.2), transparent 38%),
-      radial-gradient(circle at 84% 10%, rgba(83, 155, 255, 0.14), transparent 42%);
+      radial-gradient(circle at 18% 12%, rgba(75, 152, 255, 0.2), transparent 38%),
+      radial-gradient(circle at 84% 10%, rgba(98, 168, 255, 0.15), transparent 42%);
   }
 
   .photo-feature {
@@ -145,9 +145,9 @@
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(5, 10, 19, 0.84) 0%,
-      rgba(5, 10, 19, 0.28) 55%,
-      rgba(5, 10, 19, 0.05) 100%
+      rgba(14, 32, 58, 0.68) 0%,
+      rgba(14, 32, 58, 0.2) 55%,
+      rgba(14, 32, 58, 0.04) 100%
     );
   }
 
@@ -175,20 +175,20 @@
 .aurora {
   z-index: 0;
   background:
-    radial-gradient(circle at 15% 12%, rgba(85, 158, 255, 0.18), transparent 42%),
-    radial-gradient(circle at 80% 8%, rgba(62, 118, 199, 0.14), transparent 45%);
+    radial-gradient(circle at 15% 12%, rgba(108, 173, 255, 0.24), transparent 42%),
+    radial-gradient(circle at 80% 8%, rgba(127, 171, 235, 0.2), transparent 45%);
 }
 
 .surface-grid {
   z-index: 0;
   background-image:
-    linear-gradient(to right, rgba(93, 126, 167, 0.14) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(93, 126, 167, 0.14) 1px, transparent 1px);
+    linear-gradient(to right, rgba(141, 169, 205, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(141, 169, 205, 0.2) 1px, transparent 1px);
   background-size: 28px 28px;
-  opacity: 0.24;
+  opacity: 0.45;
 }
 
 .lens-vignette {
   z-index: 0;
-  background: radial-gradient(circle at 50% 45%, transparent 24%, rgba(0, 0, 0, 0.45) 100%);
+  background: radial-gradient(circle at 50% 45%, transparent 36%, rgba(34, 71, 122, 0.16) 100%);
 }

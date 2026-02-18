@@ -282,34 +282,88 @@ const renderGenerateBody = (): string => {
 }
 
 const renderAboutView = (): string => `
-  <section class="panel max-w-5xl">
-    <div class="flex items-center gap-3">
-      <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
-        ${iconToSvg(LayoutPanelLeft, 'h-5 w-5')}
-      </span>
-      <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">About AppAnvil</h1>
-    </div>
-    <p class="mt-3 text-sm text-[color:var(--text-muted)]">
-      AppAnvil is building toward a native one-click EXE installer. Today it generates a reliable command bundle profile so teams can install the same app stack consistently.
-    </p>
-    <div class="mt-4 grid gap-4 md:grid-cols-2">
-      <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
-        <h2 class="text-sm font-semibold tracking-tight text-[color:var(--text-strong)]">Current Workflow</h2>
-        <ol class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
-          <li>1. Select apps from the catalog.</li>
-          <li>2. Download command bundle outputs.</li>
-          <li>3. Run outputs locally with full visibility.</li>
-        </ol>
-      </article>
-      <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
-        <h2 class="text-sm font-semibold tracking-tight text-[color:var(--text-strong)]">Native EXE Roadmap</h2>
-        <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
-          <li>- Same profile format, direct EXE execution.</li>
-          <li>- Visual progress and install diagnostics.</li>
-          <li>- Enterprise-ready bundle consistency.</li>
-        </ul>
-      </article>
-    </div>
+  <section class="space-y-5">
+    <section class="panel hero-shell max-w-6xl">
+      <div class="grid gap-5 xl:grid-cols-[1.15fr_1fr]">
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
+              ${iconToSvg(LayoutPanelLeft, 'h-5 w-5')}
+            </span>
+            <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)]">About AppAnvil</h1>
+          </div>
+          <p class="mt-3 text-sm text-[color:var(--text-muted)] md:text-base">
+            AppAnvil helps teams define one installation profile and reuse it across machines. The current experience focuses on trusted script/profile generation, while a native EXE runner is actively being prepared.
+          </p>
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+              <h2 class="text-sm font-semibold text-[color:var(--text-strong)]">What Exists Today</h2>
+              <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
+                <li>- Curated multi-provider catalog.</li>
+                <li>- Profile persistence and sharing tokens.</li>
+                <li>- Transparent output generation with no auto-execution.</li>
+              </ul>
+            </article>
+            <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+              <h2 class="text-sm font-semibold text-[color:var(--text-strong)]">What Is Next</h2>
+              <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--text-muted)]">
+                <li>- Native AppAnvil EXE launcher.</li>
+                <li>- Guided visual install progress.</li>
+                <li>- Better diagnostics and install reports.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-2">
+          <article class="photo-feature sm:col-span-2">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Development workspace with laptop and code editor" loading="lazy" decoding="async" />
+            <div class="photo-overlay">
+              <p class="photo-tag">Mission</p>
+              <h3>Reliable setup flow for every machine</h3>
+            </div>
+          </article>
+          <article class="photo-feature">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Team collaboration around software planning" loading="lazy" decoding="async" />
+            <div class="photo-overlay">
+              <p class="photo-tag">Teams</p>
+              <h3>Consistent onboarding</h3>
+            </div>
+          </article>
+          <article class="photo-feature">
+            <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80" alt="Computer hardware and system performance setup" loading="lazy" decoding="async" />
+            <div class="photo-overlay">
+              <p class="photo-tag">Roadmap</p>
+              <h3>Native EXE execution layer</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+      <p class="mt-3 text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
+        Images from Unsplash (royalty-free).
+      </p>
+    </section>
+
+    <section class="panel max-w-6xl">
+      <h2 class="text-lg font-semibold tracking-tight text-[color:var(--text-strong)]">Roadmap Detail</h2>
+      <div class="mt-3 grid gap-3 md:grid-cols-3">
+        <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+          <p class="panel-caption">Phase 1</p>
+          <h3 class="mt-2 text-sm font-semibold text-[color:var(--text-strong)]">Profile Standardization</h3>
+          <p class="mt-2 text-sm text-[color:var(--text-muted)]">Lock profile schema and improve validation for long-term compatibility.</p>
+        </article>
+        <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+          <p class="panel-caption">Phase 2</p>
+          <h3 class="mt-2 text-sm font-semibold text-[color:var(--text-strong)]">Installer UX</h3>
+          <p class="mt-2 text-sm text-[color:var(--text-muted)]">Ship branded progress UI and clearer success/failure diagnostics.</p>
+        </article>
+        <article class="rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] p-4">
+          <p class="panel-caption">Phase 3</p>
+          <h3 class="mt-2 text-sm font-semibold text-[color:var(--text-strong)]">Native EXE</h3>
+          <p class="mt-2 text-sm text-[color:var(--text-muted)]">Activate one-click installer downloads directly from AppAnvil.</p>
+        </article>
+      </div>
+    </section>
   </section>
 `
 
@@ -360,7 +414,7 @@ const renderCatalogBody = (): string => {
       : state.catalogStatus === 'error'
         ? `
           <section class="panel">
-            <div class="flex items-start gap-3 text-amber-200">
+            <div class="flex items-start gap-3 text-amber-900">
               ${iconToSvg(AlertTriangle, 'mt-0.5 h-5 w-5')}
               <div>
                 <h2 class="text-base font-semibold">Catalog failed to load</h2>
@@ -407,7 +461,7 @@ const renderCatalogBody = (): string => {
 
           <div class="grid gap-3 sm:grid-cols-2">
             <article class="photo-feature sm:col-span-2">
-              <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1400&q=80" alt="Modern workstation with laptop and software setup" loading="lazy" decoding="async" />
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Modern workstation with laptop and software setup" loading="lazy" decoding="async" />
               <div class="photo-overlay">
                 <p class="photo-tag">Deployment Ready</p>
                 <h3>Team-ready setup bundles</h3>
@@ -535,7 +589,7 @@ const renderCatalogBody = (): string => {
           aria-label="Open cart drawer"
         >
           ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-          Selection & Download (${selectedApps.length})
+          Open Selection (${selectedApps.length})
         </button>
       </div>
 
@@ -580,22 +634,6 @@ const copyShareLink = async (): Promise<void> => {
   }
 }
 
-const downloadTextFile = (
-  content: string,
-  filename: string,
-  mimeType = 'text/plain;charset=utf-8',
-): void => {
-  const blob = new Blob([content], { type: mimeType })
-  const url = URL.createObjectURL(blob)
-  const link = document.createElement('a')
-  link.href = url
-  link.download = filename
-  document.body.appendChild(link)
-  link.click()
-  link.remove()
-  URL.revokeObjectURL(url)
-}
-
 const copyGenerateOutput = async (tab: GenerateTab): Promise<void> => {
   const { outputs } = getGeneratorViewData()
   if (!outputs) {
@@ -613,21 +651,8 @@ const copyGenerateOutput = async (tab: GenerateTab): Promise<void> => {
 }
 
 const downloadGenerateOutput = (tab: GenerateTab): void => {
-  const { outputs } = getGeneratorViewData()
-  if (!outputs) {
-    showToast('No generated output available.', 'error')
-    return
-  }
-
-  const content = getGenerateOutputContent(outputs, tab)
   const filename = getGenerateFilename(tab)
-  const mimeType =
-    tab === 'json'
-      ? 'application/json;charset=utf-8'
-      : 'text/plain;charset=utf-8'
-
-  downloadTextFile(content, filename, mimeType)
-  showToast(`Downloaded ${filename}`, 'success')
+  showToast(`Download for ${filename} is coming soon.`, 'info')
 }
 
 const wireHomeInteractions = (): void => {

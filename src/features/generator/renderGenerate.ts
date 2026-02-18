@@ -150,13 +150,12 @@ export const renderGenerateView = ({
           </button>
           <button
             type="button"
-            data-action="download-generate-output"
-            data-tab="${currentTab}"
-            class="btn-primary"
-            aria-label="Download active output"
+            disabled
+            class="btn-primary pointer-events-none opacity-60"
+            aria-label="Download coming soon"
           >
             ${iconToSvg(Download, 'h-4 w-4')}
-            Download
+            Download Coming Soon
           </button>
         </div>
       </div>

@@ -20,10 +20,10 @@ const escapeHtml = (value: string): string =>
 
 const statusClassName = (tone: ShareStatus['tone']): string => {
   if (tone === 'success') {
-    return 'border-emerald-400/35 bg-emerald-500/10 text-emerald-200'
+    return 'border-emerald-300 bg-emerald-50 text-emerald-800'
   }
   if (tone === 'error') {
-    return 'border-rose-400/35 bg-rose-500/10 text-rose-200'
+    return 'border-rose-300 bg-rose-50 text-rose-700'
   }
   return 'border-[color:var(--panel-border)] bg-[color:var(--panel-soft)] text-[color:var(--text-muted)]'
 }
