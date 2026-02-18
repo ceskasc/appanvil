@@ -365,48 +365,55 @@ const renderCatalogBody = (): string => {
           })
 
   return `
-    <section class="space-y-5">
-      <div class="glass rounded-3xl p-5 md:p-6">
-        <h1 class="text-2xl font-bold tracking-tight text-[color:var(--text-strong)] md:text-3xl">
-          Build your installer script stack in seconds.
-        </h1>
-        <p class="mt-3 max-w-3xl text-sm text-[color:var(--text-muted)] md:text-base">
-          Review scripts before running. This website does not execute installers.
-        </p>
+    <section class="space-y-4">
+      <div class="panel">
+        <div class="flex flex-wrap items-start justify-between gap-4">
+          <div class="max-w-3xl">
+            <p class="panel-caption">Catalog Workspace</p>
+            <h1 class="mt-1 text-2xl font-bold tracking-tight text-[color:var(--text-strong)] md:text-[2rem]">
+              Build installation bundles with a compact command-first flow.
+            </h1>
+            <p class="mt-2 text-sm text-[color:var(--text-muted)]">
+              Review scripts before running. This website does not execute installers.
+            </p>
+          </div>
 
-        <div class="mt-5 flex flex-wrap gap-2 lg:hidden">
-          <button
-            type="button"
-            data-open-drawer="filters-drawer"
-            class="btn-ghost"
-            aria-controls="filters-drawer"
-            aria-label="Open filters panel"
-          >
-            ${iconToSvg(SlidersHorizontal, 'h-4 w-4')}
-            Filters
-          </button>
-          <button
-            type="button"
-            data-open-drawer="cart-drawer"
-            class="btn-ghost"
-            aria-controls="cart-drawer"
-            aria-label="Open cart drawer"
-          >
-            ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-            Cart
-          </button>
+          <div class="flex flex-wrap gap-2 lg:hidden">
+            <button
+              type="button"
+              data-open-drawer="filters-drawer"
+              class="btn-ghost"
+              aria-controls="filters-drawer"
+              aria-label="Open filters panel"
+            >
+              ${iconToSvg(SlidersHorizontal, 'h-4 w-4')}
+              Filters
+            </button>
+            <button
+              type="button"
+              data-open-drawer="cart-drawer"
+              class="btn-ghost"
+              aria-controls="cart-drawer"
+              aria-label="Open cart drawer"
+            >
+              ${iconToSvg(ShoppingBag, 'h-4 w-4')}
+              Cart
+            </button>
+          </div>
         </div>
       </div>
 
-      <div class="grid gap-5 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
+      <div class="grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
         <aside class="hidden lg:block">
-          ${renderFiltersPanel({ filters: state.filters, categories })}
+          <div class="sticky top-4">
+            ${renderFiltersPanel({ filters: state.filters, categories })}
+          </div>
         </aside>
 
         <section>${catalogSection}</section>
 
         <aside class="hidden lg:block">
-          <div class="sticky top-5">
+          <div class="sticky top-4">
             ${renderCartPanel({ selectedApps, placement: 'desktop' })}
           </div>
         </aside>
@@ -453,7 +460,7 @@ const renderCatalogBody = (): string => {
           ></button>
         </div>
         <div class="fixed inset-x-0 bottom-0 z-50 p-3">
-          <div class="glass rounded-3xl p-1.5">
+          <div class="glass rounded-2xl p-1.5">
             ${renderCartPanel({ selectedApps, placement: 'mobile' })}
             <button type="button" data-close-drawer="cart-drawer" class="btn-ghost mt-3 w-full">
               Close Cart
@@ -462,7 +469,7 @@ const renderCatalogBody = (): string => {
         </div>
       </div>
 
-      <div class="fixed inset-x-0 bottom-0 z-30 border-t border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] px-4 py-3 backdrop-blur lg:hidden">
+      <div class="fixed inset-x-0 bottom-0 z-30 border-t border-[color:var(--panel-border)] bg-[color:var(--panel-surface)]/95 px-4 py-2.5 backdrop-blur lg:hidden">
         <button
           type="button"
           data-open-drawer="cart-drawer"
@@ -471,7 +478,7 @@ const renderCatalogBody = (): string => {
           aria-label="Open cart drawer"
         >
           ${iconToSvg(ShoppingBag, 'h-4 w-4')}
-          Open Cart Drawer (${selectedApps.length})
+          Open Cart (${selectedApps.length})
         </button>
       </div>
 
@@ -860,10 +867,10 @@ const renderApp = (): void => {
       <div class="aurora"></div>
       <div class="surface-grid"></div>
 
-      <div class="relative z-10 mx-auto flex min-h-screen w-full max-w-[1400px] flex-col px-4 py-4 pb-24 md:px-8 md:py-7 md:pb-10">
+      <div class="relative z-10 mx-auto flex min-h-screen w-full max-w-[1560px] flex-col px-3 py-3 pb-24 md:px-7 md:py-6 md:pb-10">
         ${renderHeader(currentRoute, activeTheme)}
 
-        <main class="mt-5 flex-1" id="route-content">
+        <main class="mt-4 flex-1" id="route-content">
           ${renderRouteView()}
         </main>
       </div>

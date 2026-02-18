@@ -71,21 +71,23 @@ export const toggleThemeMode = (theme: ThemeMode): ThemeMode =>
   theme === 'dark' ? 'light' : 'dark'
 
 export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
-  <header class="glass rounded-3xl px-4 py-3 md:px-6 md:py-4">
-    <div class="flex items-center gap-3">
+  <header class="glass rounded-2xl px-3 py-3 md:px-5 md:py-3.5">
+    <div class="flex items-center gap-2">
       <a
         href="#/"
-        class="flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-[color:var(--panel-surface)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--focus-ring)]"
+        class="focus-ring inline-flex items-center gap-2 rounded-xl px-2 py-1.5 transition-colors hover:bg-[color:var(--panel-soft)]"
         aria-label="AppAnvil home"
       >
-        <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[color:var(--accent-soft)] text-[color:var(--accent-strong)]">
           ${icon(Anvil, 'h-5 w-5')}
         </span>
         <span class="hidden sm:block">
-          <span class="block text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--text-subtle)]">App Script Builder</span>
-          <span class="block text-xl font-bold leading-tight text-[color:var(--text-strong)]">AppAnvil</span>
+          <span class="block text-[10px] font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">Installer Script Studio</span>
+          <span class="block text-lg font-semibold leading-tight text-[color:var(--text-strong)]">AppAnvil</span>
         </span>
       </a>
+
+      <span class="chip ml-1 hidden lg:inline-flex">Ctrl/Cmd + K</span>
 
       <button
         id="mobile-nav-toggle"
@@ -93,7 +95,7 @@ export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
         aria-label="Toggle navigation"
         aria-controls="header-nav"
         aria-expanded="false"
-        class="focus-ring ml-auto inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] md:hidden"
+        class="focus-ring ml-auto inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] md:hidden"
       >
         ${icon(Menu, 'h-5 w-5')}
       </button>
@@ -102,7 +104,7 @@ export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
         id="theme-toggle-mobile"
         type="button"
         aria-label="Toggle color theme"
-        class="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] transition-transform hover:-translate-y-0.5 md:hidden"
+        class="focus-ring inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)] md:hidden"
       >
         ${theme === 'dark' ? icon(SunMedium, 'h-5 w-5') : icon(MoonStar, 'h-5 w-5')}
       </button>
@@ -110,7 +112,7 @@ export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
       <nav
         id="header-nav"
         aria-label="Primary"
-        class="mt-3 hidden w-full flex-col gap-2 md:mt-0 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:gap-2"
+        class="mt-3 hidden w-full flex-col gap-1.5 border-t border-[color:var(--panel-border)] pt-2 md:mt-0 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:gap-1.5 md:border-0 md:pt-0"
       >
         ${navLink('Home', '#/', isNavActive(route, '#/'))}
         ${navLink('Generate', '#/generate', isNavActive(route, '#/generate'))}
@@ -122,7 +124,7 @@ export const renderHeader = (route: AppRoute, theme: ThemeMode): string => `
         id="theme-toggle"
         type="button"
         aria-label="Toggle color theme"
-        class="focus-ring hidden h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] transition-transform hover:-translate-y-0.5 md:inline-flex"
+        class="focus-ring hidden h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--panel-border)] bg-[color:var(--panel-surface)] text-[color:var(--text-strong)] transition-colors hover:bg-[color:var(--panel-soft)] md:inline-flex"
       >
         ${theme === 'dark' ? icon(SunMedium, 'h-5 w-5') : icon(MoonStar, 'h-5 w-5')}
       </button>
