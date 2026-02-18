@@ -478,17 +478,17 @@ const buildInstallerCmd = (ps1: string): string => {
     'echo AppAnvil installer launcher',
     'echo Starting embedded visual PowerShell installer...',
     'echo.',
-    'powershell -NoProfile -ExecutionPolicy Bypass -Command "$raw = Get-Content -LiteralPath $env:SELF -Raw; $marker = ' +
+    'powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference = ' +
+      "'Stop'" +
+      '; try { $raw = Get-Content -LiteralPath $env:SELF -Raw; $marker = ' +
       "'::APPANVIL_PS::'" +
       '; $idx = $raw.IndexOf($marker); if ($idx -lt 0) { Write-Error ' +
       "'Embedded installer payload not found.'" +
-      '; exit 1 }; $script = $raw.Substring($idx + $marker.Length).TrimStart(' +
-      "'`r','`n'" +
-      '); $tempDir = Join-Path $env:TEMP ' +
+      '; exit 1 }; $script = $raw.Substring($idx + $marker.Length).TrimStart([char]13,[char]10); $tempDir = Join-Path $env:TEMP ' +
       "'AppAnvil'" +
       '; New-Item -ItemType Directory -Path $tempDir -Force | Out-Null; $tempPs = Join-Path $tempDir ' +
       "'appanvil-install.ps1'" +
-      '; Set-Content -LiteralPath $tempPs -Value $script -Encoding UTF8; & powershell -NoProfile -ExecutionPolicy Bypass -File $tempPs; exit $LASTEXITCODE"',
+      '; Set-Content -LiteralPath $tempPs -Value $script -Encoding UTF8; & powershell -NoProfile -ExecutionPolicy Bypass -File $tempPs; exit $LASTEXITCODE } catch { Write-Error $_; exit 1 }"',
     'set "EXITCODE=%ERRORLEVEL%"',
     'echo.',
     'if not "%EXITCODE%"=="0" (',
