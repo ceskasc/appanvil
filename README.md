@@ -26,7 +26,7 @@ Appanvil is a static, privacy-friendly setup builder inspired by the convenience
 
 The current site is deliberately static and deploys directly to GitHub Pages. This keeps the public MVP simple and auditable. A future native Appanvil installer can be added as a signed desktop/bootstrap executable without changing the catalog UX.
 
-Deployment is handled by the repository's GitHub Actions Pages workflow on every push to `main`.
+Deployment is handled by the repository's GitHub Actions Pages workflow on every push to `main`. The public site is served from GitHub Pages.
 
 ## Development
 
