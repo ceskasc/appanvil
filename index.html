@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" data-platform="windows">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="description" content="Appanvil — pick your essential apps once, install them together." />
+  <meta property="og:title" content="Appanvil — Forge your setup" />
+  <meta property="og:description" content="Choose your apps. Generate one clean installer script. Build a fresh machine in minutes." />
+  <title>Appanvil — Forge your setup</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Appanvil home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" role="img"><path d="M5 8.5h20.2l-2.8 5H18v4.1l4.8 5.9H9.1l4.9-5.9v-4.1H7.8L5 8.5Z"/><path d="M9.8 5h12.4l1.5 2.2H8.3L9.8 5Z"/></svg>
+      </span>
+      <span>appanvil</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="#apps">Apps</a>
+      <a href="#how">How it works</a>
+      <a href="#about">Why Appanvil</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="github-link" href="https://github.com/ceskasc/appanvil" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <button class="selection-pill" id="headerSelection" type="button" aria-label="Open selected apps">
+        <span id="headerCount">0</span>
+        <span>selected</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-orbit hero-orbit-a" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit-b" aria-hidden="true"></div>
+
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> The clean way to set up a machine</div>
+        <h1>Pick your apps.<br><em>Forge one setup.</em></h1>
+        <p class="hero-lede">No installer scavenger hunt. No toolbar traps. Choose what belongs on your machine and Appanvil turns it into one clean install flow.</p>
+        <div class="hero-cta">
+          <a class="primary-cta" href="#apps">
+            <span>Choose apps</span>
+            <span class="cta-arrow">↘</span>
+          </a>
+          <span class="microcopy">Free · no account · transparent scripts</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="forge-disc">
+          <div class="forge-ring ring-one"></div>
+          <div class="forge-ring ring-two"></div>
+          <div class="forge-core">
+            <svg viewBox="0 0 96 96"><path d="M15 30h66L72 46H57v13l15 19H24l15-19V46H24L15 30Z"/><path d="M31 18h34l5 8H26l5-8Z"/></svg>
+          </div>
+          <span class="orbit-label label-a">CHOOSE</span>
+          <span class="orbit-label label-b">BUILD</span>
+          <span class="orbit-label label-c">INSTALL</span>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div><strong>01</strong><span>Curated catalog</span></div>
+        <div><strong>02</strong><span>Native package managers</span></div>
+        <div><strong>03</strong><span>One repeatable setup</span></div>
+      </div>
+    </section>
+
+    <section class="apps-section" id="apps">
+      <div class="section-heading">
+        <div>
+          <span class="section-index">01 / BUILD</span>
+          <h2>Your machine,<br>minus the busywork.</h2>
+        </div>
+        <p>Select the software you actually use. Appanvil only offers apps with a supported package source for your platform.</p>
+      </div>
+
+      <div class="platform-bar" role="tablist" aria-label="Operating system">
+        <button class="platform-button active" data-platform="windows" role="tab" aria-selected="true">
+          <span class="platform-symbol">⊞</span> Windows
+        </button>
+        <button class="platform-button" data-platform="macos" role="tab" aria-selected="false">
+          <span class="platform-symbol">⌘</span> macOS
+        </button>
+        <button class="platform-button" data-platform="linux" role="tab" aria-selected="false">
+          <span class="platform-symbol">⌁</span> Linux
+        </button>
+        <span class="platform-note" id="platformNote">Powered by winget</span>
+      </div>
+
+      <div class="catalog-tools">
+        <div class="category-tabs" id="categoryTabs" aria-label="App categories"></div>
+        <label class="search-field">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search apps" autocomplete="off" />
+        </label>
+      </div>
+
+      <div class="catalog" id="catalog" aria-live="polite"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>Nothing on the anvil.</span>
+        <p>Try another search or category.</p>
+      </div>
+    </section>
+
+    <section class="process-section" id="how">
+      <div class="process-intro">
+        <span class="section-index">02 / PROCESS</span>
+        <h2>Fresh machine.<br>Three moves.</h2>
+      </div>
+      <ol class="process-list">
+        <li>
+          <span class="process-number">01</span>
+          <div><h3>Choose</h3><p>Build your stack from a focused catalog of browsers, tools, media apps, developer utilities and more.</p></div>
+        </li>
+        <li>
+          <span class="process-number">02</span>
+          <div><h3>Forge</h3><p>Appanvil creates a readable install script using the native package ecosystem for your operating system.</p></div>
+        </li>
+        <li>
+          <span class="process-number">03</span>
+          <div><h3>Run</h3><p>Execute once. Package sources handle downloading current releases while Appanvil keeps the flow repeatable.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="manifesto" id="about">
+      <div class="manifesto-kicker">Built for clean starts</div>
+      <p>Setting up a computer should feel like <em>restoring your workspace</em>, not spending an afternoon hunting installers.</p>
+      <div class="manifesto-foot">
+        <span>Readable by default</span>
+        <span>No bundled installers</span>
+        <span>No account wall</span>
+      </div>
+    </section>
+  </main>
+
+  <aside class="forge-tray" id="forgeTray" aria-label="Selected apps">
+    <div class="tray-summary">
+      <button class="tray-toggle" id="trayToggle" type="button" aria-expanded="false">
+        <span class="tray-count" id="trayCount">0</span>
+        <span>
+          <strong id="trayTitle">Select your first app</strong>
+          <small id="traySubtitle">Your setup will appear here</small>
+        </span>
+        <span class="tray-chevron">⌃</span>
+      </button>
+      <button class="forge-button" id="forgeButton" type="button" disabled>
+        <span>Forge installer</span>
+        <span>↗</span>
+      </button>
+    </div>
+    <div class="tray-detail" id="trayDetail">
+      <div class="selected-chips" id="selectedChips"></div>
+      <button class="clear-button" id="clearButton" type="button">Clear all</button>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="forge-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
+      <span class="modal-kicker">Your build is ready</span>
+      <h2 id="modalTitle">Forged for <span id="modalPlatform">Windows</span>.</h2>
+      <p id="modalDescription">Download the generated PowerShell script, inspect it if you like, then run it to install your selected apps.</p>
+
+      <div class="code-preview">
+        <div class="code-head">
+          <span id="scriptName">appanvil-setup.ps1</span>
+          <button id="copyButton" type="button">Copy</button>
+        </div>
+        <pre><code id="scriptPreview"></code></pre>
+      </div>
+
+      <div class="modal-actions">
+        <button class="download-button" id="downloadButton" type="button">Download setup script <span>↓</span></button>
+        <button class="secondary-button" id="copyCommandButton" type="button">Copy script</button>
+      </div>
+      <p class="security-note">Appanvil does not host or repackage application binaries. Install commands use the package source shown for your platform.</p>
+    </section>
+  </div>
+
+  <footer>
+    <a class="brand footer-brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 8.5h20.2l-2.8 5H18v4.1l4.8 5.9H9.1l4.9-5.9v-4.1H7.8L5 8.5Z"/><path d="M9.8 5h12.4l1.5 2.2H8.3L9.8 5Z"/></svg></span>
+      <span>appanvil</span>
+    </a>
+    <p>Forge your setup. Keep your day.</p>
+    <span>© <span id="year"></span> Appanvil</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
